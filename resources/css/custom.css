@@ -1,0 +1,27 @@
+.sidebar-item {
+    color: #7e8cda;
+    display: block;
+    padding: 13px 20px;
+    font-size: 14px;
+    position: relative;
+    transition: all 0.5s;
+    font-family: "Poppins", sans-serif;
+}
+
+.sidebar-item > span {
+    margin-left: 7px;
+}
+
+.card-header {
+    padding: .75rem 0 !important;
+    border-bottom: 0px !important;
+}
+
+.card .card-header .card-header-right {
+    border-radius: 0 0 0 7px;
+    right: 20px;
+    top: 23px;
+    float: right;
+    padding: 7px 0;
+    position: absolute;
+}
