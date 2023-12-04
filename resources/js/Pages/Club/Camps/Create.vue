@@ -4,9 +4,9 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4>Crate Event</h4>
+            <h4 class="pl-3">Crate Event</h4>
             <div class="card-header-right">
-              <BackToList :backToListRoute="route('club.camps.index')">Back</BackToList>
+              <BackToList :backToListRoute="route('club.camps.index')"> Back</BackToList>
             </div>
           </div>
           <div class="card-body">
@@ -136,7 +136,7 @@
             <div class="form-group row">
               <label for="example-search-input" class="col-sm-2 col-form-label">Starting At :</label>
               <div class="col-sm-10">
-                <VueDatePicker v-model="date" position="left" auto-apply />
+                <VueDatePicker v-model="form.date" position="left" auto-apply />
               </div>
             </div>
             <div class="form-group row">
@@ -219,6 +219,10 @@ import { ref } from "vue";
 
 let value = ref();
 let date = ref(new Date());
+
+let form = {
+    date: ref(new Date())
+};
 </script>
 
 <style src="@vueform/multiselect/themes/default.css"></style>

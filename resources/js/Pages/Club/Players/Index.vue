@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
-          <div class="card-headr">
+          <div class="card-header">
             <h4 class="pl-4">Players</h4>
           </div>
           <div class="card-body">

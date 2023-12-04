@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <Link :href="backToListRoute" class="btn btn-success">
+  <Link :href="backToListRoute" class="btn btn-info">
     <i class="fas fa-arrow-alt-circle-left"></i>
     <slot>Back</slot>
   </Link>

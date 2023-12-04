@@ -18,26 +18,9 @@ defineProps({
 
   <Sidebar />
 
-  <div class="content-page">
+  <div class="content-page" style="height: ;">
     <div class="content">
       <div class="container-fluid pt-5">
-        <!-- <div class="page-title-box">
-          <div class="row align-items-center">
-            <div class="col-sm-6">
-              <h4 class="page-title">Responsive Table</h4>
-            </div>
-            <div class="col-sm-6">
-              <ol class="breadcrumb float-right">
-                <Link class="breadcrumb-item" :href="route('club.dashboard')">
-                  Dashboard
-                </Link>
-                <Link class="breadcrumb-item" :href="route('club.camps.index')">
-                  Events
-                </Link>
-              </ol>
-            </div>
-          </div> 
-        </div> -->
         <main>
           <slot />
         </main>

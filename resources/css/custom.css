@@ -8,11 +8,12 @@
     font-family: "Poppins", sans-serif;
 }
 
-.sidebar-item > span {
+.sidebar-item>span {
     margin-left: 7px;
 }
 
 .card-header {
+    background: #fff !important;
     padding: .75rem 0 !important;
     border-bottom: 0px !important;
 }
@@ -24,4 +25,9 @@
     float: right;
     padding: 7px 0;
     position: absolute;
+}
+
+.content-page {
+    flex: 1;
+    height: 100%;
 }

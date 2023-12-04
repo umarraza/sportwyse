@@ -16,4 +16,8 @@ class TeamController extends Controller
             'teams' => $teams
         ]);    
     }
+
+    public function create() {
+        return Inertia::render('Club/Teams/Create');    
+    }
 }

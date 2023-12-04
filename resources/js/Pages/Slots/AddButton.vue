@@ -9,7 +9,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <Link :href="routeLink" class="btn btn-success">
+  <Link :href="routeLink" class="btn btn-primary">
     <i class="fas fa-plus"></i>
     <span><slot>Add</slot> </span>
   </Link>

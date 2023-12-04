@@ -6,7 +6,7 @@
           <div class="card-header">
             <h4 class="pl-4">Teams</h4>
             <div class="card-header-right">
-              <AddButton :routeLink="route('club.camps.create')"> Add</AddButton>
+              <AddButton :routeLink="route('club.teams.create')"> Add</AddButton>
             </div>
           </div>
           <div class="card-body">
