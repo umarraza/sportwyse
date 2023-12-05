@@ -7,6 +7,8 @@ use App\Traits\Scopes\ClubScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Guardian extends Model
@@ -23,12 +25,22 @@ class Guardian extends Model
     protected $guarded = ['id'];
 
     /**
-     * Get the player associated with the Guardian
+     * Get the players associated with the Guardian
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function player(): HasOne
+    public function players(): HasMany
     {
-        return $this->hasOne(Player::class, 'guardian_id');
+        return $this->hasMany(Player::class, 'guardian_id');
+    }
+
+    /**
+     * Get the user that owns the Guardian
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

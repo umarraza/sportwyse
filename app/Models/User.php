@@ -12,6 +12,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Builder;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 // use MongoDB\Laravel\Auth\User as Authenticatable;
@@ -93,6 +94,16 @@ class User extends Authenticatable
     public function player(): HasOne
     {
         return $this->hasOne(Player::class);
+    }
+
+    /**
+     * Get all of the players for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function players(): HasMany
+    {
+        return $this->hasMany(Player::class, 'guardian_id');
     }
 
     /**
