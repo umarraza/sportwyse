@@ -159,9 +159,7 @@ return [
         /*
          * Package Service Providers...
          */
-        MongoDB\Laravel\MongoDBServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
-        MongoDB\Laravel\MongoDBServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -37,18 +37,6 @@ return [
     // localhost:27017
 
     'connections' => [
-
-        'mongodb' => [
-            'driver' => 'mongodb',
-            'host' => env('MONGODB_HOST', '127.0.0.1'),
-            'port' => env('MONGODB_PORT', '27017'),
-            'database' => env('MONGODB_DATABASE', 'sportwyse'),
-            'username' => env('MONGODB_USERNAME', ''),
-            'password' => env('MONGODB_PASSWORD', ''),
-            'options' => [
-                'appname' => 'homestead',
-            ],
-        ],
     
         'sqlite' => [
             'driver' => 'sqlite',
