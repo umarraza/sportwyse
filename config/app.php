@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://app.sportwyse.com'),
+    'url' => env('APP_URL', 'https://app.sportwyse.com'),
 
     'asset_url' => env('ASSET_URL', null),
 
