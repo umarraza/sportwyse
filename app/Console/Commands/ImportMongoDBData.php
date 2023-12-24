@@ -53,79 +53,75 @@ class ImportMongoDBData extends Command
                 });
             });
 
-            // Club::each(function ($club) {
+            Club::each(function ($club) {
 
-                
+                $this->info('Importing users...');
+                $this->newLine();
+                $this->importUsers($club);
 
+                $this->newLine();
+                $this->info('Importing teams...');
+                $this->newLine();
+                $this->importTeams($club);
 
-            //     $this->info('Importing users...');
-            //     $this->newLine();
-            //     $this->importUsers($club);
+                $this->newLine();
+                $this->info('Importing camps...');
+                $this->newLine();
+                $this->importCamps($club);
 
-            //     $this->newLine();
-            //     $this->info('Importing teams...');
-            //     $this->newLine();
-            //     $this->importTeams($club);
+            });
 
-            //     $this->newLine();
-            //     $this->info('Importing camps...');
-            //     $this->newLine();
-            //     $this->importCamps($club);
+            $this->newLine();
+            $this->info('Esttablishing the relation between camps and teams...');
 
-            // });
+            $campsCollection = Camp::whereNotNull('m_teams')->get();
 
-            // $this->newLine();
-            // $this->info('Esttablishing the relation between camps and teams...');
+            $this->withProgressBar($campsCollection, function ($camp) {
 
-            // $campsCollection = Camp::whereNotNull('m_teams')->get();
+                $teams = collect(json_decode($camp->m_teams));
 
-            // $this->withProgressBar($campsCollection, function ($camp) {
+                $teams->each(function ($teamId) use ($camp) {
 
-            //     $teams = collect(json_decode($camp->m_teams));
+                    $team = Team::where('m_id', $teamId)->first();
 
-            //     $teams->each(function ($teamId) use ($camp) {
+                    if ($team) {
+                        $team->camps()->attach($camp->id);
+                    }
 
-            //         $team = Team::where('m_id', $teamId)->first();
+                });
+            });
 
-            //         if ($team) {
-            //             $team->camps()->attach($camp->id);
-            //         }
+            $this->newLine();
+            $this->info('Esttablishing the relation between staff and teams...');
+            $teamsCollection = Team::whereNotNull('m_staff_member_ids')->get();
 
-            //     });
-            // });
+            $this->withProgressBar($teamsCollection, function ($team) {
+                collect(json_decode($team->m_staff_member_ids))->each(function ($staffId) use ($team) {
 
-            // $this->newLine();
-            // $this->info('Esttablishing the relation between staff and teams...');
-            // $teamsCollection = Team::whereNotNull('m_staff_member_ids')->get();
+                    $staff = Staff::where('m_id', $staffId)->first();
 
-            // $this->withProgressBar($teamsCollection, function ($team) {
-            //     collect(json_decode($team->m_staff_member_ids))->each(function ($staffId) use ($team) {
+                    if ($staff) {
+                        $team->staffMembers()->attach($staff->id);
+                    }
 
-            //         $staff = Staff::where('m_id', $staffId)->first();
+                });
+            });
 
-            //         if ($staff) {
-            //             $team->staffMembers()->attach($staff->id);
-            //         }
+            $this->newLine();
+            $this->info('Esttablishing the relation between players and teams...');
+            $playersCollection = Player::whereNotNull('m_teams')->get();
 
-            //     });
-            // });
+            $this->withProgressBar($playersCollection, function ($player) {
+                collect(json_decode($player->m_teams))->each(function ($teamId) use ($player) {
 
+                    $team = Team::where('m_id', $teamId)->first();
 
-            // $this->newLine();
-            // $this->info('Esttablishing the relation between players and teams...');
-            // $playersCollection = Player::whereNotNull('m_teams')->get();
+                    if ($team) {
+                        $player->teams()->attach($team->id);
+                    }
 
-            // $this->withProgressBar($playersCollection, function ($player) {
-            //     collect(json_decode($player->m_teams))->each(function ($teamId) use ($player) {
-
-            //         $team = Team::where('m_id', $teamId)->first();
-
-            //         if ($team) {
-            //             $player->teams()->attach($team->id);
-            //         }
-
-            //     });
-            // });
+                });
+            });
 
         });
     }
