@@ -27,6 +27,8 @@ class RouteServiceProvider extends ServiceProvider
     public const PARENT = 'parent/dashboard';
     /** @var string */
     public const PLAYER = 'player/dashboard';
+    /** @var string */
+    public const STAFF = 's/dashboard';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
@@ -47,6 +49,9 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware(['web', 'auth', 'auth.club'])
                 ->group(base_path('routes/club.php'));
+
+            Route::middleware(['web', 'auth', 'auth.staff'])
+                ->group(base_path('routes/staff.php'));
         });
     }
 }

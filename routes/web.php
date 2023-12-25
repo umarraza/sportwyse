@@ -22,6 +22,7 @@ use App\Http\Controllers\JsonViewerController;
 
 Route::get('/', function () {
 
+    dd('hello world'    );
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
