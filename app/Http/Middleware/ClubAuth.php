@@ -16,8 +16,10 @@ class ClubAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->isClub()) {
-            return $next($request);
+        if (Auth::check() && !Auth::user()->isClub()) {
+            abort(403);
         }
+
+        return $next($request);
     }
 }

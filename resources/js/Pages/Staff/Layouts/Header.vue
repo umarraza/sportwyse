@@ -8,6 +8,7 @@ const toggleSidebar = () => {
 const logout = () => {
   router.post(route('logout'));
 };
+
 </script>
 
 <template>
@@ -29,7 +30,7 @@ const logout = () => {
       <ul class="navbar-right list-inline float-right mb-0">
         <!-- notification -->
         <li class="dropdown notification-list list-inline-item">
-          <h5>Welcome {{ $page.props.auth.user.staff.name }}</h5>
+          <h5>Welcome {{ $page.props.auth.user.first_name + ' ' +  $page.props.auth.user.last_name}}</h5>
         </li>
 
         <li class="dropdown notification-list list-inline-item">

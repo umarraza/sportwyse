@@ -10,23 +10,23 @@ import { Link } from '@inertiajs/vue3';
       <div id="sidebar-menu">
         <!-- Left Menu Start -->
         <ul class="metismenu" id="side-menu">
-          <Link :href="route('club.dashboard')" class="sidebar-item">
+          <Link :href="route('staff.dashboard')" class="sidebar-item">
             <i class="fas fa-home"></i>
             <span> Dashboard </span>
           </Link>
-          <Link :href="route('club.camps.index')" class="sidebar-item">
+          <Link href="" class="sidebar-item">
             <i class="fab fa-opencart"></i>
             <span> Events </span>
           </Link>
-          <Link :href="route('club.teams.index')" class="sidebar-item">
+          <Link :href="route('staff.teams.index')" class="sidebar-item">
             <i class="fas fa-users"></i>
             <span> Teams </span>
           </Link>
-          <Link :href="route('club.players.index')" class="sidebar-item">
+          <Link href="" class="sidebar-item">
             <i class="fas fa-user-circle"></i>
             <span> Players </span>
           </Link>
-          <Link :href="route('club.parents.index')" class="sidebar-item">
+          <Link href="" class="sidebar-item">
             <i class="fas fa-user-circle"></i>
             <span> Parents </span>
           </Link>

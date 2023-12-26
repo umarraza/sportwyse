@@ -7,10 +7,7 @@ use App\Http\Controllers\Staff\ParentController;
 use App\Http\Controllers\Staff\PlayerController;
 use App\Http\Controllers\Staff\DashboardController;
 
-Route::name('staff.')->prefix('s')->group(function () {
+Route::name('staff.')->prefix('staff')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('camps', CampController::class);
     Route::resource('teams', TeamController::class);
-    Route::resource('players', PlayerController::class);
-    Route::resource('parents', ParentController::class); 
 });

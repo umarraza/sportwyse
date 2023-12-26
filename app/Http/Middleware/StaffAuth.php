@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
 use Symfony\Component\HttpFoundation\Response;
 
 class StaffAuth
@@ -16,8 +17,10 @@ class StaffAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->isStaff()) {
-            return $next($request);
+        if (Auth::check() && !Auth::user()->isStaff()) {
+            abort(403);
         }
+
+        return $next($request);
     }
 }

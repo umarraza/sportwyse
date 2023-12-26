@@ -1,8 +1,8 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import Banner from '@/Components/Banner.vue';
-import Sidebar from "@/Pages/Club/Layouts/Sidebar.vue";
-import Header from "@/Pages/Club/Layouts/Header.vue";
+import Sidebar from "@/Pages/Staff/Layouts/Sidebar.vue";
+import Header from "@/Pages/Staff/Layouts/Header.vue";
 
 defineProps({
   title: String,
@@ -10,20 +10,22 @@ defineProps({
 
 </script>
 <template>
-  <Head :title="title" />
+  <div>
+    <Head :title="title" />
 
-  <Banner />
+    <Banner />
 
-  <Header />
+    <Header />
 
-  <Sidebar />
+    <Sidebar />
 
-  <div class="content-page" style="height: ;">
-    <div class="content">
-      <div class="container-fluid pt-5">
-        <main>
-          <slot />
-        </main>
+    <div class="content-page">
+      <div class="content">
+        <div class="container-fluid pt-5">
+          <main>
+            <slot />
+          </main>
+        </div>
       </div>
     </div>
   </div>
