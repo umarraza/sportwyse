@@ -1,1 +1,0 @@
-import{o as s,c as r,w as n,u as o,a as e,r as l,g as u,j as c}from"./app-3155c2f1.js";const d=e("i",{class:"fas fa-plus"},null,-1),p={__name:"AddButton",props:{routeLink:{type:String}},setup(t){return(a,f)=>(s(),r(o(c),{href:t.routeLink,class:"btn btn-primary"},{default:n(()=>[d,e("span",null,[l(a.$slots,"default",{},()=>[u("Add")])])]),_:3},8,["href"]))}};export{p as default};
