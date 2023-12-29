@@ -1,39 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-import { onMounted } from 'vue'
-
-defineProps({
-  team: {
-    type: Object,
-    required: true
-  },
-  players: {
-    type: Object,
-    required: true
-  }
-});
-
-const playersArray = ref([]);
-
-const player = ref({
-  id: '',
-  status: ''
-});
-
-onMounted(() => {
-  playersArray.value.push(player.value);
-});
-
-const addMorePlayer = () => {
-  playersArray.value.push({ id: '', status: '' });
-};
-
-const removePlayer = (index) => {
-  playersArray.value.splice(index, 1);
-};
-
-</script>
-
 <template>
   <div class="modal fade" :class="`addPlayers${team.id}`" tabindex="-1" role="dialog"
     :aria-labelledby="`addPlayers${team.id}Label`" aria-hidden="true">
@@ -48,34 +12,105 @@ const removePlayer = (index) => {
         <div class="modal-body">
           <div class="row" v-for="(item, index) in playersArray" :key="index">
             <div class="col-md-1" style="padding: 38px 0px 0px 15px !important;">
-              <i class="fas fa-minus-circle" @click="removePlayer(index)" style="font-size: 25px; color: #ff005a9c; cursor: pointer"></i>
+              <i class="fas fa-minus-circle" @click="removePlayer(index)"
+                style="font-size: 25px; color: #ff005a9c; cursor: pointer"></i>
             </div>
-            <div class="col-md-6">
+           
+            <div class="col-md-5">
               <div class="form-group">
-                <label class="col-form-label">Select Player</label>
-                <select class="form-control" v-model="item.id">
-                  <option value="">(none)</option>
-                  <option v-for="(player, index) in players" :key="player.id" :value="player.id">{{ player.name }}
-                  </option>
-                </select>
+                <label class="col-form-label">Name</label>
+                <VueMultiselect v-model="item.id" :options="allPlayers" :close-on-select="true" :clear-on-select="false"
+                placeholder="Select one" label="name" track-by="name" />
+                <!-- <select class="form-control" v-model="item.status">
+                  <option value="Primary">Primary</option>
+                  <option value="Guest">Guest</option>
+                </select> -->
               </div>
             </div>
-            <div class="col-md-5" style="padding-top: 35px !important;">
-              <label class="btn btn-light">
-                <input type="radio" v-model="item.status" value="Primary"> Primary
-              </label>
-              <label class="btn btn-light">
-                <input type="radio" v-model="item.status" value="Guest"> Guest
-              </label>
+            <div class="col-md-5">
+              <div class="form-group">
+                <label class="col-form-label">Status</label>
+                <select class="custom-select" v-model="item.status">
+                  <option value="Primary">Primary</option>
+                  <option value="Guest">Guest</option>
+                </select>
+              </div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary" @click="addMorePlayer">Add More</button>
-          <button type="button" class="btn btn-success" @click="addMorePlayer">Submit</button>
+          <button type="button" class="btn btn-success" @click.prevent="submitForm">Submit</button>
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue';
+import { onMounted } from 'vue'
+import { Inertia } from '@inertiajs/inertia'
+import VueMultiselect from 'vue-multiselect'
+
+const props = defineProps({
+  team: {
+    type: Object,
+    required: true
+  },
+  players: {
+    type: Object,
+    required: true
+  }
+});
+
+const playersArray = ref([]).value;
+
+let value = ref('');
+
+
+const allPlayers = props.players.map((player) => {
+  return {
+    id: player.id,
+    name: player.name,
+  }
+});
+
+const options = ref([
+  { name: 'Vue.js', language: 'JavaScript' },
+  { name: 'AdonisJs', language: 'JavaScript' },
+  { name: 'Rails', language: 'Ruby' },
+  { name: 'Sinatra', language: 'Ruby' },
+  { name: 'Laravel', language: 'PHP' },
+  { name: 'Phoenix', language: 'Elixir' }
+]);
+
+const player = ref({
+  id: '',
+  status: 'Primary'
+});
+
+onMounted(() => {
+  playersArray.push(player.value);
+});
+
+const addMorePlayer = () => {
+  playersArray.push({ id: '', status: 'Primary' });
+};
+
+const removePlayer = (index) => {
+  playersArray.splice(index, 1);
+};
+
+const submitForm = async () => {
+  try {
+    Inertia.post(route('staff.teams.add-player', props.team.id), {
+      players: playersArray,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+</script>
