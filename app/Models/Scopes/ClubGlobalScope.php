@@ -14,7 +14,7 @@ class ClubGlobalScope implements Scope
      */
     public function apply(Builder $builder, Model $model): void
     {
-        if (Auth::check()) {
+        if (Auth::check() && Auth::user()->isClub()) {
             $builder->where('club_id', Auth::user()->club->id);
         }
     }

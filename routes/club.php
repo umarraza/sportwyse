@@ -7,7 +7,7 @@ use App\Http\Controllers\Club\ParentController;
 use App\Http\Controllers\Club\PlayerController;
 use App\Http\Controllers\Club\DashboardController;
 
-Route::name('club.')->group(function () {
+Route::name('club.')->prefix('club')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('camps', CampController::class);
     Route::resource('teams', TeamController::class);

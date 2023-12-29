@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * IMPORTANT:
+ * 
+ * If a player is participating in the same event with multiple teams, they will only need to make a single payment for the event he is participating.
+ * But each player participating in different events will pay amount for each event. 				
+ */
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -15,7 +22,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-// use MongoDB\Laravel\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -126,16 +132,16 @@ class User extends Authenticatable
         return $this->hasRole('Club');
     }
 
+    public function isStaff() 
+    {
+        return $this->hasRole('Staff');
+    }
+
     public function isAdmin() 
     {
         return $this->hasRole('Super Admin');
     }
 
-    /**
-     * Get the club associated with the User
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
     public function club(): HasOne
     {
         return $this->hasOne(Club::class);

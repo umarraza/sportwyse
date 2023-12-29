@@ -2,6 +2,7 @@
 
 use Inertia\Inertia;
 use Laravel\Fortify\Fortify;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
@@ -39,15 +40,26 @@ Fortify::loginView(function () {
     ]);
 });
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/dashboard', function () {
+ Route::middleware([
+     'auth:sanctum',
+     config('jetstream.auth_session'),
+     'verified',
+ ])->group(function () {
+     Route::get('dashboard', function () {
+
+        if (Auth::user()->isClub()) {
+            $route = 'club.dashboard';
+        }
+
+        if (Auth::user()->isStaff()) {
+            $route = 'staff.dashboard';
+        }
+
+        return redirect()->route($route);
+
         return Inertia::render('Dashboard');
-    })->name('dashboard');
-});
+     })->name('dashboard');
+ });
 
 Route::middleware([
     'auth:sanctum',

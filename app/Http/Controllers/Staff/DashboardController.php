@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Club;
+namespace App\Http\Controllers\Staff;
 
 use Inertia\Inertia;
 use Illuminate\Http\Request;
@@ -11,6 +11,6 @@ class DashboardController extends Controller
 {
     public function index() 
     {
-        return Inertia::render('Club/Dashboard',);
+        return Inertia::render('Staff/Dashboard',);
     }
 }

@@ -80,6 +80,8 @@ return [
 
     'club' => RouteServiceProvider::CLUB,
 
+    'staff' => RouteServiceProvider::STAFF,
+
     /*
     |--------------------------------------------------------------------------
     | Fortify Routes Prefix / Subdomain
