@@ -63,7 +63,7 @@ import { ref } from "vue";
 import VueMultiselect from 'vue-multiselect'
 import { onMounted } from 'vue'
 import { Link } from '@inertiajs/vue3';
-import { Inertia } from '@inertiajs/inertia'
+import { router } from '@inertiajs/vue3'
 
 export default {
   components: {
@@ -89,8 +89,6 @@ export default {
   setup(props) {
 
     const playersArray = ref([]).value;
-
-    let value = ref('');
 
     const allPlayers = props.players.map((player) => {
       return {
@@ -127,7 +125,7 @@ export default {
 
     const submitForm = async () => {
       try {
-        Inertia.post(route('staff.teams.add-player', props.team.id), {
+        router.post(route('staff.teams.add-player', props.team.id), {
           players: playersArray,
         });
       } catch (error) {
@@ -146,68 +144,4 @@ export default {
     }
   },
 };
-
-
-// const props = defineProps({
-//   team: {
-//     type: Object,
-//     required: true
-//   },
-//   players: {
-//     type: Object,
-//     required: true
-//   },
-//   errors: {
-//     type: Object,
-//     required: false
-//   }
-// });
-
-// const playersArray = ref([]).value;
-
-// let value = ref('');
-
-
-// const allPlayers = props.players.map((player) => {
-//   return {
-//     id: player.id,
-//     name: player.name,
-//   }
-// });
-
-// const options = ref([
-//   { name: 'Vue.js', language: 'JavaScript' },
-//   { name: 'AdonisJs', language: 'JavaScript' },
-//   { name: 'Rails', language: 'Ruby' },
-//   { name: 'Sinatra', language: 'Ruby' },
-//   { name: 'Laravel', language: 'PHP' },
-//   { name: 'Phoenix', language: 'Elixir' }
-// ]);
-
-// const player = ref({
-//   id: '',
-//   status: 'Primary'
-// });
-
-// onMounted(() => {
-//   playersArray.push(player.value);
-// });
-
-// const addMorePlayer = () => {
-//   playersArray.push({ id: '', status: 'Primary' });
-// };
-
-// const removePlayer = (index) => {
-//   playersArray.splice(index, 1);
-// };
-
-// const submitForm = async () => {
-//   try {
-//     Inertia.post(route('staff.teams.add-player', props.team.id), {
-//       players: playersArray,
-//     });
-//   } catch (error) {
-//     alert(error);
-//   }
-// };
 </script>
