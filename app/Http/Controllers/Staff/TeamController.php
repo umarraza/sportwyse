@@ -30,47 +30,19 @@ class TeamController extends Controller
         ]);
     }
 
-    public function create(Team $team)
+    public function addPlayer(AddPlayerInTeamRequest $request, Team $team)
     {
-        $players = DB::table('players as p')
-            ->join('users as u', 'u.id', '=', 'p.user_id')
-            ->select('p.id', DB::raw("CONCAT(u.first_name, ' ', u.last_name) AS name"))
-            ->get();
-
-        return Inertia::render('Staff/Teams/Create', [
-            'team' => $team,
-            'players' => $players,
-        ]);
-    }
-
-
-    public function addPlayer(Request $request, Team $team)
-    {
-        $value = $request->header('X-Inertia-Version');
-        dd($value);
-        // bce2ff3a7a514a4ea73d2a0b96c27a3b
-
-        return redirect()->route('staff.teams.index')->with('success', 'Player has been added successfully.');
-
-        try {
-            foreach ($request->players as $player) {
-                $team->players()->attach($player['id']['id'], ['status' => $player['status']]);
-            }
-        } catch (\Throwable $th) {
-            dd($th);
+        foreach ($request->players as $player) {
+            $team->players()->attach($player['id'], ['status' => $player['status']]);
         }
 
-        // return redirect()->route('staff.teams.index')->with('success', 'Player has been added successfully.');
-
-        // return Redirect::route('staff.teams.index');
-        // return redirect()->route('staff.teams.index')->with('success', 'Student created successfully.');
-
+        return to_route('staff.teams.index')->with('success', 'Player added successfully.');
     }
 
     public function deletePlayer(Team $team, Player $player)
     {
         $team->players()->detach($player->id);
 
-        return response()->noContent();
+        return to_route('staff.teams.index')->with('success', 'Player removed successfully.');
     }
 }

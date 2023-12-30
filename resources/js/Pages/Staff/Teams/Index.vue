@@ -14,21 +14,16 @@ defineProps({
   players: {
     type: Object,
     required: true
+  },
+  errors: {
+    type: Object,
+    required: false
   }
 });
 </script>
 <template>
   <AppLayout title="Teams">
-    <div class="row" v-if="$page.props.flash.success">
-      <div class="col-md-12">
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-          <strong>Success!</strong> {{ $page.props.flash.success }}
-        </div>
-      </div>
-    </div>
+    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -76,16 +71,11 @@ defineProps({
                       </td>
                       <td></td>
                       <td>
-
-                        <Link :href="route('staff.teams.add-player', team.id)" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> Add Players
-                        </Link>
-
-                        <!-- <div class="btn-group" role="group" aria-label="Basic example">
+                        <div class="btn-group" role="group" aria-label="Basic example">
                           <button class="btn btn-primary" data-toggle="modal" :data-target="`.addPlayers${team.id}`"><i
                               class="fa fa-plus"></i> Add Players</button>
                         </div>
-                        <AddPlayer :team="team" :players="players" /> -->
+                        <AddPlayer :team="team" :players="players" :errors="errors" />
                       </td>
                       <Players :team="team" />
                     </tr>
@@ -95,7 +85,7 @@ defineProps({
             </div>
           </div>
         </div>
-      </div> <!-- end col -->
-    </div> <!-- end row -->
+      </div>
+    </div>
   </AppLayout>
 </template>

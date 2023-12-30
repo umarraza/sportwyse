@@ -46,7 +46,6 @@ Fortify::loginView(function () {
      'verified',
  ])->group(function () {
      Route::get('dashboard', function () {
-
         if (Auth::user()->isClub()) {
             $route = 'club.dashboard';
         }

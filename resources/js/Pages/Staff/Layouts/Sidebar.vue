@@ -14,22 +14,22 @@ import { Link } from '@inertiajs/vue3';
             <i class="fas fa-home"></i>
             <span> Dashboard </span>
           </Link>
-          <Link href="" class="sidebar-item">
+          <!-- <Link href="" class="sidebar-item">
             <i class="fab fa-opencart"></i>
             <span> Events </span>
-          </Link>
+          </Link> -->
           <Link :href="route('staff.teams.index')" class="sidebar-item">
             <i class="fas fa-users"></i>
             <span> Teams </span>
           </Link>
-          <Link href="" class="sidebar-item">
+          <!-- <Link href="" class="sidebar-item">
             <i class="fas fa-user-circle"></i>
             <span> Players </span>
           </Link>
           <Link href="" class="sidebar-item">
             <i class="fas fa-user-circle"></i>
             <span> Parents </span>
-          </Link>
+          </Link> -->
         </ul>
       </div>
       <div class="clearfix"></div>
