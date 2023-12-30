@@ -30,17 +30,18 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-        return [
-            ...parent::share($request),
-            'ziggy' => fn () => [
-                ...(new Ziggy)->toArray(),
-                'location' => $request->url(),
-            ],
+        // dd($request->header('X-Inertia-Version'));
+        return array_merge(parent::share($request), [
             'flash' => [
                 'success' => session('success'),
                 'warning' => session('warning'),
                 'error' => session('error'),
             ],
-        ];
+            'ziggy' => function () use ($request) {
+                return array_merge((new Ziggy)->toArray(), [
+                    'location' => $request->url(),
+                ]);
+            },
+        ]);
     }
 }

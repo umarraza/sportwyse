@@ -43,3 +43,15 @@
     border-width: 5px 5px 0;
     content: "";
 }
+ 
+.txt-danger {
+    font-size: 12px;
+    list-style: none;
+    color: #fc5454;
+    margin-top: 5px
+}
+
+.search-select-validate {
+    border: 1px solid #fc5454 !important;
+    border-radius: 3px !important;
+}

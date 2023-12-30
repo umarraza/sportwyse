@@ -4,6 +4,8 @@ import AppLayout from '@/Pages/Staff/Layouts/AppLayout.vue';
 import AddButton from "@/Pages/Slots/AddButton.vue";
 import Players from "@/Pages/Staff/Teams/Players.vue";
 import AddPlayer from "@/Pages/Staff/Teams/AddPlayer.vue";
+import { Link } from '@inertiajs/vue3';
+
 defineProps({
   teams: {
     type: Object,
@@ -74,11 +76,16 @@ defineProps({
                       </td>
                       <td></td>
                       <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">
+
+                        <Link :href="route('staff.teams.add-player', team.id)" class="btn btn-primary">
+                        <i class="fas fa-plus"></i> Add Players
+                        </Link>
+
+                        <!-- <div class="btn-group" role="group" aria-label="Basic example">
                           <button class="btn btn-primary" data-toggle="modal" :data-target="`.addPlayers${team.id}`"><i
                               class="fa fa-plus"></i> Add Players</button>
                         </div>
-                        <AddPlayer :team="team" :players="players" />
+                        <AddPlayer :team="team" :players="players" /> -->
                       </td>
                       <Players :team="team" />
                     </tr>

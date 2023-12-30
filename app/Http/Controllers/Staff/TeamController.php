@@ -30,8 +30,28 @@ class TeamController extends Controller
         ]);
     }
 
-    public function addPlayer(AddPlayerInTeamRequest $request, Team $team)
+    public function create(Team $team)
     {
+        $players = DB::table('players as p')
+            ->join('users as u', 'u.id', '=', 'p.user_id')
+            ->select('p.id', DB::raw("CONCAT(u.first_name, ' ', u.last_name) AS name"))
+            ->get();
+
+        return Inertia::render('Staff/Teams/Create', [
+            'team' => $team,
+            'players' => $players,
+        ]);
+    }
+
+
+    public function addPlayer(Request $request, Team $team)
+    {
+        $value = $request->header('X-Inertia-Version');
+        dd($value);
+        // bce2ff3a7a514a4ea73d2a0b96c27a3b
+
+        return redirect()->route('staff.teams.index')->with('success', 'Player has been added successfully.');
+
         try {
             foreach ($request->players as $player) {
                 $team->players()->attach($player['id']['id'], ['status' => $player['status']]);
@@ -40,7 +60,9 @@ class TeamController extends Controller
             dd($th);
         }
 
-        return Redirect::route('staff.teams.index');
+        // return redirect()->route('staff.teams.index')->with('success', 'Player has been added successfully.');
+
+        // return Redirect::route('staff.teams.index');
         // return redirect()->route('staff.teams.index')->with('success', 'Student created successfully.');
 
     }
