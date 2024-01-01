@@ -49,7 +49,7 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware(['web', 'auth', 'auth.club'])
                 ->group(base_path('routes/club.php'));
 
-            Route::middleware(['web', 'auth', 'auth.staff'])
+            Route::middleware(['web', 'auth'])
                 ->group(base_path('routes/staff.php'));
         });
     }

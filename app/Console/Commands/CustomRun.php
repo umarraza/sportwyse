@@ -27,9 +27,11 @@ class CustomRun extends Command
      */
     public function handle()
     {
-        $user = User::find(11);
+        $user = User::find(1);
 
-        $user->password = Hash::make('password');
-        $user->save();
+        
+        $user->removeRole('Staff');
+        dd($user->roles->pluck('name')->toArray());
+
     }
 }

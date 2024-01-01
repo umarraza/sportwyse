@@ -22,6 +22,7 @@
                       <th>End Date</th>
                       <th>Status</th>
                       <th>Register</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -39,6 +40,13 @@
                         <svg v-else stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="color: rgb(241, 12, 88);"><circle cx="8" cy="8" r="8"></circle></svg>
                       </td>
                       <td></td>
+                      <td>
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                          <button class="btn btn-primary" data-toggle="modal" :data-target="`.addPlayers${team.id}`"><i
+                              class="fa fa-plus"></i> Add Players</button>
+                        </div>
+                        <AddPlayer :team="team" :players="players" :errors="errors" />
+                      </td>
 
                       <div class="modal fade" :class="`staffMembersModal${team.id}`" tabindex="-1" role="dialog"
                         :aria-labelledby="`staffMembersModal${team.id}`" aria-hidden="true">
@@ -96,11 +104,20 @@
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
 import AddButton from "@/Pages/Slots/AddButton.vue";
+import AddPlayer from "@/Pages/Staff/Teams/AddPlayer.vue";
 
 defineProps({
     teams: {
       type: Object,
       required: true
+    },
+    players: {
+      type: Object,
+      required: true
+    },
+    errors: {
+      type: Object,
+      required: false
     }
 });
 </script>
