@@ -55,3 +55,10 @@
     border: 1px solid #fc5454 !important;
     border-radius: 3px !important;
 }
+
+.input-group {
+    border-color: none !important;
+    border-width: 0 !important;
+    border-radius: 0px;
+    padding: 0 !important;
+}

@@ -1,5 +1,6 @@
 <template>
   <AppLayout title="Camps">
+    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -10,7 +11,7 @@
             </div>
           </div>
           <div class="card-body">
-            <div class="table-rep-plugin">
+            <div class="table-rep-plugin" v-if="camps.data.length">
               <div class="table-responsive b-0" data-pattern="priority-columns">
                 <table id="tech-companies-1" class="table table-striped">
                   <thead>
@@ -19,10 +20,6 @@
                       <th>Price</th>
                       <th>StartingAt</th>
                       <th>EndingAt</th>
-                      <th>Invoiced</th>
-                      <th>Paid</th>
-                      <th>Pending</th>
-                      <th>Players</th>
                       <th>Teams</th>
                       <th>Actions</th>
                     </tr>
@@ -30,13 +27,9 @@
                   <tbody>
                     <tr v-for="(camp, index) in camps.data" :key="index">
                       <td>{{ camp.name }}</td>
-                      <td>{{ camp.price }}</td>
+                      <td>${{ camp.price }}</td>
                       <td>{{ camp.start_date }}</td>
                       <td>{{ camp.end_date }}</td>
-                      <td>{{ camp.invoiced }}</td>
-                      <td>{{ camp.paid }}</td>
-                      <td>{{ camp.pending }}</td>
-                      <td>2</td>
                       <td>
                         <button
                           type="button"
@@ -51,15 +44,12 @@
                         <div
                           class="btn-group btn-group-sm ml-auto menu-actions align-self-center"
                         >
-                          <button
-                            type="button"
-                            class="btn btn-success btn-sm waves-effect waves-light"
-                          >
-                            <i class="fa fa-eye"></i>
-                          </button>
+                          <ShowButton :routeLink="route('club.camps.show', camp.id)"></ShowButton>
+                          <EditButton :routeLink="route('club.camps.edit', camp.id)"></EditButton>
                           <button
                             type="button"
                             class="btn btn-danger btn-sm waves-effect waves-light"
+                            @click="deleteCamp(camp.id)"
                           >
                             <i class="fa fa-trash"></i>
                           </button>
@@ -137,6 +127,9 @@
                 </table>
               </div>
             </div>
+            <div v-else>
+              <p class="text-center">No Events Found. Click Add button to create a new Event.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -147,10 +140,29 @@
 <script setup>
 import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import AddButton from "@/Pages/Slots/AddButton.vue";
+import EditButton from "@/Pages/Slots/EditButton.vue";
+import ShowButton from "@/Pages/Slots/ShowButton.vue";
+import { Link } from '@inertiajs/vue3';
+
 const props = defineProps({
   camps: {
     type: Object,
     required: true,
   }
 });
+
+const deleteCamp = (campId) => {
+  if (confirm("Are you sure you want to delete this camp?")) {
+    axios
+      .delete(route("club.camps.destroy", campId))
+      .then((response) => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+};
+
+
 </script>

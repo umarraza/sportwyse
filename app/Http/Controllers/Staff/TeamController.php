@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Staff;
 use App\Models\Team;
 use Inertia\Inertia;
 use App\Models\Player;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\Staff\AddPlayerInTeamRequest;
 
 class TeamController extends Controller
