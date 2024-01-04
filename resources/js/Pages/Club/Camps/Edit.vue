@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4 class="pl-3">Crate Event</h4>
+            <h4 class="pl-3">Edit Event</h4>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.camps.index')"> Back</BackToList>
             </div>
@@ -21,26 +21,13 @@
               </div>
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Select Teams</label>
-
                 <div class="col-sm-10">
-                <Multiselect
-                  v-model="form.teams"
-                  mode="tags"
-                  :close-on-select="false"
-                  :searchable="true"
-                  :placeholder="'Select Teams'"
-                  :create-option="true"
-                  :options="teamOptions"
-                />
-              </div>
-
-                <!-- <div class="col-sm-10">
-                  <Multiselect v-model="form.teams" mode="tags" label="id" track-by="name" :close-on-select="false"
-                    :searchable="true" :placeholder="'Select Teams'" :create-option="true" :options="teams" />
-                </div> -->
+                  <Multiselect v-model="form.teams" mode="tags" :close-on-select="false" :searchable="true"
+                    :placeholder="'Select Teams'" :create-option="true" :options="teamOptions" />
+                </div>
               </div>
               <div class="form-group row">
-                <label for="example-search-input" class="col-sm-2 col-form-label">Select Payments</label>
+                <label for="example-search-input" class="col-sm-2 col-form-label">Payment Type</label>
                 <div class="col-sm-10">
                   <label for>
                     <input name="payment_type" type="radio" v-model="form.payment_type" value="Fixed" />
@@ -191,47 +178,10 @@
                   <VueDatePicker position="left" :enable-time-picker="false" v-model="form.end_date" auto-apply />
                 </div>
               </div>
-
-              <!-- <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Include Cancel Button</label>
-              <div class="col-sm-10">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" v-model="form.include_cancel_button"
-                    id="customCheck1" />
-                  <label class="custom-control-label" for="customCheck1"></label>
-                </div>
-              </div>
-            </div> -->
-              <!-- <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Include Past Due</label>
-              <div class="col-sm-10">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" v-model="form.include_past_due" id="customCheck2" />
-                  <label class="custom-control-label" for="customCheck2"></label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Use Credit Amount</label>
-              <div class="col-sm-10">
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" v-model="form.use_credit_amount"
-                    id="customCheck3" />
-                  <label class="custom-control-label" for="customCheck3"></label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-search-input" class="col-sm-2 col-form-label">Got Sport Event Id</label>
-              <div class="col-sm-10">
-                <input name="type" type="text" class="form-control" v-model="form.got_sport_event_id"
-                  placeholder="Got Sport Event Id" />
-              </div>
-            </div> -->
               <div class="form-group">
                 <div>
                   <CancelButton :routeLink="route('club.camps.index')" />
-                  <button type="submit" class="btn btn-primary waves-effect ml-1 waves-light">Submit</button>
+                  <button type="submit" class="btn btn-success waves-effect ml-1 waves-light">Submit</button>
                 </div>
               </div>
             </form>
@@ -247,14 +197,21 @@ import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import BackToList from "@/Pages/Slots/BackToList.vue";
 import Multiselect from "@vueform/multiselect";
 import { useForm } from '@inertiajs/vue3';
-import { ref } from "vue";
 import TextInput from '@/Components/TextInput.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';
 import CancelButton from "@/Pages/Slots/CancelButton.vue";
 
 const props = defineProps({
+  camp: {
+    type: Object,
+    required: true,
+  },
   teams: {
+    type: Object,
+    required: true,
+  },
+  currentTeams: {
     type: Object,
     required: true,
   },
@@ -264,22 +221,22 @@ const props = defineProps({
 let teamOptions = props.teams;
 
 const form = useForm({
-  type: "Private",
-  name: "",
-  payment_type: "Fixed",
-  processing_fee: "Exclude processing fees in price",
-  processing_fee_using_credit_card: "",
-  net_amount_using_credit_card: "",
-  total_price_using_credit_card: "",
-  processing_fee_using_bank_account: "",
-  net_amount_using_bank_account: "",
-  total_price_using_bank_account: "",
-  price: "",
-  payment_pay_type: "Onetime",
-  installment: "",
-  start_date: new Date(),
-  end_date: new Date(),
-  teams: [],
+  type: props.camp.type,
+  name: props.camp.name,
+  payment_type: props.camp.payment_type,
+  processing_fee: props.camp.processing_fee,
+  processing_fee_using_credit_card: props.camp.processing_fee_using_credit_card,
+  net_amount_using_credit_card: props.camp.net_amount_using_credit_card,
+  total_price_using_credit_card: props.camp.total_price_using_credit_card,
+  processing_fee_using_bank_account: props.camp.processing_fee_using_bank_account,
+  net_amount_using_bank_account: props.camp.net_amount_using_bank_account,
+  total_price_using_bank_account: props.camp.total_price_using_bank_account,
+  price: props.camp.price,
+  payment_pay_type: props.camp.payment_pay_type,
+  installment: props.camp.installment,
+  start_date: props.camp.start_date,
+  end_date: props.camp.end_date,
+  teams: props.currentTeams,
 });
 
 const calculateAmount = () => {
@@ -315,7 +272,7 @@ const submit = () => {
 
   form.transform(data => ({
     ...data,
-  })).post(route('club.camps.store'), {
+  })).put(route('club.camps.update', props.camp.id), {
     onFinish: (response) => {
       console.log(response);
     },
