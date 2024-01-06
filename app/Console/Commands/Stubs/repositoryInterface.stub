@@ -1,0 +1,25 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Project;
+use {{ namespacedModel }};
+use Illuminate\Http\Request;
+
+class {{ class }}RepositoryInterface
+{
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @param App\Project $project
+     * @return bool
+     */
+    public function store(Request $request, Project $project): bool
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @param App\Models\{{ namespacedModel }} $model
+     * @return bool
+     */
+    public function update(Request $request, {{ namespacedModel }} $model): bool
+}

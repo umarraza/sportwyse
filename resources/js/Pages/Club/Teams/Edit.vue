@@ -1,10 +1,10 @@
 <template>
-  <AppLayout title="Creae Team">
+  <AppLayout title="Edit Team">
     <div class="row">
       <div class="col-12">
         <div class="card ">
           <div class="card-header">
-            <h4 class="pl-4">Crate Team</h4>
+            <h4 class="pl-4">Edit Team</h4>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
             </div>
@@ -88,10 +88,19 @@ import Multiselect from "@vueform/multiselect";
 import { useForm } from '@inertiajs/vue3';
 import CancelButton from "@/Pages/Slots/CancelButton.vue";
 
+
 const props = defineProps({
   staff: {
     type: Object,
     required: true,
+  },
+  team: {
+    type: Object,
+    required: true,
+  },
+  currentStaff: {
+    type: Object,
+    required: true
   },
   errors: Object,
 });
@@ -99,12 +108,12 @@ const props = defineProps({
 let staffOptions = props.staff;
 
 const form = useForm({
-  status: '1',
-  gender: 'Male',
-  name: '',
-  staff: [],
-  birth_year_start_date: new Date(),
-  birth_year_end_date: new Date(),
+  status: props.team.status,
+  gender: props.team.gender,
+  name: props.team.name,
+  staff: props.currentStaff,
+  birth_year_start_date: props.team.start_date,
+  birth_year_end_date: props.team.end_date,
 });
 
 const submit = () => {
@@ -113,7 +122,7 @@ const submit = () => {
 
   form.transform(data => ({
     ...data,
-  })).post(route('club.teams.store'), {
+  })).put(route('club.teams.update', props.team.id), {
     onFinish: (response) => {
       console.log(response);
     },

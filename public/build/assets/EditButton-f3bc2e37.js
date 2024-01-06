@@ -1,1 +1,0 @@
-import{o as e,c as a,w as s,u as r,j as n,a as o}from"./app-bd23ec5b.js";const c=o("i",{class:"fas fa-edit"},null,-1),_={__name:"EditButton",props:{routeLink:{type:String}},setup(t){return(i,u)=>(e(),a(r(n),{href:t.routeLink,class:"btn btn-primary"},{default:s(()=>[c]),_:1},8,["href"]))}};export{_ as default};

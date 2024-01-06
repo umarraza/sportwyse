@@ -1,0 +1,29 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Project;
+use Illuminate\Http\Request;
+
+class {{ class }} implements {{ class }}Interface
+{
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @param App\Project $project
+     * @return bool
+     */
+    public function store(Request $request, Project $project): bool
+    {
+        //
+    }
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @return bool
+     */
+    public function update(Request $request): bool
+    {
+        //
+    }
+}

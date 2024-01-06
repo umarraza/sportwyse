@@ -20,6 +20,9 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import VueDatePicker from '@vuepic/vue-datepicker';
 import SuccessAlert from '../js/Pages/Slots/SuccessAlert.vue';
+import InputLabel from '@/Components/InputLabel.vue';
+import TextInput from '@/Components/TextInput.vue';
+import InputError from '@/Components/InputError.vue';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -32,6 +35,9 @@ createInertiaApp({
             .use(ZiggyVue)
             .component("SuccessAlert", SuccessAlert)
             .component("VueDatePicker", VueDatePicker)
+            .component("InputLabel", InputLabel)
+            .component("TextInput", TextInput)
+            .component("InputError", InputError)
             .mount(el);
     },
     progress: {

@@ -247,7 +247,6 @@ import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import BackToList from "@/Pages/Slots/BackToList.vue";
 import Multiselect from "@vueform/multiselect";
 import { useForm } from '@inertiajs/vue3';
-import { ref } from "vue";
 import TextInput from '@/Components/TextInput.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import InputError from '@/Components/InputError.vue';
