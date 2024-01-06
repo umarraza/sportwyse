@@ -51,7 +51,6 @@ class CampController extends Controller
             ]);
     
             $camp->teams()->attach($request->teams);
-
         });
 
         return redirect()->route('club.camps.index')->with('success', 'Event created successfully.');

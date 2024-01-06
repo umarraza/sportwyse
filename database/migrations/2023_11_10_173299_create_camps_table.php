@@ -26,12 +26,12 @@ return new class extends Migration
             $table->boolean('is_visible')->default(false);
             $table->boolean('is_removed')->default(false);
             $table->boolean('include_due_amount')->default(false);
-            $table->decimal('processing_fee_using_credit_card', 5,2)->nullable();
-            $table->decimal('net_amount_using_credit_card', 5,2)->nullable();
-            $table->decimal('total_price_using_credit_card', 5,2)->nullable();
-            $table->decimal('processing_fee_using_bank_account', 5,2)->nullable();
-            $table->decimal('net_amount_using_bank_account', 5,2)->nullable();
-            $table->decimal('total_price_using_bank_account', 5,2)->nullable();
+            $table->decimal('processing_fee_credit_card', 5,2)->nullable();
+            $table->decimal('net_amount_credit_card', 5,2)->nullable();
+            $table->decimal('total_price_credit_card', 5,2)->nullable();
+            $table->decimal('processing_bank_account', 5,2)->nullable();
+            $table->decimal('net_amount_bank_account', 5,2)->nullable();
+            $table->decimal('total_price_bank_account', 5,2)->nullable();
             $table->mediumInteger('registrations')->default(0)->nullable();
             $table->smallInteger('pending')->nullable();
             $table->decimal('paid', 10, 2)->nullable()->default(0);
