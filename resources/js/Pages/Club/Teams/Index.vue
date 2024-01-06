@@ -1,5 +1,6 @@
 <template>
   <AppLayout title="Camps">
+    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -21,7 +22,7 @@
                       <th>Start Date</th>
                       <th>End Date</th>
                       <th>Status</th>
-                      <th>Register</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -35,10 +36,24 @@
                       <td>{{ team.start_date }}</td>
                       <td>{{ team.end_date }}</td>
                       <td >
-                        <svg v-if="team.is_archived" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="color: rgb(12, 241, 12);"><circle cx="8" cy="8" r="8"></circle></svg>
+                        <svg v-if="team.status" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="color: rgb(12, 241, 12);"><circle cx="8" cy="8" r="8"></circle></svg>
                         <svg v-else stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg" style="color: rgb(241, 12, 88);"><circle cx="8" cy="8" r="8"></circle></svg>
                       </td>
-                      <td></td>
+                      <td>
+                        <div
+                          class="btn-group btn-group-sm ml-auto menu-actions align-self-center"
+                        >
+                          <ShowButton :routeLink="route('club.teams.show', team.id)"></ShowButton>
+                          <EditButton :routeLink="route('club.teams.edit', team.id)"></EditButton>
+                          <button
+                            type="button"
+                            class="btn btn-danger btn-sm waves-effect waves-light"
+                            @click="deleteTeam(team.id)"
+                          >
+                            <i class="fa fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
 
                       <div class="modal fade" :class="`staffMembersModal${team.id}`" tabindex="-1" role="dialog"
                         :aria-labelledby="`staffMembersModal${team.id}`" aria-hidden="true">
@@ -52,26 +67,10 @@
                             </div>
                             <div class="modal-body">
                               <div class="table-responsive b-0" data-pattern="priority-columns">
-
                                 <ul v-if="team.staff_members.length">
                                   <li v-for="(staff, index) in team.staff_members" :key="index">{{ `${staff.user.first_name} ${staff.user.last_name}` }}</li>
                                 </ul>
                                 <p v-else>No staff found.</p>
-
-                                <!-- <table id="teams-table" class="table">
-                                  <thead>
-                                    <tr>
-                                      <th><strong>Staff Name</strong></th>
-                                      <th><strong>Email</strong></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr v-for="(staff, index) in team.staff_members" :key="index">
-                                      <td>{{ `${staff.user.first_name} ${staff.user.last_name}` }}</td>
-                                      <td>{{ staff.user.email }}</td>
-                                    </tr>
-                                  </tbody>
-                                </table> -->
                               </div>
                             </div>
                             <div class="modal-footer">
@@ -96,6 +95,8 @@
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
 import AddButton from "@/Pages/Slots/AddButton.vue";
+import EditButton from "@/Pages/Slots/EditButton.vue";
+import ShowButton from "@/Pages/Slots/ShowButton.vue";
 
 defineProps({
     teams: {
@@ -103,4 +104,18 @@ defineProps({
       required: true
     }
 });
+
+const deleteTeam = (teamId) => {
+  if (confirm("Are you sure you want to delete this team?")) {
+    axios
+      .delete(route("club.teams.destroy", teamId))
+      .then((response) => {
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+};
+
 </script>
