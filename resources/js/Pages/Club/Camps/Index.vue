@@ -13,7 +13,7 @@
           <div class="card-body">
             <div class="table-rep-plugin" v-if="camps.data.length">
               <div class="table-responsive b-0" data-pattern="priority-columns">
-                <table id="tech-companies-1" class="table table-striped">
+                <table id="tech-companies-1" class="table">
                   <thead>
                     <tr>
                       <th>Name</th>

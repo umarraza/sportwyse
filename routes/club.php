@@ -6,11 +6,16 @@ use App\Http\Controllers\Club\TeamController;
 use App\Http\Controllers\Club\ParentController;
 use App\Http\Controllers\Club\PlayerController;
 use App\Http\Controllers\Club\DashboardController;
+use App\Http\Controllers\Club\TeamPlayerController;
 
 Route::name('club.')->prefix('club')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('camps', CampController::class);
-    Route::resource('teams', TeamController::class);
-    Route::resource('players', PlayerController::class);
     Route::resource('parents', ParentController::class);
+    Route::resource('parents.players', PlayerController::class)->shallow();
+    
+    Route::resource('teams', TeamController::class);
+    Route::get('teams/{team}/players', [TeamPlayerController::class, 'index'])->name('teams.players.index');
+    Route::get('teams/{team}/players/add', [TeamPlayerController::class, 'add'])->name('teams.players.add');
+    Route::post('teams/{team}/players', [TeamPlayerController::class, 'index'])->name('teams.players.store');
 });

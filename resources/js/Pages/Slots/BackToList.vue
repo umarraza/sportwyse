@@ -11,6 +11,6 @@ const props = defineProps({
 <template>
   <Link :href="backToListRoute" class="btn btn-primary">
     <i class="fas fa-arrow-alt-circle-left"></i>
-    <slot>Back</slot>
+    <slot> Back</slot>
   </Link>
 </template>

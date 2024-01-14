@@ -6,7 +6,8 @@
           <div class="card-header">
             <h4 class="pl-4">Players</h4>
             <div class="card-header-right">
-              <AddButton :routeLink="route('club.players.create')"> Add</AddButton>
+              <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
+              <AddButton :routeLink="route('club.teams.players.add', team.id)" class="btn btn-success ml-1"> Add Players</AddButton>
             </div>
           </div>
           <div class="card-body">
@@ -15,26 +16,22 @@
                 <table id="tech-companies-1" class="table  table-striped">
                   <thead>
                     <tr>
+                      <th>Photo</th>
                       <th>First Name</th>
                       <th>Last Name</th>
-                      <th>Date of Birth</th>
-                      <th>Coach Name</th>
-                      <th>Programe</th>
-                      <th>Teams</th>
+                      <th>Parent Name</th>
+                      <th>Parent Email</th>
+                      <th>Parent Phone</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="(player, index) in players" :key="index">
+                      <td>-</td>
                       <td>{{ player.user.first_name }}</td>
                       <td>{{ player.user.last_name }}</td>
-                      <td>{{ player.birth_date }}</td>
-                      <td></td>
-                      <td></td>
-                      <td>
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal"
-                          :data-target="`.teams-modal-${player.id}`">View ({{ player.teams_count }})</button>
-                      </td>
-
+                      <td>{{ `${player.guardian.user.first_name} ${player.guardian.user.last_name}` }}</td>
+                      <td>{{ player.guardian.user.email }}</td>
+                      <td>{{ player.guardian.phone }}</td>
                       <div class="modal fade" :class="`teams-modal-${player.id}`" tabindex="-1" role="dialog"
                         aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -84,18 +81,20 @@
     </div> <!-- end row -->
   </AppLayout>
 </template>
-
+  
 <script setup>
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
-import AddButton from "@/Pages/Slots/AddButton.vue";
-import EditButton from "@/Pages/Slots/EditButton.vue";
-import ShowButton from "@/Pages/Slots/ShowButton.vue";
+import BackToList from "@/Pages/Slots/BackToList.vue";
 
 const props = defineProps({
-    players: {
-      type: Object,
-      required: true
-    },
+  players: {
+    type: Object,
+    required: true
+  },
+  team: {
+    type: Object,
+    required: true
+  }
 });
 </script>

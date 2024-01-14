@@ -1,18 +1,16 @@
 <template>
   <AppLayout title="Camps">
+    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
             <h4 class="pl-4">Parents</h4>
-            <div class="card-header-right">
-              <AddButton :routeLink="route('club.parents.create')"> Add</AddButton>
-            </div>
           </div>
           <div class="card-body">
             <div class="table-rep-plugin">
               <div class="table-responsive b-0" data-pattern="priority-columns">
-                <table id="tech-companies-1" class="table  table-striped">
+                <table id="tech-companies-1" class="table">
                   <thead>
                     <tr>
                       <th>First Name</th>
@@ -20,6 +18,7 @@
                       <th>Email</th>
                       <th>Phone</th>
                       <th>Players</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -32,7 +31,12 @@
                         <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal"
                           :data-target="`.playersModal${parent.id}`">View ({{ parent.players_count }})</button>
                       </td>
-
+                      <td>
+                        <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
+                          <AddButton :routeLink="route('club.parents.players.create', parent.id)" :class="'btn-success'">
+                            Add Players</AddButton>
+                        </div>
+                      </td>
                       <div class="modal fade" :class="`playersModal${parent.id}`" tabindex="-1" role="dialog"
                         :aria-labelledby="`playersModal${parent.id}`" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
@@ -47,7 +51,8 @@
                               <div class="table-responsive b-0" data-pattern="priority-columns">
 
                                 <ul v-if="parent.players.length">
-                                  <li v-for="(player, index) in parent.players" :key="index">{{ `${player.user.first_name} ${player.user.last_name}` }}</li>
+                                  <li v-for="(player, index) in parent.players" :key="index">{{ `${player.user.first_name}
+                                                                      ${player.user.last_name}` }}</li>
                                 </ul>
                                 <p v-else>No player found.</p>
                               </div>
@@ -73,12 +78,11 @@
 <script setup>
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
-import AddButton from "@/Pages/Slots/AddButton.vue";
 
 defineProps({
-    parents: {
-      type: Object,
-      required: true
-    }
+  parents: {
+    type: Object,
+    required: true
+  }
 });
 </script>
