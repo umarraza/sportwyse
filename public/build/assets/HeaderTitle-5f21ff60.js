@@ -1,0 +1,1 @@
+import{o as t,e as r,t as s}from"./app-365665b1.js";const a={class:"pl-4"},l={__name:"HeaderTitle",props:{title:{type:String,required:!0}},setup(e){return(o,c)=>(t(),r("h4",a,s(e.title),1))}};export{l as default};

@@ -1,1 +1,0 @@
-import{o as t,c as s,w as a,u as o,l as r,a as c}from"./app-ed6aa4ba.js";const n=c("i",{class:"fas fa-eye"},null,-1),l={__name:"ShowButton",props:{routeLink:{type:String}},setup(e){return(u,f)=>(t(),s(o(r),{href:e.routeLink,class:"btn btn-success"},{default:a(()=>[n]),_:1},8,["href"]))}};export{l as default};

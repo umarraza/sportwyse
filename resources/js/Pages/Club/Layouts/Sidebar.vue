@@ -22,10 +22,6 @@ import { Link } from '@inertiajs/vue3';
             <i class="fas fa-users"></i>
             <span> Teams </span>
           </Link>
-          <Link :href="route('club.players.index')" class="sidebar-item">
-            <i class="fas fa-user-circle"></i>
-            <span> Players </span>
-          </Link>
           <Link :href="route('club.parents.index')" class="sidebar-item">
             <i class="fas fa-user-circle"></i>
             <span> Parents </span>

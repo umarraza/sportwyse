@@ -30,6 +30,8 @@ class TeamController extends Controller
 
     public function addPlayer(AddPlayerInTeamRequest $request, Team $team)
     {
+        dd($request->players);
+
         foreach ($request->players as $player) {
             $team->players()->attach($player['id'], ['status' => $player['status']]);
         }

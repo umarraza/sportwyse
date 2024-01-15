@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Team;
+use App\Models\Guardian;
 use App\Traits\Scopes\ClubScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -46,5 +47,15 @@ class Player extends Model
     public function teams(): BelongsToMany
     {
         return $this->belongsToMany(Team::class);
+    }
+
+    /**
+     * Get the guardian that owns the Player
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function guardian(): BelongsTo
+    {
+        return $this->belongsTo(Guardian::class, 'guardian_id');
     }
 }

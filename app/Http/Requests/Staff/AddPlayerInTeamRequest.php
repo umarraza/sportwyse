@@ -22,6 +22,8 @@ class AddPlayerInTeamRequest extends FormRequest
      */
     public function rules(): array
     {
+        dd($this->players);
+
         return [
             'players.*.id' => [
                 'required',

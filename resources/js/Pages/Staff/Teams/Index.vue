@@ -1,10 +1,8 @@
 <script setup>
 
 import AppLayout from '@/Pages/Staff/Layouts/AppLayout.vue';
-import AddButton from "@/Pages/Slots/AddButton.vue";
 import Players from "@/Pages/Staff/Teams/Players.vue";
 import AddPlayer from "@/Pages/Staff/Teams/AddPlayer.vue";
-import { Link } from '@inertiajs/vue3';
 
 defineProps({
   teams: {

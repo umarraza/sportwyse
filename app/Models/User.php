@@ -78,9 +78,20 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'name'
     ];
 
     protected $with = ['club'];
+
+    /**
+     * Get the name attribute.
+     *
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return $this->first_name . ' ' . $this->last_name;
+    }
 
     /**
      * Get the guardian associated with the User
@@ -135,6 +146,11 @@ class User extends Authenticatable
     public function isStaff() 
     {
         return $this->hasRole('Staff');
+    }
+
+    public function isParent() 
+    {
+        return $this->hasRole('Parent');
     }
 
     public function isAdmin() 

@@ -1,0 +1,75 @@
+<template>
+  <AppLayout title="Players">
+    <div class="row">
+      <div class="col-12">
+        <div class="card m-b-30">
+          <div class="card-header">
+            <h4 class="pl-4">Players</h4>
+            <div class="card-header-right">
+              <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
+              <AddButton :routeLink="route('club.teams.players.add', team.id)" class="btn btn-success ml-1"> Add Players
+              </AddButton>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-rep-plugin">
+              <div class="table-responsive b-0" data-pattern="priority-columns">
+                <table id="tech-companies-1" class="table  table-striped">
+                  <thead>
+                    <tr>
+                      <th>Photo</th>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Status</th>
+                      <th>Parent Name</th>
+                      <th>Parent Email</th>
+                      <th>Parent Phone</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(player, index) in players" :key="index">
+                      <td>-</td>
+                      <td>{{ player.user.first_name }}</td>
+                      <td>{{ player.user.last_name }}</td>
+                      <td>
+                        <span v-if="player.pivot.status === 'Primary'" class="badge badge-success">Primary</span>
+                        <span v-else class="badge badge-info">Guest</span>
+                      </td>
+                      <td>{{ `${player.guardian.user.first_name} ${player.guardian.user.last_name}` }}</td>
+                      <td><a :href="`mailto:${player.guardian.user.email}`">{{ player.guardian.user.email }}</a></td>
+                      <td>{{ player.guardian.phone }}</td>
+                      <td>
+                        <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
+                          <ShowButton :routeLink="route('club.players.show', player.id)"></ShowButton>
+                          <DeleteButton :routeLink="route('club.teams.players.delete', [team.id, player.id])"></DeleteButton>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- end col -->
+    </div> <!-- end row -->
+  </AppLayout>
+</template>
+  
+<script setup>
+
+import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
+import BackToList from "@/Pages/Slots/BackToList.vue";
+
+const props = defineProps({
+  players: {
+    type: Object,
+    required: true
+  },
+  team: {
+    type: Object,
+    required: true
+  }
+});
+</script>

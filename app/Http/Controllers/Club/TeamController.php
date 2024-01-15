@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Club;
 use App\Models\Team;
 use Inertia\Inertia;
 use App\Models\Staff;
+use App\Models\Player;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Club\StoreTeamRequest;
 use App\Repository\Club\Team\TeamRepositoryInterface;

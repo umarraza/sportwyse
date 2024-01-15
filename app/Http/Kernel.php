@@ -60,6 +60,7 @@ class Kernel extends HttpKernel
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'auth.club' => \App\Http\Middleware\ClubAuth::class,
         'auth.staff' => \App\Http\Middleware\StaffAuth::class,
+        'auth.parent' => \App\Http\Middleware\ParentAuth::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,

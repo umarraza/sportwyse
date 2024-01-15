@@ -19,10 +19,19 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import VueDatePicker from '@vuepic/vue-datepicker';
+// Alerts
 import SuccessAlert from '../js/Pages/Slots/SuccessAlert.vue';
+// Forms
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
 import InputError from '@/Components/InputError.vue';
+// Buttons
+import AddButton from "../js/Pages/Slots/AddButton.vue";
+import EditButton from "../js/Pages/Slots/EditButton.vue";
+import ShowButton from "../js/Pages/Slots/ShowButton.vue";
+import DeleteButton from "../js/Pages/Slots/DeleteButton.vue";
+import BackToList from "../js/Pages/Slots/BackToList.vue";
+
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -34,10 +43,15 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
             .component("SuccessAlert", SuccessAlert)
-            .component("VueDatePicker", VueDatePicker)
-            .component("InputLabel", InputLabel)
             .component("TextInput", TextInput)
+            .component("InputLabel", InputLabel)
             .component("InputError", InputError)
+            .component("AddButton", AddButton)
+            .component("EditButton", EditButton)
+            .component("ShowButton", ShowButton)
+            .component("BackToList", BackToList)
+            .component("DeleteButton", DeleteButton)
+            .component("VueDatePicker", VueDatePicker)
             .mount(el);
     },
     progress: {
