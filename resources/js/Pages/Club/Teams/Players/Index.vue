@@ -7,7 +7,8 @@
             <h4 class="pl-4">Players</h4>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
-              <AddButton :routeLink="route('club.teams.players.add', team.id)" class="btn btn-success ml-1"> Add Players</AddButton>
+              <AddButton :routeLink="route('club.teams.players.add', team.id)" class="btn btn-success ml-1"> Add Players
+              </AddButton>
             </div>
           </div>
           <div class="card-body">
@@ -19,9 +20,11 @@
                       <th>Photo</th>
                       <th>First Name</th>
                       <th>Last Name</th>
+                      <th>Status</th>
                       <th>Parent Name</th>
                       <th>Parent Email</th>
                       <th>Parent Phone</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -29,47 +32,19 @@
                       <td>-</td>
                       <td>{{ player.user.first_name }}</td>
                       <td>{{ player.user.last_name }}</td>
+                      <td>
+                        <span v-if="player.pivot.status === 'Primary'" class="badge badge-success">Primary</span>
+                        <span v-else class="badge badge-info">Guest</span>
+                      </td>
                       <td>{{ `${player.guardian.user.first_name} ${player.guardian.user.last_name}` }}</td>
-                      <td>{{ player.guardian.user.email }}</td>
+                      <td><a :href="`mailto:${player.guardian.user.email}`">{{ player.guardian.user.email }}</a></td>
                       <td>{{ player.guardian.phone }}</td>
-                      <div class="modal fade" :class="`teams-modal-${player.id}`" tabindex="-1" role="dialog"
-                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title mt-0" id="myLargeModalLabel">Teams</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <div class="table-responsive b-0" data-pattern="priority-columns">
-                                <table id="teams-table" class="table table-xs table-striped">
-                                  <thead>
-                                    <tr>
-                                      <th><strong>Team Name</strong></th>
-                                      <th><strong>Activity</strong></th>
-                                      <th><strong>Start Date</strong></th>
-                                      <th><strong>End Date</strong></th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr v-for="(team, index) in player.teams" :key="index">
-                                      <td>{{ team.name }}</td>
-                                      <td>{{ team.activity }}</td>
-                                      <td>{{ team.start_date }}</td>
-                                      <td>{{ team.end_date }}</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
+                      <td>
+                        <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
+                          <ShowButton :routeLink="route('club.players.show', player.id)"></ShowButton>
+                          <DeleteButton :routeLink="route('club.teams.players.delete', [team.id, player.id])"></DeleteButton>
                         </div>
-                      </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

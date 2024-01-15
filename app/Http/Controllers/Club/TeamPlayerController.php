@@ -14,7 +14,7 @@ class TeamPlayerController extends Controller
     public function index(Team $team)
     {
         $players = $team->players()
-                        ->with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name')
+                        ->with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email')
                         ->select('id', 'user_id', 'guardian_id')
                         ->get();
 
@@ -37,12 +37,22 @@ class TeamPlayerController extends Controller
         ]);
     }
 
-    public function addPlayer(Request $request, Team $team)
+    public function store(Request $request, Team $team)
     {
-        foreach ($request->players as $player) {
-            $team->players()->attach($player['id'], ['status' => $player['status']]);
+        foreach ($request->playerForms as $player) {
+            $team->players()->attach($player['info']['id'], ['status' => $player['status']]);
         }
 
-        return to_route('staff.teams.index')->with('success', 'Player added successfully.');
+        return to_route('club.teams.players.index', $team->id)->with('success', 'Player added successfully.');
     }
+
+    public function show(Player $player)
+    {
+        $player->load('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email');
+
+        return Inertia::render('Club/Teams/Players/Show', [
+            'player' => $player,
+        ]);
+    }
+
 }

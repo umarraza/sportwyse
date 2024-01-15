@@ -29,6 +29,10 @@ class RedirectIfAuthenticated
                     $route = route('staff.dashboard');
                 } 
 
+                if (Auth::user()->isParent()) {
+                    $route = route('parent.dashboard');
+                } 
+
                 return redirect($route);
             }
         }

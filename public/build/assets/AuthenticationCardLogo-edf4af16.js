@@ -1,1 +1,0 @@
-import{o as s,c as t,w as e,u as a,l as o,a as r}from"./app-ed6aa4ba.js";const c="https://app.sportwyse.com/build/assets/sportwyse-894111b1.png",_=r("img",{class:"w-28 h-16 mx-auto",src:c},null,-1),l={__name:"AuthenticationCardLogo",setup(n){return(p,i)=>(s(),t(a(o),{href:"/"},{default:e(()=>[_]),_:1}))}};export{l as _};

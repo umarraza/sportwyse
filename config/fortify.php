@@ -78,6 +78,8 @@ return [
 
     'admin' => RouteServiceProvider::ADMIN,
 
+    'parent' => RouteServiceProvider::PARENT,
+
     'club' => RouteServiceProvider::CLUB,
 
     'staff' => RouteServiceProvider::STAFF,

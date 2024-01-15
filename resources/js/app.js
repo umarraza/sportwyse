@@ -29,6 +29,7 @@ import InputError from '@/Components/InputError.vue';
 import AddButton from "../js/Pages/Slots/AddButton.vue";
 import EditButton from "../js/Pages/Slots/EditButton.vue";
 import ShowButton from "../js/Pages/Slots/ShowButton.vue";
+import DeleteButton from "../js/Pages/Slots/DeleteButton.vue";
 import BackToList from "../js/Pages/Slots/BackToList.vue";
 
 
@@ -49,6 +50,7 @@ createInertiaApp({
             .component("EditButton", EditButton)
             .component("ShowButton", ShowButton)
             .component("BackToList", BackToList)
+            .component("DeleteButton", DeleteButton)
             .component("VueDatePicker", VueDatePicker)
             .mount(el);
     },

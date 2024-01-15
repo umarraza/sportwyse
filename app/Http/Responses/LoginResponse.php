@@ -22,6 +22,10 @@ class LoginResponse implements LoginResponseContract
             $route = config('fortify.staff');
         }
 
+        if (Auth::user()->isStaff()) {
+            $route = config('fortify.parent');
+        }
+
         return $request->wantsJson()
                     ? response()->json(['two_factor' => false])
                     : redirect()->intended($route);

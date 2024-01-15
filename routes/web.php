@@ -54,6 +54,10 @@ Fortify::loginView(function () {
             $route = 'staff.dashboard';
         }
 
+        if (Auth::user()->isParent()) {
+            $route = 'parent.dashboard';
+        }
+
         return redirect()->route($route);
 
         return Inertia::render('Dashboard');

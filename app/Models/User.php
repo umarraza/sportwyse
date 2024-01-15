@@ -148,6 +148,11 @@ class User extends Authenticatable
         return $this->hasRole('Staff');
     }
 
+    public function isParent() 
+    {
+        return $this->hasRole('Parent');
+    }
+
     public function isAdmin() 
     {
         return $this->hasRole('Super Admin');
