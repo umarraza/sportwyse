@@ -8,6 +8,7 @@ import '../css/metismenu.min.css';
 import '../css/style.css';
 import '../css/morris.css';
 import '@vuepic/vue-datepicker/dist/main.css'
+import "vue-toastification/dist/index.css";
 
 import '../js/theme/jquery.min.js';
 import '../js/theme/bootstrap.bundle.min.js';
@@ -19,6 +20,8 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 import VueDatePicker from '@vuepic/vue-datepicker';
+import Toast from "vue-toastification";
+
 // Alerts
 import SuccessAlert from '../js/Pages/Slots/SuccessAlert.vue';
 // Forms
@@ -32,7 +35,6 @@ import ShowButton from "../js/Pages/Slots/ShowButton.vue";
 import DeleteButton from "../js/Pages/Slots/DeleteButton.vue";
 import BackToList from "../js/Pages/Slots/BackToList.vue";
 
-
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
@@ -42,6 +44,7 @@ createInertiaApp({
         return createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(Toast)
             .component("SuccessAlert", SuccessAlert)
             .component("TextInput", TextInput)
             .component("InputLabel", InputLabel)

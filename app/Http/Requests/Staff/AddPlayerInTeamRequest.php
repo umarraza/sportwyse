@@ -22,23 +22,15 @@ class AddPlayerInTeamRequest extends FormRequest
      */
     public function rules(): array
     {
-        dd($this->players);
-
         return [
-            'players.*.id' => [
-                'required',
-                Rule::unique('player_team', 'player_id')->where(function ($query) {
-                    $query->where('status', 'Primary');
-                    $query->where('team_id', $this->team->id);
-                }),
-            ],
+            'playerForms.*.id' => ['required', Rule::unique('player_team', 'player_id')->where('team_id', $this->route('team')->id)],
         ];
     }
 
     public function messages(): array
     {
         return [
-            'players.*.id.required' => 'The player field is required.',
+            'playerForms.*.id' => 'The player field is required.',
             'players.*.id.unique' => 'The player has already been taken.',
         ];
     }   

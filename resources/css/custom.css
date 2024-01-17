@@ -13,18 +13,18 @@
 }
 
 .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background: #fff !important;
-    padding: .75rem 0 !important;
-    border-bottom: 0px !important;
+    border-bottom: 1px solid rgb(167 167 167 / 13%) !important;
 }
 
-.card .card-header .card-header-right {
-    border-radius: 0 0 0 7px;
-    right: 20px;
-    top: 23px;
-    float: right;
-    padding: 7px 0;
-    position: absolute;
+.card-header-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 1em;
 }
 
 .content-page {
