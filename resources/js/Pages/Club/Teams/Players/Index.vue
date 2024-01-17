@@ -4,7 +4,8 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4 class="pl-4">Players</h4>
+            <h4 class="ml-4">Players</h4>
+            <p class="mb-0">{{ team.name }}</p>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
               <AddButton :routeLink="route('club.teams.players.add', team.id)" class="btn btn-success ml-1"> Add Players
@@ -14,7 +15,7 @@
           <div class="card-body">
             <div class="table-rep-plugin">
               <div class="table-responsive b-0" data-pattern="priority-columns">
-                <table id="tech-companies-1" class="table  table-striped">
+                <table id="tech-companies-1" class="table table-striped">
                   <thead>
                     <tr>
                       <th>Photo</th>
@@ -42,7 +43,8 @@
                       <td>
                         <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
                           <ShowButton :routeLink="route('club.players.show', player.id)"></ShowButton>
-                          <DeleteButton :routeLink="route('club.teams.players.delete', [team.id, player.id])"></DeleteButton>
+                          <DeleteButton :routeLink="route('club.teams.players.delete', [team.id, player.id])">
+                          </DeleteButton>
                         </div>
                       </td>
                     </tr>
