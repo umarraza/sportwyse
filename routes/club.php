@@ -19,5 +19,5 @@ Route::name('club.')->prefix('club')->group(function () {
     Route::get('players/{plyare}', [TeamPlayerController::class, 'show'])->name('players.show');
     Route::get('teams/{team}/players/add', [TeamPlayerController::class, 'add'])->name('teams.players.add');
     Route::post('teams/{team}/players', [TeamPlayerController::class, 'store'])->name('teams.players.store');
-    Route::post('teams/{team}/players/{player}', [TeamPlayerController::class, 'delete'])->name('teams.players.delete');
+    Route::delete('teams/{team}/players/{player}', [TeamPlayerController::class, 'delete'])->name('teams.players.delete');
 });

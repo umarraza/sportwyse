@@ -42,9 +42,7 @@
                       <td>{{ player.guardian.phone }}</td>
                       <td>
                         <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
-                          <ShowButton :routeLink="route('club.players.show', player.id)"></ShowButton>
-                          <DeleteButton :routeLink="route('club.teams.players.delete', [team.id, player.id])">
-                          </DeleteButton>
+                          <button class="btn btn-danger" @click="deletePlyaer(player.id)">Remove</button>
                         </div>
                       </td>
                     </tr>
@@ -63,6 +61,7 @@
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
 import BackToList from "@/Pages/Slots/BackToList.vue";
+import { router } from '@inertiajs/vue3';
 
 const props = defineProps({
   players: {
@@ -74,4 +73,14 @@ const props = defineProps({
     required: true
   }
 });
+
+const deletePlyaer = (playerId) => {
+  if (confirm('Are you sure you want to remove this player from the team?')) {
+    router.delete(route('club.teams.players.delete', [props.team.id, playerId]), {
+      onSuccess: () => {
+      },
+    });
+  }
+};
+
 </script>

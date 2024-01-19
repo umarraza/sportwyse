@@ -111,6 +111,7 @@ import AddButton from "@/Pages/Slots/AddButton.vue";
 import EditButton from "@/Pages/Slots/EditButton.vue";
 import ShowButton from "@/Pages/Slots/ShowButton.vue";
 import { Link } from '@inertiajs/vue3';
+import { router } from '@inertiajs/vue3';
 
 defineProps({
   teams: {
@@ -121,14 +122,7 @@ defineProps({
 
 const deleteTeam = (teamId) => {
   if (confirm("Are you sure you want to delete this team?")) {
-    axios
-      .delete(route("club.teams.destroy", teamId))
-      .then((response) => {
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    router.delete(route('club.teams.destroy', teamId));
   }
 };
 
