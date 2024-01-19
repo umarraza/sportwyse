@@ -53,4 +53,11 @@ class TeamPlayerController extends Controller
         ]);
     }
 
+    public function delete(Team $team, Player $player)
+    {
+        $team->players()->detach($player->id);
+
+        return to_route('club.teams.players.index', $team->id)->with('success', 'Player removed successfully.');
+    }
+
 }
