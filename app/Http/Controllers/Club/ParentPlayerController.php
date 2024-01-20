@@ -14,20 +14,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\Club\StoreCampRequest;
 use App\Http\Requests\Club\StorePlayerRequest;
+use App\Repository\Parent\ParentPlayerRepositoryInterface;
 
 class ParentPlayerController extends Controller
 {
-    public function index() 
+    public function __construct(private ParentPlayerRepositoryInterface $repository)
     {
-        $players = Player::select('id', 'user_id', 'birth_date')
-                        ->has('user')
-                        ->has('teams')
-                        ->with('user:id,first_name,last_name', 'teams:id,name,activity,start_date,end_date')
-                        ->withCount('teams')
-                        ->get();
+    }
 
-        return Inertia::render('Club/Players/Index', [
-            'players' => $players
+    public function index(Guardian $parent) 
+    {
+        return Inertia::render('Club/Parents/Players/Index', [
+            'players' => $this->repository->index($parent)
         ]);    
     }
 
@@ -83,7 +81,6 @@ class ParentPlayerController extends Controller
 
     public function update(StoreCampRequest $request, Camp $camp) {
 
-
         DB::transaction(function () use ($request, $camp) {
             
             $camp->update([
@@ -110,12 +107,10 @@ class ParentPlayerController extends Controller
         return redirect()->route('club.camps.index')->with('success', 'Event updated successfully.');
     }
 
-    public function show(Camp $camp) {
-
-        $camp->load('teams:id,name');
-
-        return Inertia::render('Club/Camps/Show', [
-            'camp' => $camp
+    public function show(Player $player) 
+    {
+        return Inertia::render('Club/Parents/Players/Show', [
+            'player' => $this->repository->show($player),
         ]);
     }
 

@@ -21,7 +21,6 @@ defineProps({
 </script>
 <template>
   <AppLayout title="Teams">
-    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">

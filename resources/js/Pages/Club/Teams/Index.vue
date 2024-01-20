@@ -1,6 +1,5 @@
 <template>
   <AppLayout title="Camps">
-    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -30,12 +29,8 @@
                     <tr v-for="(team, index) in teams" :key="index">
                       <td>{{ team.name }}</td>
                       <td>
-
                         <Link href=""
                           class="">{{ team.staff_members_count }}</Link>
-
-                        <!-- <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal"
-                          :data-target="`.staffMembersModal${team.id}`">View ({{ team.staff_members_count }})</button> -->
                       </td>
                       <td>{{ team.gender }}</td>
                       <td>{{ team.start_date }}</td>
@@ -66,32 +61,6 @@
                           </button>
                         </div>
                       </td>
-
-                      <div class="modal fade" :class="`staffMembersModal${team.id}`" tabindex="-1" role="dialog"
-                        :aria-labelledby="`staffMembersModal${team.id}`" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h5 class="modal-title mt-0" :id="`staffMembersModal${team.id}`">Staff</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <div class="table-responsive b-0" data-pattern="priority-columns">
-                                <ul v-if="team.staff_members.length">
-                                  <li v-for="(staff, index) in team.staff_members" :key="index">{{
-                                    `${staff.user.first_name} ${staff.user.last_name}` }}</li>
-                                </ul>
-                                <p v-else>No staff found.</p>
-                              </div>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </tr>
                   </tbody>
                 </table>

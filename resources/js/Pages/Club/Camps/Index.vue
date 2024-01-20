@@ -142,7 +142,6 @@ import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import AddButton from "@/Pages/Slots/AddButton.vue";
 import EditButton from "@/Pages/Slots/EditButton.vue";
 import ShowButton from "@/Pages/Slots/ShowButton.vue";
-import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
   camps: {

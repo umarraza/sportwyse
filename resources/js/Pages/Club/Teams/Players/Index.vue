@@ -21,6 +21,7 @@
                       <th>Photo</th>
                       <th>First Name</th>
                       <th>Last Name</th>
+                      <th>Birth Date</th>
                       <th>Status</th>
                       <th>Parent Name</th>
                       <th>Parent Email</th>
@@ -33,6 +34,7 @@
                       <td>-</td>
                       <td>{{ player.user.first_name }}</td>
                       <td>{{ player.user.last_name }}</td>
+                      <td>{{ player.birth_date }}</td>
                       <td>
                         <span v-if="player.pivot.status === 'Primary'" class="badge badge-success">Primary</span>
                         <span v-else class="badge badge-info">Guest</span>

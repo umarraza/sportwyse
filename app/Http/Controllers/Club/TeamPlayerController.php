@@ -14,7 +14,7 @@ class TeamPlayerController extends Controller
     {
         $players = $team->players()
                         ->with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email')
-                        ->select('id', 'user_id', 'guardian_id')
+                        ->select('id', 'user_id', 'guardian_id', 'birth_date')
                         ->get();
 
         return Inertia::render('Club/Teams/Players/Index', [
