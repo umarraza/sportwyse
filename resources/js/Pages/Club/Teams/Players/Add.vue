@@ -1,6 +1,5 @@
 <template>
   <AppLayout title="Camps">
-    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -42,6 +41,10 @@
                   <tr>
                     <th class="p0-th">Gender</th>
                     <td style="width: 65% !important;" class="p0-th">{{ item.gender }}</td>
+                  </tr>
+                  <tr>
+                    <th class="p0-th">Birth Date</th>
+                    <td style="width: 65% !important;" class="p0-th">{{ item.birth_date }}</td>
                   </tr>
                   <tr>
                     <th class="p0-th">Parent Name</th>
@@ -123,7 +126,7 @@ const checkDuplicatePlayer = (playerId) => {
 const onselect = (index, item) => {
   setTimeout(() => {
 
-    if (checkDuplicatePlayer(item.id)) {
+    if (item.id && checkDuplicatePlayer(item.id)) {
       toast.error("Player already added.", {
         position: "bottom-left",
       });
@@ -136,6 +139,7 @@ const onselect = (index, item) => {
     const player = props.players.find((player) => player.id === selectedValue);
 
     item.gender = player.gender;
+    item.birth_date = player.birth_date;
     item.parent_name = player.user.first_name + ' ' + player.user.last_name;
     item.parent_email = player.guardian.user.email;
   }, 10);

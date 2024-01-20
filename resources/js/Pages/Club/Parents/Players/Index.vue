@@ -5,6 +5,10 @@
         <div class="card m-b-30">
           <div class="card-header">
             <h4 class="pl-2">Players</h4>
+            <div class="card-header-right">
+              <BackToList :backToListRoute="route('club.parents.index')" class="mr-1"> Back to Parents
+              </BackToList>
+            </div>
           </div>
           <div class="card-body">
             <div class="table-rep-plugin">
@@ -15,7 +19,6 @@
                       <th>First Name</th>
                       <th>Last Name</th>
                       <th>Date of Birth</th>
-                      <th>Teams</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -25,12 +28,8 @@
                       <td>{{ player.user.last_name }}</td>
                       <td>{{ player.birth_date }}</td>
                       <td>
-                        <Link :href="route('club.players.teams', player.id)"
-                        >Teams ({{ player.teams_count }})</Link>
-                      </td>
-                      <td>
                         <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
-                          <ShowButton :routeLink="route('club.players.details', player.id)">Show</ShowButton>
+                          <ShowButton :routeLink="route('club.parent.players.show', player.id)">Show</ShowButton>
                         </div>
                       </td>
                     </tr>
@@ -49,12 +48,11 @@
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
 import ShowButton from "@/Pages/Slots/ShowButton.vue";
-import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
-    players: {
-      type: Object,
-      required: true
-    },
+  players: {
+    type: Object,
+    required: true
+  },
 });
 </script>

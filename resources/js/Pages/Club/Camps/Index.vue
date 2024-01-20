@@ -5,7 +5,7 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4 class="pl-4">Events</h4>
+            <h4 class="pl-2">Events</h4>
             <div class="card-header-right">
               <AddButton :routeLink="route('club.camps.create')"> Add</AddButton>
             </div>
@@ -142,7 +142,6 @@ import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import AddButton from "@/Pages/Slots/AddButton.vue";
 import EditButton from "@/Pages/Slots/EditButton.vue";
 import ShowButton from "@/Pages/Slots/ShowButton.vue";
-import { Link } from '@inertiajs/vue3';
 
 const props = defineProps({
   camps: {

@@ -5,6 +5,10 @@
  */
 
 import axios from 'axios';
+import { useToast } from "vue-toastification";
+
+const toast = useToast();
+
 window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -16,11 +20,11 @@ axios.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
 
-    // Remove alert after 2 seconds
-    setTimeout(() => {
-        const alert = document.querySelector('.alert');
-        if (alert) alert.remove() ;
-    }, 3000);
+    if (response.data.props.flash.success) {
+        toast.success(response.data.props.flash.success, {
+            position: "bottom-left",
+        });
+    }
 
     return response;
 }, function (error) {

@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="card ">
           <div class="card-header">
-            <h4 class="pl-4">Crate Team</h4>
+            <h4 class="pl-2">Crate Team</h4>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
             </div>
