@@ -4,7 +4,7 @@
         <div class="col-12">
           <div class="card m-b-30">
             <div class="card-header">
-              <h4 class="pl-4">Team Details</h4>
+              <h4 class="pl-2">Team Details</h4>
               <div class="card-header-right">
                 <BackToList :backToListRoute="route('club.teams.index')" class="mr-1"> Back</BackToList>
                 <EditButton :routeLink="route('club.teams.edit', team.id)"> Add</EditButton>

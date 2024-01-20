@@ -55,6 +55,6 @@ class Team extends Model
      */
     public function players(): BelongsToMany
     {
-        return $this->belongsToMany(Player::class)->withPivot('status');
+        return $this->belongsToMany(Player::class);
     }
 }

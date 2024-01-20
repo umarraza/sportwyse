@@ -4,8 +4,8 @@
       <div class="col-12">
         <div class="card ">
           <div class="card-header">
-            <h4 class="pl-4">Crate Player</h4>
-            <span class="pl-4">{{ parent.name }}</span>
+            <h4 class="pl-2">Crate Player</h4>
+            <span class="pl-2">{{ parent.name }}</span>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.parents.index')"> Back</BackToList>
             </div>

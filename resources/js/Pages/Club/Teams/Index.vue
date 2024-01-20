@@ -5,7 +5,7 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4 class="pl-4">Teams</h4>
+            <h4 class="pl-2">Teams</h4>
             <div class="card-header-right">
               <AddButton :routeLink="route('club.teams.create')"> Add</AddButton>
             </div>
@@ -54,7 +54,7 @@
                       </td>
                       <td>
                         <Link :href="route('club.teams.players.index', team.id)"
-                          class="">View Players ({{ team.players_count }})</Link>
+                        >Players ({{ team.players_count }})</Link>
                       </td>
                       <td>
                         <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
