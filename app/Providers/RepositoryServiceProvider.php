@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Repository\Camp\CampRepository;
 use Illuminate\Support\ServiceProvider;
 use App\Repository\Player\PlayerRepository;
 use App\Repository\Club\Team\TeamRepository;
+use App\Repository\Camp\CampRepositoryInterface;
 use App\Repository\Parent\ParentPlayerRepository;
 use App\Repository\Player\PlayerRepositoryInterface;
 use App\Repository\Club\Team\TeamRepositoryInterface;
@@ -20,7 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(TeamRepositoryInterface::class, TeamRepository::class);
         $this->app->bind(PlayerRepositoryInterface::class, PlayerRepository::class);
         $this->app->bind(ParentPlayerRepositoryInterface::class, ParentPlayerRepository::class);
-
+        $this->app->bind(CampRepositoryInterface::class, CampRepository::class);
     }
 
     /**

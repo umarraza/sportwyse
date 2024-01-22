@@ -3,59 +3,65 @@
 namespace App\Http\Controllers\Club;
 
 use App\Models\Camp;
-use App\Models\Team;
 use Inertia\Inertia;
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Club\StoreCampRequest;
+use App\Repository\Camp\CampRepositoryInterface;
 
 class CampController extends Controller
 {
-    public function index() 
+    /**
+     * CampController constructor.
+     *
+     * @param CampRepositoryInterface $repository The camp repository interface.
+     */
+    public function __construct(private CampRepositoryInterface $repository)
     {
-        $camps = Camp::with('teams:id,name,start_date,end_date')->withCount('teams')->paginate(10);
+    }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
         return Inertia::render('Club/Camps/Index', [
-            'camps' => $camps
+            'camps' => $this->repository->index()
         ]);
     }
 
+    /**
+     * Create a new camp.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create() {
 
         return Inertia::render('Club/Camps/Create', [
-            'teams' => $this->getTeams()
+            'teams' => $this->repository->getTeams()
         ]);    
     }
 
+    /**
+     * Store a newly created camp in storage.
+     *
+     * @param  \App\Http\Requests\StoreCampRequest  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(StoreCampRequest $request) {
 
-        DB::transaction(function () use ($request) {
-            
-            $camp = Camp::create([
-                'club_id' => auth()->user()->club->id,
-                'name' => $request->name,
-                'type'  => 'public',
-                'payment_type' => $request->payment_type,
-                'price' => $request->price,
-                'start_date' => $request->date('start_date'),
-                'end_date' => $request->date('end_date'),
-                'processing_fee' => $request->processing_fee,
-                'processing_fee_using_credit_card' => $request->processing_fee_using_credit_card,
-                'net_amount_using_credit_card' => $request->net_amount_using_credit_card,
-                'total_price_using_credit_card' => $request->total_price_using_credit_card,
-                'processing_fee_using_bank_account' => $request->processing_fee_using_bank_account,
-                'net_amount_using_bank_account' => $request->net_amount_using_bank_account,
-                'total_price_using_bank_account' => $request->total_price_using_bank_account,
-                'payment_pay_type' => $request->payment_pay_type,
-                'installment' => $request->installment,
-            ]);
-    
-            $camp->teams()->attach($request->teams);
-        });
+        $this->repository->store($request->all());
 
         return redirect()->route('club.camps.index')->with('success', 'Event created successfully.');
     }
 
+    /**
+     * Edit a camp.
+     *
+     * @param Camp $camp The camp to be edited.
+     * @return Response
+     */
     public function edit(Camp $camp) {
 
         $camp->load('teams:id,name');
@@ -63,68 +69,49 @@ class CampController extends Controller
         $currentTeams = $camp->teams->pluck('id')->toArray();
 
         return Inertia::render('Club/Camps/Edit', [
-            'currentTeams' => $currentTeams,
-            'teams' => $this->getTeams(),
             'camp' => $camp,
+            'currentTeams' => $currentTeams,
+            'teams' => $this->repository->getTeams(),
         ]);    
     }
 
-    public function update(StoreCampRequest $request, Camp $camp) {
-
-
-        DB::transaction(function () use ($request, $camp) {
-            
-            $camp->update([
-                'name' => $request->name,
-                'payment_type' => $request->payment_type,
-                'price' => $request->price,
-                'start_date' => $request->date('start_date'),
-                'end_date' => $request->date('end_date'),
-                'processing_fee' => $request->processing_fee,
-                'processing_fee_using_credit_card' => $request->processing_fee_using_credit_card,
-                'net_amount_using_credit_card' => $request->net_amount_using_credit_card,
-                'total_price_using_credit_card' => $request->total_price_using_credit_card,
-                'processing_fee_using_bank_account' => $request->processing_fee_using_bank_account,
-                'net_amount_using_bank_account' => $request->net_amount_using_bank_account,
-                'total_price_using_bank_account' => $request->total_price_using_bank_account,
-                'payment_pay_type' => $request->payment_pay_type,
-                'installment' => $request->installment,
-            ]);
-    
-            $camp->teams()->sync($request->teams);
-
-        });
+    /**
+     * Update a camp.
+     *
+     * @param StoreCampRequest $request The request object.
+     * @param Camp $camp The camp to be updated.
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(StoreCampRequest $request, Camp $camp)
+    {
+        $this->repository->update($request->all(), $camp);
 
         return redirect()->route('club.camps.index')->with('success', 'Event updated successfully.');
     }
 
-    public function show(Camp $camp) {
-
-        $camp->load('teams:id,name');
-
+    /**
+     * Display the specified camp.
+     *
+     * @param  Camp  $camp
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Camp $camp)
+    {
         return Inertia::render('Club/Camps/Show', [
-            'camp' => $camp
+            'camp' => $this->repository->show($camp)
         ]);
     }
 
-    public function destroy(Camp $camp) {
-
-        $camp->delete();
-
-        return response()->json([
-            'message' => 'Event deleted successfully.'
-        ]);
+    /**
+     * Destroy a camp.
+     *
+     * @param  Camp  $camp
+     * @return void
+     */
+    public function destroy(Camp $camp)
+    {
+        $this->repository->destroy($camp);
 
         return redirect()->route('club.camps.index')->with('success', 'Event deleted successfully.');
-    }
-
-    private function getTeams() {
-        return Team::select('id', 'name')->get()
-        ->map(function ($team) {
-            return [
-                'value' => $team->id,
-                'label' => $team->name
-            ];
-        });
     }
 }

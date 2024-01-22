@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4 class="pl-3">Edit Event</h4>
+            <h4 class="pl-2">Edit Event</h4>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.camps.index')"> Back</BackToList>
             </div>
@@ -272,11 +272,7 @@ const submit = () => {
 
   form.transform(data => ({
     ...data,
-  })).put(route('club.camps.update', props.camp.id), {
-    onFinish: (response) => {
-      console.log(response);
-    },
-  });
+  })).put(route('club.camps.update', props.camp.id));
 };
 
 </script>

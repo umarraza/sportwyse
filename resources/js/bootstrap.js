@@ -19,7 +19,6 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 axios.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-
     if (response.data.props.flash.success) {
         toast.success(response.data.props.flash.success, {
             position: "bottom-left",
@@ -32,6 +31,12 @@ axios.interceptors.response.use(function (response) {
     // Do something with response error
 
     const response = error.response;
+
+    if (response.status === 500) {
+        toast.success(response.data.message, {
+            position: "bottom-left",
+        });
+    }
 
     if (response.status === 404) {
         alert(response.data.message);

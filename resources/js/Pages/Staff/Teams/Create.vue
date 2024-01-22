@@ -5,8 +5,8 @@
         <div class="col-12">
           <div class="card ">
             <div class="card-header">
-              <h4 class="pl-3">Add Players</h4>
-              <h6 class="card-subtitle font-14 pl-3 text-muted">{{ team.name }}</h6>
+              <h4 class="pl-2">Add Players</h4>
+              <h6 class="card-subtitle font-14 pl-2 text-muted">{{ team.name }}</h6>
               <div class="card-header-right">
                 <BackToList :backToListRoute="route('club.camps.index')"> Back</BackToList>
               </div>

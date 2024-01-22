@@ -1,6 +1,5 @@
 <template>
   <AppLayout title="Camps">
-    <SuccessAlert v-if="$page.props.flash.success" :message="$page.props.flash.success" />
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -142,6 +141,7 @@ import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import AddButton from "@/Pages/Slots/AddButton.vue";
 import EditButton from "@/Pages/Slots/EditButton.vue";
 import ShowButton from "@/Pages/Slots/ShowButton.vue";
+import { router } from '@inertiajs/vue3';
 
 const props = defineProps({
   camps: {
@@ -151,17 +151,8 @@ const props = defineProps({
 });
 
 const deleteCamp = (campId) => {
-  if (confirm("Are you sure you want to delete this camp?")) {
-    axios
-      .delete(route("club.camps.destroy", campId))
-      .then((response) => {
-        window.location.reload();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  if (confirm("Are you sure you want to delete this event?")) {
+    router.delete(route('club.camps.destroy', campId));
   }
 };
-
-
 </script>
