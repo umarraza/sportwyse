@@ -33,6 +33,7 @@ class UsersImport
                 'updated_at'        => !is_null($model->updatedAt) ? Carbon::parse($updatedAt['$date']) : now(),
             ]);
 
+            // Create staff
             if ($model->data->rushUserType === 'staff') {
 
                 $user->staff()->create([
@@ -44,6 +45,7 @@ class UsersImport
                 $user->assignRole('Staff');
             }
 
+            // Create Parent
             if ($model->data->rushUserType === 'adult') {
 
                 $guardian                     = $user->guardian()->create([
@@ -74,14 +76,37 @@ class UsersImport
 
                             $user->assignRole('Player');
 
-                            $medicalInformationReleaseHIPPA = isset($data->medicalInformationReleaseHIPPA) ? filter_var($data->medicalInformationReleaseHIPPA, FILTER_VALIDATE_BOOLEAN) : false;
-                            $consentforTreatment = isset($data->consentforTreatment) ? filter_var($data->consentforTreatment, FILTER_VALIDATE_BOOLEAN) : false;
-                            $acceptanceofRisk = isset($data->acceptanceofRisk) ? filter_var($data->acceptanceofRisk, FILTER_VALIDATE_BOOLEAN) : false;
-                            $refundPolicy = isset($data->refundPolicy) ? filter_var($data->refundPolicy, FILTER_VALIDATE_BOOLEAN) : false;
-                            $delinquentPaymentPolicy = isset($data->delinquentPaymentPolicy) ? filter_var($data->delinquentPaymentPolicy, FILTER_VALIDATE_BOOLEAN) : false;
-                            $concussionInformationSheet = isset($data->concussionInformationSheet) ? filter_var($data->concussionInformationSheet, FILTER_VALIDATE_BOOLEAN) : false;
-                            $concussionInformationAcknowledgement = isset($data->concussionInformationAcknowledgement) ? filter_var($data->concussionInformationAcknowledgement, FILTER_VALIDATE_BOOLEAN) : false;
-                            $appearanceAgreement = isset($data->appearanceAgreement) ? filter_var($data->appearanceAgreement, FILTER_VALIDATE_BOOLEAN) : false;
+                            $medicalInformationReleaseHIPPA = isset($data->medicalInformationReleaseHIPPA) 
+                                ? filter_var($data->medicalInformationReleaseHIPPA, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
+                            
+                            $consentforTreatment = isset($data->consentforTreatment) 
+                                ? filter_var($data->consentforTreatment, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
+                            
+                            $acceptanceofRisk = isset($data->acceptanceofRisk) 
+                                ? filter_var($data->acceptanceofRisk, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
+
+                            $refundPolicy = isset($data->refundPolicy) 
+                                ? filter_var($data->refundPolicy, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
+
+                            $delinquentPaymentPolicy = isset($data->delinquentPaymentPolicy) 
+                                ? filter_var($data->delinquentPaymentPolicy, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
+
+                            $concussionInformationSheet = isset($data->concussionInformationSheet) 
+                                ? filter_var($data->concussionInformationSheet, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
+
+                            $concussionInformationAcknowledgement = isset($data->concussionInformationAcknowledgement) 
+                                ? filter_var($data->concussionInformationAcknowledgement, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
+
+                            $appearanceAgreement = isset($data->appearanceAgreement) 
+                                ? filter_var($data->appearanceAgreement, FILTER_VALIDATE_BOOLEAN) 
+                                : false;
 
                             $user->player()->create([
                                 'club_id'                                => $club->id,
