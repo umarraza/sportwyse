@@ -29,6 +29,10 @@ class RouteServiceProvider extends ServiceProvider
     /** @var string */
     public const STAFF = 'staff/dashboard';
 
+    public static function redirectTo($guard){
+        return $guard.'/dashboard';
+    }
+
     /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */

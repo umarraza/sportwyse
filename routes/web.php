@@ -7,8 +7,10 @@ use Laravel\Fortify\RoutePath;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JsonViewerController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +37,16 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
         Route::post(RoutePath::for('register', '/register'), [RegisteredUserController::class, 'store'])
             ->middleware(['guest:'.config('fortify.guard')]);
     }
+
+    Route::group(['prefix'=>'admin','middleware'=>['admin:admin']],function(){
+        Route::get('/login', [AdminController::class, 'loginForm']);
+        Route::post('/login', [AdminController::class, 'store'])->name('admin.login');
+    });
+
+    Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
+        return Inertia::render('Admin/Dashboard');
+    })->name('admin.dashboard');
 });
-
-
 
 Route::get('/', function () {
 

@@ -8,6 +8,7 @@ use App\Http\Controllers\Club\PlayerController;
 use App\Http\Controllers\Club\DashboardController;
 use App\Http\Controllers\Club\TeamPlayerController;
 use App\Http\Controllers\Club\ParentPlayerController;
+use App\Http\Controllers\Club\ImportStripeDataController;
 
 Route::name('club.')->prefix('club')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -35,4 +36,10 @@ Route::name('club.')->prefix('club')->group(function () {
     Route::get('player/{player}/teams', [PlayerController::class, 'teams'])->name('players.teams');
     Route::get('players/{player}/details', [PlayerController::class, 'show'])->name('players.details');
     Route::post('player/{player}/teams/{team}/update-status', [PlayerController::class, 'updateStatus'])->name('players.teams.update-status');
+
+    /**
+     * ImportStripeDataController
+     */
+    Route::get('stripe/import', [ImportStripeDataController::class, 'index'])->name('stripe.data.index');
+    Route::post('stripe/import', [ImportStripeDataController::class, 'store'])->name('stripe.data.store');
 });
