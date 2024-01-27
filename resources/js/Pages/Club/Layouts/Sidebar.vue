@@ -30,6 +30,11 @@ import { Link } from '@inertiajs/vue3';
             <i class="fas fa-user-circle"></i>
             <span> Parents </span>
           </Link>
+
+          <Link :href="route('stripe.index')" class="sidebar-item">
+            <i class="fas fa-user-circle"></i>
+            <span> Stripe </span>
+          </Link>
         </ul>
       </div>
       <div class="clearfix"></div>

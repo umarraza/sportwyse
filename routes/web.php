@@ -7,6 +7,7 @@ use Laravel\Fortify\RoutePath;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use App\Http\Controllers\StripeController;
 use App\Http\Controllers\JsonViewerController;
 use App\Http\Controllers\RegisteredUserController;
 
@@ -66,6 +67,10 @@ Route::middleware([
 ])->group(function () {
     Route::get('import', [JsonViewerController::class, 'index'])->name('import');
 });
+
+Route::get('stripe', [StripeController::class, 'index'])->name('stripe.index');
+Route::get('stripe/create', [StripeController::class, 'create'])->name('stripe.create');
+Route::post('stripe', [StripeController::class, 'store'])->name('stripe.store');
 
 
 Route::middleware([
