@@ -32,7 +32,7 @@ import { Link } from '@inertiajs/vue3';
           </Link>
 
           <Link :href="route('stripe.index')" class="sidebar-item">
-            <i class="fas fa-user-circle"></i>
+            <i class="fab fa-stripe-s"></i>
             <span> Stripe </span>
           </Link>
         </ul>

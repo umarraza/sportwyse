@@ -71,7 +71,7 @@ Route::middleware([
 Route::get('stripe', [StripeController::class, 'index'])->name('stripe.index');
 Route::get('stripe/create', [StripeController::class, 'create'])->name('stripe.create');
 Route::post('stripe', [StripeController::class, 'store'])->name('stripe.store');
-
+Route::get('filter-transactions', [StripeController::class, 'filter'])->name('transactions.filter');
 
 Route::middleware([
     'auth:sanctum',

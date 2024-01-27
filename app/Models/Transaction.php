@@ -34,4 +34,34 @@ class Transaction extends Model
         'customer_phone',
         'application_id',
     ];
+
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['status_lebel'];
+
+    /**
+     * Get the status label attribute.
+     *
+     * @return string
+     */
+    public function getStatusLebelAttribute()
+    {
+        switch ($this->status) {
+            case 'Paid':
+                return "<span class='badge badge-success'>Paid</span>";
+                break;
+            case 'Failed':
+                return "<span class='badge badge-danger'>Failed</span>";
+                break;
+            case 'canceled':
+                return "<span class='badge badge-warning'>Canceled</span>";
+                break;
+            case 'Refunded':
+                return "<span class='badge badge-info'>Refunded</span>";
+                break;
+        }
+    }
 }
