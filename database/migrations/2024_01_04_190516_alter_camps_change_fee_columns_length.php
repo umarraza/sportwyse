@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('camps', function (Blueprint $table) {
-            $table->decimal('processing_fee_using_credit_card', 10,2)->change();
-            $table->decimal('net_amount_using_credit_card', 10,2)->change();
-            $table->decimal('total_price_using_credit_card', 10,2)->change();
-            $table->decimal('processing_fee_using_bank_account', 10,2)->change();
-            $table->decimal('net_amount_using_bank_account', 10,2)->change();
-            $table->decimal('total_price_using_bank_account', 10,2)->change();
+            $table->decimal('processing_fee_using_credit_card', 10,2)->nullable()->default(0)->change();
+            $table->decimal('net_amount_using_credit_card', 10,2)->nullable()->default(0)->change();
+            $table->decimal('total_price_using_credit_card', 10,2)->nullable()->default(0)->change();
+            $table->decimal('processing_fee_using_bank_account', 10,2)->nullable()->default(0)->change();
+            $table->decimal('net_amount_using_bank_account', 10,2)->nullable()->default(0)->change();
+            $table->decimal('total_price_using_bank_account', 10,2)->nullable()->default(0)->change();
         });
     }
 
