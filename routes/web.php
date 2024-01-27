@@ -10,7 +10,6 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\JsonViewerController;
 use App\Http\Controllers\RegisteredUserController;
-use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +42,10 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
         Route::post('/login', [AdminController::class, 'store'])->name('admin.login');
     });
 
+    // In FortifyServiceProvider, if use Laravel\Fortify\Actions\AttemptToAuthenticate & Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable, admin login will work
+    // If use App\Actions\Fortify\AttemptToAuthenticate &  App\Actions\Fortify\RedirectIfTwoFactorAuthenticatable, admin login will not work and simple login will work.
+
+    // Somehow, we need to decide inside LoginResponse which route to redirect to based on the user type.
     Route::middleware(['auth:sanctum,admin', 'verified'])->get('/admin/dashboard', function () {
         return Inertia::render('Admin/Dashboard');
     })->name('admin.dashboard');
@@ -67,7 +70,6 @@ Fortify::loginView(function () {
     ]);
 });
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -82,7 +84,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
+    Log:info(Auth::guard()->name);
+
     Route::get('dashboard', function () {
+        return Inertia::render('Admin/Dashboard');
 
         if (Auth::user()->isClub()) {
             $route = 'club.dashboard';

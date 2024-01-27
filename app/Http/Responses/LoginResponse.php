@@ -12,19 +12,19 @@ class LoginResponse implements LoginResponseContract
         // below is the existing response
         // replace this with your own code
         // the user can be located with Auth facade
-        $route  = config('fortify.home');
+        // $route  = config('fortify.home');
 
-        if (Auth::user()->isClub()) {
-            $route = config('fortify.club');
-        }
+        // if (Auth::user()->isClub()) {
+        //     $route = config('fortify.club');
+        // }
 
-        if (Auth::user()->isStaff()) {
-            $route = config('fortify.staff');
-        }
+        // if (Auth::user()->isStaff()) {
+        //     $route = config('fortify.staff');
+        // }
 
-        if (Auth::user()->isStaff()) {
-            $route = config('fortify.parent');
-        }
+        // if (Auth::user()->isStaff()) {
+        //     $route = config('fortify.parent');
+        // }
 
         return $request->wantsJson()
                     ? response()->json(['two_factor' => false])

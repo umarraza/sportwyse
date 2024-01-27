@@ -14,8 +14,8 @@ defineProps({
 });
 
 const form = useForm({
-  email: '',
-  password: '',
+  email: 'admin@admin.com',
+  password: 'password',
   remember: false,
 });
 
@@ -33,6 +33,17 @@ const submit = () => {
   <Head title="Log in" />
   <div
     class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+    <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+        <Link :href="route('admin.login')"
+          class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">
+        Admin Log in</Link>
+
+        <Link :href="route('login')"
+          class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500 ml-2">
+        Log in</Link>
+    </div>
+
+
     <AuthenticationCard>
       <template #logo>
         <AuthenticationCardLogo />
@@ -43,7 +54,7 @@ const submit = () => {
           <div class="form-group">
             <div class="col-12">
               <InputLabel for="email" value="Email" />
-              <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full"  autofocus
+              <TextInput id="email" v-model="form.email" type="email" class="mt-1 block w-full" autofocus
                 autocomplete="username" />
               <InputError class="mt-2" :message="form.errors.email" />
             </div>
@@ -52,7 +63,7 @@ const submit = () => {
           <div class="form-group">
             <div class="col-12">
               <InputLabel for="password" value="Password" />
-              <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full" 
+              <TextInput id="password" v-model="form.password" type="password" class="mt-1 block w-full"
                 autocomplete="current-password" />
               <InputError class="mt-2" :message="form.errors.password" />
             </div>

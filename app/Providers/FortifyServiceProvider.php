@@ -14,9 +14,13 @@ use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Contracts\Auth\StatefulGuard;
-use Laravel\Fortify\Actions\AttemptToAuthenticate;
 use App\Actions\Fortify\UpdateUserProfileInformation;
-use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+
+// use Laravel\Fortify\Actions\AttemptToAuthenticate;
+// use Laravel\Fortify\Actions\RedirectIfTwoFactorAuthenticatable;
+
+use App\Actions\Fortify\AttemptToAuthenticate;
+use App\Actions\Fortify\RedirectIfTwoFactorAuthenticatable;
 
 class FortifyServiceProvider extends ServiceProvider
 {
