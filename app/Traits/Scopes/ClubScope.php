@@ -3,6 +3,7 @@
 namespace App\Traits\Scopes;
 
 use App\Models\Club;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Scopes\ClubGlobalScope;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -17,9 +18,12 @@ trait ClubScope
 
         static::addGlobalScope(new ClubGlobalScope());
     
-        static::creating(function ($model) {
-            $model->club_id = auth()->user()->club->id;
-        });
+        if (Auth::check()) {
+            static::creating(function ($model) {
+                $model->club_id = auth()->user()->club->id;
+            });
+        }
+
     }
 
     /**

@@ -35,6 +35,11 @@ class ImportMongoDBData extends Command
      */
     public function handle()
     {
+        // IMPORTANT: The clubs has alreay been seeded in database, check the ClubTableSeeder.php file.
+        // Just create a new database, and run following commands
+        // php artisan migrate --seed
+        // php artisan app:import
+
         DB::transaction(function () {
 
             $this->newLine();
