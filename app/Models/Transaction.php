@@ -2,8 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Camp;
+use App\Models\Player;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Carbon;
 
 class Transaction extends Model
 {
@@ -16,6 +20,8 @@ class Transaction extends Model
      */
     protected $fillable = [
         'id',
+        'camp_id',
+        'player_id',
         'customer_email',
         'description',
         'event_name',
@@ -40,7 +46,12 @@ class Transaction extends Model
      *
      * @var array
      */
-    protected $appends = ['status_lebel'];
+    protected $appends = ['status_lebel', 'date_label'];
+
+    public function getDateLabelAttribute()
+    {
+        return Carbon::parse($this->created_date)->format('m-d-Y');
+    }
 
     /**
      * Get the status label attribute.
@@ -63,5 +74,25 @@ class Transaction extends Model
                 return "<span class='badge badge-info'>Refunded</span>";
                 break;
         }
+    }
+
+    /**
+     * Get the player that owns the Transaction
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function player(): BelongsTo
+    {
+        return $this->belongsTo(Player::class)->withDefault();
+    }
+
+    /**
+     * Get the camp that owns the Transaction
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function camp(): BelongsTo
+    {
+        return $this->belongsTo(Camp::class)->withDefault();
     }
 }

@@ -21,7 +21,7 @@ class ClubTableSeeder extends Seeder
                     'last_name' => 'Han',
                     'email' => 'mike@sanjoserush.com',
                     'password' => 'password',
-                    'club' => ['name' => 'Colorado Rush', 'm_id' => '7a673cb5-e965-42a9-8614-00edb1d81f8a'],
+                    'club' => ['name' => 'San Jose Rush', 'm_id' => '7a673cb5-e965-42a9-8614-00edb1d81f8a'],
                 ],
                 [
                     'first_name' => 'Michael',
@@ -35,7 +35,7 @@ class ClubTableSeeder extends Seeder
                     'last_name' => 'Miller',
                     'email' => 'david.miller@probuildsolutions.com',
                     'password' => 'password',
-                    'club' => ['name' => 'San Jose Rush', 'm_id' => '65c1c987-efcc-4c5f-8f29-04157daa2e36'],
+                    'club' => ['name' => 'Colorado Rush', 'm_id' => '65c1c987-efcc-4c5f-8f29-04157daa2e36'],
                 ],
                 [
                     'first_name' => 'Brian',

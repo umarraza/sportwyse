@@ -19,7 +19,7 @@
               <div class="form-group">
                 <div class="">
                   <CancelButton :routeLink="route('stripe.index')" />
-                  <button type="submit" class="btn btn-primary waves-effect ml-1 waves-light">Import</button>
+                  <button type="submit" class="btn btn-primary waves-effect ml-1 waves-light" :disabled="form.processing">Import</button>
                 </div>
               </div>
             </form>

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\StripeController;
 use App\Http\Controllers\JsonViewerController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\RegisteredUserController;
 
 /*
@@ -72,6 +73,8 @@ Route::get('stripe', [StripeController::class, 'index'])->name('stripe.index');
 Route::get('stripe/create', [StripeController::class, 'create'])->name('stripe.create');
 Route::post('stripe', [StripeController::class, 'store'])->name('stripe.store');
 Route::get('filter-transactions', [StripeController::class, 'filter'])->name('transactions.filter');
+
+Route::patch('transactions/{transaction}', [TransactionController::class, 'update'])->name('transaction.update');
 
 Route::middleware([
     'auth:sanctum',
