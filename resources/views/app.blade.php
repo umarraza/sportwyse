@@ -19,8 +19,6 @@
 </head>
 
 <body>
-  <div id="wrapper">
     @inertia
-  </div>
 </body>
 </html>

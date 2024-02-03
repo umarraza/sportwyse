@@ -11,6 +11,7 @@ use App\Http\Controllers\StripeController;
 use App\Http\Controllers\JsonViewerController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\BatchUpdateTransactionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,9 +73,10 @@ Route::middleware([
 Route::get('stripe', [StripeController::class, 'index'])->name('stripe.index');
 Route::get('stripe/create', [StripeController::class, 'create'])->name('stripe.create');
 Route::post('stripe', [StripeController::class, 'store'])->name('stripe.store');
-Route::get('filter-transactions', [StripeController::class, 'filter'])->name('transactions.filter');
 
 Route::patch('transactions/{transaction}', [TransactionController::class, 'update'])->name('transaction.update');
+Route::get('transactions/edit', [BatchUpdateTransactionsController::class, 'index'])->name('transaction.batch-update.index');
+Route::post('transactions/batch-update', [BatchUpdateTransactionsController::class, 'update'])->name('transaction-batch.update');
 
 Route::middleware([
     'auth:sanctum',

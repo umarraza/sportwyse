@@ -14,7 +14,7 @@
               </div>
               <div class="col-md-2">
                 <select class="form-control" v-model="filters.status">
-                  <option value="">Status</option>
+                  <option :value="null">Status</option>
                   <option value="Canceled">Canceled</option>
                   <option value="Failed">Failed</option>
                   <option value="Paid">Paid</option>
@@ -35,9 +35,6 @@
                 <TextInput id="event_name" v-model="filters.event_name" type="text" placeholder="Event Name"
                   class="block w-full" autofocus autocomplete="event_name" />
               </div>
-              <!-- <div class="col-md-2 date-picker-column">
-                <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.created_date" auto-apply />
-              </div> -->
             </div>
             <div class="row mt-5">
             </div>
@@ -51,6 +48,12 @@
           <div class="card-header">
             <h4 class="pl-2">Teams</h4>
             <div class="card-header-right">
+              <Link :href="route('transaction.batch-update.index')" class="btn btn-warning mr-1">
+              <i class="fas fa-edit"></i>
+              <span>
+                Batch Update
+              </span>
+              </Link>
               <AddButton :routeLink="route('stripe.create')"> Import Stripe Data</AddButton>
             </div>
           </div>
@@ -101,13 +104,13 @@
             <Pagination :links="transactions.links" />
           </div>
         </div>
-      </div> 
+      </div>
     </div>
   </AppLayout>
 </template>
   
 <script setup>
-import { router } from '@inertiajs/vue3';
+import { Link, router } from '@inertiajs/vue3';
 import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import AddButton from "@/Pages/Slots/AddButton.vue";
 import { watch, reactive, computed } from 'vue';
@@ -131,7 +134,7 @@ const filters = reactive(defaults({}, props.filters, {
   customer_description: '',
   customer_id: '',
   event_name: '',
-  status: '',
+  status: null,
 }));
 
 watch(filters, () => {

@@ -35,15 +35,18 @@ axios.interceptors.response.use(function (response) {
 
     const response = error.response;
 
-    if (response.status === 500) {
-        toast.success(response.data.message, {
-            position: "bottom-left",
-        });
+    if (response) {
+        if (response.status === 500) {
+            toast.success(response.data.message, {
+                position: "bottom-left",
+            });
+        }
+
+        if (response.status === 404) {
+            alert(response.data.message);
+        }
     }
 
-    if (response.status === 404) {
-        alert(response.data.message);
-    }
 
     return Promise.reject(error);
 });

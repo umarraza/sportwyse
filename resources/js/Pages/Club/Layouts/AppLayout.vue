@@ -14,16 +14,17 @@ defineProps({
 
   <Banner />
 
-  <Header />
-
-  <Sidebar />
-
-  <div class="content-page" style="height: ;">
-    <div class="content">
-      <div class="container-fluid pt-5">
-        <main>
-          <slot />
-        </main>
+  
+  <div id="wrapper">
+    <Header />
+    <Sidebar />
+    <div class="content-page" style="height: ;">
+      <div class="content">
+        <div class="container-fluid pt-5">
+          <main>
+            <slot />
+          </main>
+        </div>
       </div>
     </div>
   </div>

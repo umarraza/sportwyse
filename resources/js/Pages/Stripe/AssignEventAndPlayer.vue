@@ -35,7 +35,6 @@ const playerOptions = props.prop_players.map((player) => {
 });
 
 const onselect = (index, item) => {
-  console.log(index, item);
   setTimeout(() => {
   }, 10);
 };
