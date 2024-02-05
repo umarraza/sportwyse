@@ -100,3 +100,9 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+Route::middleware('verified')->group(function () {
+    Route::get('model-select', function () {
+        return Inertia::render('ModelSelect');
+    })->name('model-select');
+});

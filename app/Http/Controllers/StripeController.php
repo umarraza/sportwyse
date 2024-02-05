@@ -22,6 +22,12 @@ class StripeController extends Controller
     {
         // Retrieve transactions with optional filters
         $transactions = Transaction::query()
+            ->when($request->camp_id, function ($q) use ($request) {
+                $q->where('camp_id', $request->camp_id);
+            })
+            ->when($request->player_id, function ($q) use ($request) {
+                $q->where('player_id', $request->player_id);
+            })
             ->when($request->email, function ($q) use ($request) {
                 $q->where('customer_email', 'like', "%{$request->email}%");
             })
@@ -49,13 +55,11 @@ class StripeController extends Controller
                 'customer_id',
                 'invoice_number',
                 'amount',
-                'payment_intent_id',
-                'statement_descriptor',
                 'customer_description',
                 'application_id',
             )
             ->with('player.user:id,first_name,last_name', 'camp:id,name')
-            ->paginate(10)
+            ->paginate(100)
             ->withQueryString();
 
         // Retrieve players and camps
@@ -69,6 +73,8 @@ class StripeController extends Controller
             'camps' => $camps,
             'players' => $players,
             'filters' => $request->only([
+                'camp_id',
+                'player_id',
                 'email',
                 'customer_description',
                 'status',
@@ -101,3 +107,7 @@ class StripeController extends Controller
         return redirect()->route('stripe.index')->with('success', 'Transactions imported successfully');
     }
 }
+
+
+// Dynamic paggination
+// Checkboxes for filtering transactions by of event name, player name, and status 

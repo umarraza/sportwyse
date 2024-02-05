@@ -20,6 +20,26 @@ class BatchUpdateTransactionsController extends Controller
             ->when($request->player_name, function ($q) use ($request) {
                 $q->where('description', $request->player_name);
             })
+            ->when($request->from_date && $request->to_date, function ($q) use ($request) {
+                $q->whereDate('created_date', '>=', $request->from_date)
+                    ->whereDate('created_date', '<=', $request->to_date);
+            })
+            ->when($request->from_date && !$request->to_date, function($q) use ($request) {
+                $q->whereDate('created_date', '>=', $request->from_date);
+            })
+            ->when(!$request->from_date && $request->to_date, function($q) use ($request) {
+                $q->whereDate('created_date', '<=', $request->to_date);
+            })
+            ->when($request->from_amount && $request->to_amount, function ($q) use ($request) {
+                $q->where('amount', '>=', $request->from_amount)
+                    ->where('amount', '<=', $request->to_amount);
+            })
+            ->when($request->from_amount && !$request->to_amount, function($q) use ($request) {
+                $q->where('amount', '>=', $request->from_amount);
+            })
+            ->when(!$request->from_amount && $request->to_amount, function($q) use ($request) {
+                $q->where('amount', '<=', $request->to_amount);
+            })
             ->where('status', '=', 'Failed')
             ->select(
                 'id',
@@ -39,7 +59,8 @@ class BatchUpdateTransactionsController extends Controller
                 'application_id',
             )
             ->with('player.user:id,first_name,last_name', 'camp:id,name')
-            ->paginate(5)
+            ->orderBy('created_date', 'asc')
+            ->paginate(10)
             ->withQueryString();
 
         $uniqueEvents = Transaction::select('event_name')
@@ -73,10 +94,20 @@ class BatchUpdateTransactionsController extends Controller
 
     public function update(Request $request) 
     {
-        $models = Transaction::where('description', $request->player_name)
-            ->orWhere('event_name', $request->event_name)
-            ->where('status', 'Failed')
-            ->get();
+        $models = Transaction::query()
+        ->when($request->event_name, function ($q) use ($request) {
+            $q->where('event_name', $request->event_name);
+        })
+        ->when($request->player_name, function ($q) use ($request) {
+            $q->where('description', $request->player_name);
+        })
+        ->where('status', '=', 'Failed')
+        ->get();
+
+        // $models = Transaction::where('description', $request->player_name)
+        //     ->where('event_name', $request->event_name)
+        //     ->where('status', 'Failed')
+        //     ->get();
 
         foreach ($models as $model) {
             $model->update([

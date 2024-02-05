@@ -9,6 +9,26 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-2">
+                <div class="form-group">
+                  <model-select :options="campOptions" v-model="filters.camp_id" placeholder="Select New Event"
+                    @blur="onselect(index, item)">
+                    <template v-slot="{ option }">
+                      <span>{{ option.text }}</span>
+                    </template>
+                  </model-select>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="form-group">
+                  <model-select :options="playerOptions" v-model="filters.player_id" placeholder="Select New Player"
+                    @blur="onselect(index, item)">
+                    <template v-slot="{ option }">
+                      <span>{{ option.text }}</span>
+                    </template>
+                  </model-select>
+                </div>
+              </div>
+              <div class="col-md-2">
                 <TextInput id="email" v-model="filters.email" type="text" placeholder="Cusomer Email" class="block w-full"
                   autofocus autocomplete="email" />
               </div>
@@ -63,40 +83,31 @@
                 <thead>
                   <tr>
                     <th>Customer Email</th>
-                    <th>Player Name</th>
-                    <th>Status</th>
                     <th>Event Name</th>
+                    <th>Player Name</th>
+                    <th>New Event Name</th>
+                    <th>New Player Name</th>
+                    <th>Status</th>
                     <th>Created Date</th>
                     <th>Customer ID</th>
                     <th>Invoice Number</th>
                     <th>Amount</th>
-                    <th>Payment Intent ID</th>
-                    <th>Statement Descriptor</th>
                     <th>Customer Description</th>
-                    <!-- <th>Application ID</th> -->
-                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="(transaction, index) in transactions.data" :key="index">
                     <td>{{ transaction.customer_email }}</td>
+                    <td>{{ transaction.event_name }}</td>
+                    <td>{{ transaction.description }}</td>
+                    <td>{{ transaction.camp.name }}</td>
                     <td>{{ playerName(transaction.player) }}</td>
                     <td v-html="transaction.status_lebel"></td>
-                    <td>{{ transaction.camp.name }}</td>
                     <td>{{ transaction.date_label }}</td>
                     <td>{{ transaction.customer_id }}</td>
                     <td>{{ transaction.invoice_number }}</td>
                     <td>{{ transaction.amount }}</td>
-                    <td>{{ transaction.payment_intent_id }}</td>
-                    <td>{{ transaction.statement_descriptor }}</td>
                     <td>{{ transaction.customer_description }}</td>
-                    <!-- <td>{{ transaction.application_id }}</td> -->
-                    <td>
-                      <a type="button" href="#" data-toggle="modal" :data-target="`#myModal${transaction.id}`">Assign
-                        Event & Player</a>
-                      <!-- sample modal content -->
-                      <AssignEventAndPlayer :prop_transaction="transaction" :prop_camps="camps" :prop_players="players" />
-                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -110,13 +121,15 @@
 </template>
   
 <script setup>
+
+import "vue-search-select/dist/VueSearchSelect.css"
 import { Link, router } from '@inertiajs/vue3';
 import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import AddButton from "@/Pages/Slots/AddButton.vue";
-import { watch, reactive, computed } from 'vue';
-import AssignEventAndPlayer from './AssignEventAndPlayer.vue';
+import { watch, reactive } from 'vue';
 import Pagination from '@/Shared/Pagination.vue';
 import { defaults } from 'lodash';
+import { ModelSelect } from 'vue-search-select'
 
 const props = defineProps({
   transactions: Object,
@@ -129,7 +142,27 @@ const playerName = (player) => {
   return player.user ? `${player.user.first_name} ${player.user.last_name}` : '';
 };
 
+const playerOptions = props.players.map((player) => {
+  return {
+    value: player.id,
+    text: player.user.name,
+  }
+});
+
+const campOptions = props.camps.map((camp) => {
+  return {
+    value: camp.id,
+    text: camp.name,
+  }
+});
+
+const onselect = (index, item) => {
+  setTimeout(() => {
+  }, 10);
+};
 const filters = reactive(defaults({}, props.filters, {
+  player_id: '',
+  camp_id: '',
   email: '',
   customer_description: '',
   customer_id: '',
