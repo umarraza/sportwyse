@@ -21,14 +21,14 @@ class BatchUpdateTransactionsController extends Controller
                 $q->where('description', $request->player_name);
             })
             ->when($request->from_date && $request->to_date, function ($q) use ($request) {
-                $q->whereDate('created_date', '>=', $request->from_date)
-                    ->whereDate('created_date', '<=', $request->to_date);
+                $q->whereDate('created_date', '>=', $request->date('from_date'))
+                    ->whereDate('created_date', '<=', $request->date('to_date'));
             })
             ->when($request->from_date && !$request->to_date, function($q) use ($request) {
-                $q->whereDate('created_date', '>=', $request->from_date);
+                $q->whereDate('created_date', '>=', $request->date('from_date'));
             })
             ->when(!$request->from_date && $request->to_date, function($q) use ($request) {
-                $q->whereDate('created_date', '<=', $request->to_date);
+                $q->whereDate('created_date', '<=', $request->date('to_date'));
             })
             ->when($request->from_amount && $request->to_amount, function ($q) use ($request) {
                 $q->where('amount', '>=', $request->from_amount)
@@ -63,31 +63,56 @@ class BatchUpdateTransactionsController extends Controller
             ->paginate(10)
             ->withQueryString();
 
-        $uniqueEvents = Transaction::select('event_name')
+        $uniqueEvents = Transaction::select('id', 'event_name')
             ->whereNotNull('event_name')
-            ->distinct()
-            ->get();
+            ->distinct()->get()
+            ->map(function ($event) {
+                return [
+                    'value' => $event->id,
+                    'text' => $event->event_name,
+                ];
+            });
 
-        $uniquePlayers = Transaction::select('description')
+        $uniquePlayers = Transaction::select('id', 'description')
             ->whereNotNull('description')
-            ->distinct()
-            ->get();
+            ->distinct()->get()
+            ->map(function ($player) {
+                return [
+                    'value' => $player->id,
+                    'text' => $player->description,
+                ];
+            });
 
-        // Retrieve players and camps
-        $players = Player::with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email')
-            ->get();
+        $players = Player::with('user')
+            ->get()
+            ->map(function ($player) {
+                return [
+                    'value' => $player->id,
+                    'text' => $player->user->name,
+                ];
+            });
             
-        $camps = Camp::all();
+        $camps = Camp::get()
+            ->map(function ($camp) {
+                return [
+                    'value' => $camp->id,
+                    'text' => $camp->name,
+                ];
+            });
 
-        return Inertia::render('Club/Transactions/Edit', [
-            'players' => $players,
-            'camps' => $camps,
+        return Inertia::render('Club/Transactions/Index', [
+            'campsOptions' => $camps,
+            'playersOptions' => $players,
             'transactions' => $transactions,
             'uniqueEvents' => $uniqueEvents,
             'uniquePlayers' => $uniquePlayers,
             'filters' => $request->only([
                 'event_name',
                 'player_name',
+                'from_date',
+                'to_date',
+                'from_amount',
+                'to_amount',
             ]),
         ]);
     }
