@@ -4,10 +4,11 @@ namespace App\Models;
 
 use App\Models\Camp;
 use App\Models\Player;
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Carbon;
 
 class Transaction extends Model
 {
@@ -94,5 +95,44 @@ class Transaction extends Model
     public function camp(): BelongsTo
     {
         return $this->belongsTo(Camp::class)->withDefault();
+    }
+
+    /**
+     * Apply search filters to the query.
+     *
+     * @param Builder $query The query builder instance.
+     * @return void
+     */
+    public function scopeSearch(Builder $query): void
+    {
+        $eventModel = Transaction::find(request()->eventId);
+        $playerModel = Transaction::find(request()->playerId);
+
+        $query->when(isset($eventModel), function ($q) use ($eventModel) {
+            $q->where('event_name', $eventModel->event_name);
+        })
+        ->when(isset($playerModel), function ($q) use ($playerModel) {
+            $q->where('description', $playerModel->description);
+        })
+        ->when(request()->from_date && request()->to_date, function ($q) {
+            $q->whereDate('created_date', '>=', request()->date('from_date'))
+                ->whereDate('created_date', '<=', request()->date('to_date'));
+        })
+        ->when(request()->from_date && !request()->to_date, function($q) {
+            $q->whereDate('created_date', '>=', request()->date('from_date'));
+        })
+        ->when(!request()->from_date && request()->to_date, function($q) {
+            $q->whereDate('created_date', '<=', request()->date('to_date'));
+        })
+        ->when(request()->from_amount && request()->to_amount, function ($q) {
+            $q->where('amount', '>=', request()->from_amount)
+                ->where('amount', '<=', request()->to_amount);
+        })
+        ->when(request()->from_amount && !request()->to_amount, function($q) {
+            $q->where('amount', '>=', request()->from_amount);
+        })
+        ->when(!request()->from_amount && request()->to_amount, function($q) {
+            $q->where('amount', '<=', request()->to_amount);
+        });
     }
 }

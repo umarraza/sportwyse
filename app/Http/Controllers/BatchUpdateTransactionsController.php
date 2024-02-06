@@ -13,33 +13,11 @@ class BatchUpdateTransactionsController extends Controller
 {
     public function index(Request $request)
     {
+        $eventModel = Transaction::find($request->eventId);
+        $playerModel = Transaction::find($request->playerId);
+
         $transactions = Transaction::query()
-            ->when($request->event_name, function ($q) use ($request) {
-                $q->where('event_name', $request->event_name);
-            })
-            ->when($request->player_name, function ($q) use ($request) {
-                $q->where('description', $request->player_name);
-            })
-            ->when($request->from_date && $request->to_date, function ($q) use ($request) {
-                $q->whereDate('created_date', '>=', $request->date('from_date'))
-                    ->whereDate('created_date', '<=', $request->date('to_date'));
-            })
-            ->when($request->from_date && !$request->to_date, function($q) use ($request) {
-                $q->whereDate('created_date', '>=', $request->date('from_date'));
-            })
-            ->when(!$request->from_date && $request->to_date, function($q) use ($request) {
-                $q->whereDate('created_date', '<=', $request->date('to_date'));
-            })
-            ->when($request->from_amount && $request->to_amount, function ($q) use ($request) {
-                $q->where('amount', '>=', $request->from_amount)
-                    ->where('amount', '<=', $request->to_amount);
-            })
-            ->when($request->from_amount && !$request->to_amount, function($q) use ($request) {
-                $q->where('amount', '>=', $request->from_amount);
-            })
-            ->when(!$request->from_amount && $request->to_amount, function($q) use ($request) {
-                $q->where('amount', '<=', $request->to_amount);
-            })
+            ->search()
             ->where('status', '=', 'Failed')
             ->select(
                 'id',
@@ -106,33 +84,19 @@ class BatchUpdateTransactionsController extends Controller
             'transactions' => $transactions,
             'uniqueEvents' => $uniqueEvents,
             'uniquePlayers' => $uniquePlayers,
-            'filters' => $request->only([
-                'event_name',
-                'player_name',
-                'from_date',
-                'to_date',
-                'from_amount',
-                'to_amount',
-            ]),
+            'filters' => $request->all() + [
+                'eventId' => $eventModel ? $eventModel->id : '',
+                'playerId' => $playerModel ? $playerModel->id : ''
+            ],
         ]);
     }
 
     public function update(Request $request) 
     {
         $models = Transaction::query()
-        ->when($request->event_name, function ($q) use ($request) {
-            $q->where('event_name', $request->event_name);
-        })
-        ->when($request->player_name, function ($q) use ($request) {
-            $q->where('description', $request->player_name);
-        })
-        ->where('status', '=', 'Failed')
-        ->get();
-
-        // $models = Transaction::where('description', $request->player_name)
-        //     ->where('event_name', $request->event_name)
-        //     ->where('status', 'Failed')
-        //     ->get();
+            ->search()
+            ->where('status', '=', 'Failed')
+            ->get();
 
         foreach ($models as $model) {
             $model->update([

@@ -15,43 +15,41 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">Search Event</label>
-                    <model-select :options="uniqueEvents" v-model="eventId" 
-                      placeholder="Search Event">
+                    <model-select :options="uniqueEvents" v-model="filters.eventId" placeholder="Search Event">
                     </model-select>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">Search Player</label>
-                    <model-select :options="uniquePlayers" v-model="playerId" 
-                      placeholder="Search Player">
+                    <model-select :options="uniquePlayers" v-model="filters.playerId" placeholder="Search Player">
                     </model-select>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">From Date</label>
-                    <VueDatePicker position="left" :enable-time-picker="false" v-model="from_date" auto-apply
+                    <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.from_date" auto-apply
                       placeholder="From Date" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">To Date</label>
-                    <VueDatePicker position="left" :enable-time-picker="false" v-model="to_date" auto-apply
+                    <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.to_date" auto-apply
                       placeholder="To Date" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">From Amount</label>
-                    <input type="number" placeholder="From Amount" v-model="from_amount" class="form-control" />
+                    <input type="number" placeholder="From Amount" v-model="filters.from_amount" class="form-control" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">To Amount</label>
-                    <input type="number" placeholder="To Amount" v-model="to_amount" class="form-control" />
+                    <input type="number" placeholder="To Amount" v-model="filters.to_amount" class="form-control" />
                   </div>
                 </div>
               </div>
@@ -141,7 +139,7 @@
 </template>
 
 <script setup>
-import { watch, ref } from 'vue';
+import { watch, ref, reactive } from 'vue';
 import "vue-search-select/dist/VueSearchSelect.css"
 import { ModelSelect } from 'vue-search-select'
 import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
@@ -158,45 +156,23 @@ const props = defineProps({
   uniquePlayers: Object,
 });
 
-const to_date = ref('');
-const from_date = ref('');
 const camp_id = ref('');
-const to_amount = ref('');
 const player_id = ref('');
-const from_amount = ref('');
-const playerId = ref('');
-const eventId = ref('');
 
-const getEventName = () => {
-  const event = props.uniqueEvents.find((event) => event.value === eventId.value);
-  return event ? event.text : '';
-};
+const filters = reactive({
+  to_date: ref(props.filters.to_date),
+  from_date: ref(props.filters.from_date ?? ''),
+  to_amount: ref(props.filters.to_amount ?? ''),
+  from_amount: ref(props.filters.from_amount),
+  playerId: ref(parseInt(props.filters.playerId ?? '')),
+  eventId: ref(parseInt(props.filters.eventId ?? '')),
+});
 
-const getPlayerName = () => {
-  const player = props.uniquePlayers.find((player) => player.value === playerId.value);
-  return player ? player.text : '';
-};
-
-const resetFilters = () => {
-  eventId.value = '';
-  playerId.value = '';
-  from_date.value = '';
-  to_date.value = '';
-  from_amount.value = '';
-  to_amount.value = '';
-};
+watch(filters, () => {
+  runFilters();
+}, { deep: true });
 
 const runFilters = () => {
-
-  const filters = {
-    event_name: getEventName(),
-    player_name: getPlayerName(),
-    from_date: from_date.value,
-    to_date: to_date.value,
-    from_amount: from_amount.value,
-    to_amount: to_amount.value,
-  };
-
   router.get('/transactions/index', filters, {
     preserveState: true,
     preserveScroll: true,
@@ -204,31 +180,14 @@ const runFilters = () => {
   });
 };
 
-watch(eventId, async (newEventName, oldEventName) => {
-  runFilters();
-});
-
-watch(playerId, async (newPlayerName, oldPlayerName) => {
-  runFilters();
-});
-
-watch(from_date, async (newFromDate, oldFromDate) => {
-  runFilters();
-});
-
-watch(to_date, async (newToDate, oldToDate) => {
-  runFilters();
-});
-
-watch(from_amount, async (newFromAmount, oldFromAmount) => {
-  runFilters();
-});
-
-watch(to_amount, async (newToAmount, oldToAmount) => {
-  runFilters();
-});
-
-
+const resetFilters = () => {
+  filters.eventId = '';
+  filters.playerId = '';
+  filters.from_date = '';
+  filters.to_date = '';
+  filters.from_amount = '';
+  filters.to_amount = '';
+};
 
 const playerName = (player) => {
   return player.user ? `${player.user.first_name} ${player.user.last_name}` : '';
@@ -242,11 +201,17 @@ const onselect = (index, item) => {
 const submit = () => {
 
   const data = {
-    eventId: eventId.value,
-    playerId: playerId.value,
+    eventId: filters.eventId,
+    playerId: filters.playerId,
     camp_id: camp_id.value,
     player_id: player_id.value,
+    from_amount: filters.from_amount,
+    to_amount: filters.to_amount,
+    from_date: filters.from_date,
+    to_date: filters.to_date,
   };
+
+  console.log(data);
 
   router.post(route('transaction-batch.update'), data, {
     preserveScroll: true,
