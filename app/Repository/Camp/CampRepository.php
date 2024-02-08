@@ -17,7 +17,7 @@ class CampRepository implements CampRepositoryInterface
      */
     public function index()
     {
-        return Camp::with('teams:id,name,start_date,end_date')->withCount('teams')->paginate(10);
+        return Camp::with('teams:id,name,start_date,end_date')->withCount('teams')->paginate(config('app.default_pagination_size'));
     }
 
     /**

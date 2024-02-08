@@ -114,25 +114,43 @@ class Transaction extends Model
         ->when(isset($playerModel), function ($q) use ($playerModel) {
             $q->where('description', $playerModel->description);
         })
-        ->when(request()->from_date && request()->to_date, function ($q) {
-            $q->whereDate('created_date', '>=', request()->date('from_date'))
-                ->whereDate('created_date', '<=', request()->date('to_date'));
+        ->when(request()->fromDate && request()->toDate, function ($q) {
+            $q->whereDate('created_date', '>=', request()->date('fromDate'))
+                ->whereDate('created_date', '<=', request()->date('toDate'));
         })
-        ->when(request()->from_date && !request()->to_date, function($q) {
-            $q->whereDate('created_date', '>=', request()->date('from_date'));
+        ->when(request()->fromDate && !request()->toDate, function($q) {
+            $q->whereDate('created_date', '>=', request()->date('fromDate'));
         })
-        ->when(!request()->from_date && request()->to_date, function($q) {
-            $q->whereDate('created_date', '<=', request()->date('to_date'));
+        ->when(!request()->fromDate && request()->toDate, function($q) {
+            $q->whereDate('created_date', '<=', request()->date('toDate'));
         })
-        ->when(request()->from_amount && request()->to_amount, function ($q) {
-            $q->where('amount', '>=', request()->from_amount)
-                ->where('amount', '<=', request()->to_amount);
+        ->when(request()->fromAmount && request()->toAmount, function ($q) {
+            $q->where('amount', '>=', request()->fromAmount)
+                ->where('amount', '<=', request()->toAmount);
         })
-        ->when(request()->from_amount && !request()->to_amount, function($q) {
-            $q->where('amount', '>=', request()->from_amount);
+        ->when(request()->fromAmount && !request()->toAmount, function($q) {
+            $q->where('amount', '>=', request()->fromAmount);
         })
-        ->when(!request()->from_amount && request()->to_amount, function($q) {
-            $q->where('amount', '<=', request()->to_amount);
+        ->when(!request()->fromAmount && request()->toAmount, function($q) {
+            $q->where('amount', '<=', request()->toAmount);
+        })
+        ->when(request()->boolean('allUnAssigned'), function ($q) {
+            $q->whereNull('player_id')->whereNull('camp_id');
+        })
+        ->when(request()->boolean('unAssignedByEvent'), function ($q) {
+            $q->whereNull('camp_id');
+        })
+        ->when(request()->boolean('unAssignedByPlayer'), function ($q) {
+            $q->whereNull('player_id');
+        })
+        ->when(request()->boolean('allAssigned'), function ($q) {
+            $q->whereNotNull('player_id')->whereNotNull('camp_id');
+        })
+        ->when(request()->boolean('assignedByEvent'), function ($q) {
+            $q->whereNotNull('camp_id');
+        })
+        ->when(request()->boolean('assignedByPlayer'), function ($q) {
+            $q->whereNotNull('player_id');
         });
     }
 }

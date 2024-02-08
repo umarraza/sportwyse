@@ -29,31 +29,94 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">From Date</label>
-                    <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.from_date" auto-apply
+                    <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.fromDate" auto-apply
                       placeholder="From Date" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">To Date</label>
-                    <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.to_date" auto-apply
+                    <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.toDate" auto-apply
                       placeholder="To Date" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">From Amount</label>
-                    <input type="number" placeholder="From Amount" v-model="filters.from_amount" class="form-control" />
+                    <input type="number" placeholder="From Amount" v-model="filters.fromAmount" class="form-control" />
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="col-form-label">To Amount</label>
-                    <input type="number" placeholder="To Amount" v-model="filters.to_amount" class="form-control" />
+                    <input type="number" placeholder="To Amount" v-model="filters.toAmount" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label class="col-form-label">Paginate By Size</label>
+                    <select class="form-control" v-model="filters.paginateBySize">
+                      <option value="">(none)</option>
+                      <option value="10">10</option>
+                      <option value="100">100</option>
+                      <option value="200">200</option>
+                      <option value="300">300</option>
+                      <option value="400">400</option>
+                      <option value="500">500</option>
+                      <option value="700">700</option>
+                      <option value="900">900</option>
+                      <option value="1000">1000</option>
+                    </select>
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row mt-2">
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="allUnAssigned" v-model="filters.allUnAssigned"
+                      data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="allUnAssigned">All Un Assigned</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="allAssigned" v-model="filters.allAssigned"
+                      data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="allAssigned">All Assigned</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="unAssignedByEvent"
+                      v-model="filters.unAssignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="unAssignedByEvent">Un Assigned (By Event)</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="assignedByEvent"
+                      v-model="filters.assignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="assignedByEvent">Assigned (By Event)</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="unAssignedByPlayer"
+                      v-model="filters.unAssignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="unAssignedByPlayer">Un Assigned (By Player)</label>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="assignedByPlayer"
+                      v-model="filters.assignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="assignedByPlayer">Assigned (By Player)</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
                 <div class="col-md-12">
                   <button class="btn btn-primary waves-effect ml-1 waves-light" @click.prevent="resetFilters">Reset
                     Filters</button>
@@ -61,15 +124,17 @@
               </div>
               <div class="row mt-5">
                 <div class="col-md-12">
+                  <Pagination :links="transactions.links" />
                   <div class="table-responsive b-0" data-pattern="priority-columns">
                     <table class="table table-xs table-striped">
                       <thead>
                         <tr>
+                          <th>#</th>
                           <th>Customer Email</th>
-                          <th>Event Name</th>
-                          <th>Player Name</th>
-                          <th>New Event Name</th>
-                          <th>New Player Name</th>
+                          <th>Event Name (New)</th>
+                          <th>Player Name (New)</th>
+                          <th>Event Name (Old)</th>
+                          <th>Player Name (Old)</th>
                           <th>Status</th>
                           <th>Created Date</th>
                           <th>Customer ID</th>
@@ -82,11 +147,12 @@
                       </thead>
                       <tbody>
                         <tr v-for="(transaction, index) in transactions.data" :key="index">
+                          <td>{{ index+1 }}</td>
                           <td>{{ transaction.customer_email }}</td>
-                          <td>{{ transaction.event_name }}</td>
-                          <td>{{ transaction.description }}</td>
-                          <td>{{ transaction.camp.name }}</td>
+                          <td>{{ transaction.camp.name ?? '-' }}</td>
                           <td>{{ playerName(transaction.player) }}</td>
+                          <td>{{ transaction.event_name ?? '-' }}</td>
+                          <td>{{ transaction.description ?? '-' }}</td>
                           <td v-html="transaction.status_lebel"></td>
                           <td>{{ transaction.date_label }}</td>
                           <td>{{ transaction.customer_id }}</td>
@@ -128,7 +194,8 @@
               </div>
               <div class="form-group text-right mt-3">
                 <CancelButton :routeLink="route('stripe.index')" />
-                <button type="submit" class="btn btn-primary waves-effect ml-1 waves-light">Update</button>
+                <button type="submit" :disabled="filters.allAssigned === 'true'"
+                  class="btn btn-primary waves-effect ml-1 waves-light">Update</button>
               </div>
             </form>
           </div>
@@ -160,12 +227,19 @@ const camp_id = ref('');
 const player_id = ref('');
 
 const filters = reactive({
-  to_date: ref(props.filters.to_date),
-  from_date: ref(props.filters.from_date ?? ''),
-  to_amount: ref(props.filters.to_amount ?? ''),
-  from_amount: ref(props.filters.from_amount),
-  playerId: ref(parseInt(props.filters.playerId ?? '')),
-  eventId: ref(parseInt(props.filters.eventId ?? '')),
+  toDate: ref(props.filters.toDate),
+  fromDate: ref(props.filters.fromDate ?? ''),
+  toAmount: ref(props.filters.toAmount ?? ''),
+  fromAmount: ref(props.filters.fromAmount),
+  playerId: ref(props.filters.playerId ? parseInt(props.filters.playerId) : ''),
+  eventId: ref(props.filters.eventId ? parseInt(props.filters.eventId) : ''),
+  paginateBySize: ref(props.filters.paginateBySize ?? 100),
+  allUnAssigned: ref(props.filters.allUnAssigned ?? false),
+  unAssignedByEvent: ref(props.filters.unAssignedByEvent ?? false),
+  unAssignedByPlayer: ref(props.filters.unAssignedByPlayer ?? false),
+  allAssigned: ref(props.filters.allAssigned ?? false),
+  assignedByPlayer: ref(props.filters.assignedByPlayer ?? false),
+  assignedByEvent: ref(props.filters.assignedByEvent ?? false),
 });
 
 watch(filters, () => {
@@ -183,14 +257,21 @@ const runFilters = () => {
 const resetFilters = () => {
   filters.eventId = '';
   filters.playerId = '';
-  filters.from_date = '';
-  filters.to_date = '';
-  filters.from_amount = '';
-  filters.to_amount = '';
+  filters.fromDate = '';
+  filters.toDate = '';
+  filters.fromAmount = '';
+  filters.toAmount = '';
+  filters.paginateBySize = '';
+  filters.allUnAssigned = false;
+  filters.unAssignedByEvent = false;
+  filters.unAssignedByPlayer = false;
+  filters.allAssigned = false;
+  filters.assignedByPlayer = false;
+  filters.assignedByEvent = false;
 };
 
 const playerName = (player) => {
-  return player.user ? `${player.user.first_name} ${player.user.last_name}` : '';
+  return player.user ? `${player.user.first_name} ${player.user.last_name}` : '-';
 };
 
 const onselect = (index, item) => {
@@ -205,10 +286,17 @@ const submit = () => {
     playerId: filters.playerId,
     camp_id: camp_id.value,
     player_id: player_id.value,
-    from_amount: filters.from_amount,
-    to_amount: filters.to_amount,
-    from_date: filters.from_date,
-    to_date: filters.to_date,
+    fromAmount: filters.fromAmount,
+    toAmount: filters.toAmount,
+    fromDate: filters.fromDate,
+    toDate: filters.toDate,
+    paginateBySize: filters.paginateBySize,
+    allUnAssigned: filters.allUnAssigned,
+    unAssignedByEvent: filters.unAssignedByEvent,
+    unAssignedByPlayer: filters.unAssignedByPlayer,
+    allAssigned: filters.allAssigned,
+    assignedByPlayer: filters.assignedByPlayer,
+    assignedByEvent: filters.assignedByEvent,
   };
 
   console.log(data);

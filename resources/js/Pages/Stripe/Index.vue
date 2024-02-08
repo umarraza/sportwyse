@@ -8,8 +8,9 @@
           </div>
           <div class="card-body">
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div class="form-group">
+                  <label class="col-form-label">Select New Event</label>
                   <model-select :options="campOptions" v-model="filters.camp_id" placeholder="Select New Event"
                     @blur="onselect(index, item)">
                     <template v-slot="{ option }">
@@ -18,8 +19,9 @@
                   </model-select>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <div class="form-group">
+                <label class="col-form-label">Select New Player</label>
                   <model-select :options="playerOptions" v-model="filters.player_id" placeholder="Select New Player"
                     @blur="onselect(index, item)">
                     <template v-slot="{ option }">
@@ -28,13 +30,15 @@
                   </model-select>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
+                <label class="col-form-label">Cusomer Email</label>
                 <TextInput id="email" v-model="filters.email" type="text" placeholder="Cusomer Email" class="block w-full"
                   autofocus autocomplete="email" />
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
+                <label class="col-form-label">Status</label>
                 <select class="form-control" v-model="filters.status">
-                  <option :value="null">Status</option>
+                  <option :value="null">(none)</option>
                   <option value="Canceled">Canceled</option>
                   <option value="Failed">Failed</option>
                   <option value="Paid">Paid</option>
@@ -43,20 +47,84 @@
                   <option value="Requires Payment Method">Requires Payment Method</option>
                 </select>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
+                <label class="col-form-label">Customer Description</label>
                 <TextInput id="customer_description" v-model="filters.customer_description" type="text"
                   placeholder="Customer Description" class="block w-full" autofocus autocomplete="customer_description" />
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
+                <label class="col-form-label">Customer ID</label>
                 <TextInput id="customer_id" v-model="filters.customer_id" type="text" placeholder="Customer ID"
                   class="block w-full" autofocus autocomplete="customer_id" />
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
+                <label class="col-form-label">Event Name</label>
                 <TextInput id="event_name" v-model="filters.event_name" type="text" placeholder="Event Name"
                   class="block w-full" autofocus autocomplete="event_name" />
               </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label class="col-form-label">Paginate By Size</label>
+                  <select class="form-control" v-model="filters.paginateBySize">
+                    <option value="">(none)</option>
+                    <option value="10">10</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="300">300</option>
+                    <option value="400">400</option>
+                    <option value="500">500</option>
+                    <option value="700">700</option>
+                    <option value="900">900</option>
+                    <option value="1000">1000</option>
+                  </select>
+                </div>
+              </div>
             </div>
-            <div class="row mt-5">
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="allUnAssigned" v-model="filters.allUnAssigned"
+                    data-parsley-multiple="groups" data-parsley-mincheck="2">
+                  <label class="custom-control-label" for="allUnAssigned">All Un Assigned</label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="allAssigned" v-model="filters.allAssigned"
+                    data-parsley-multiple="groups" data-parsley-mincheck="2">
+                  <label class="custom-control-label" for="allAssigned">All Assigned</label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="unAssignedByEvent"
+                    v-model="filters.unAssignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                  <label class="custom-control-label" for="unAssignedByEvent">Un Assigned (By Event)</label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="assignedByEvent"
+                    v-model="filters.assignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                  <label class="custom-control-label" for="assignedByEvent">Assigned (By Event)</label>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-3">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="unAssignedByPlayer"
+                    v-model="filters.unAssignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                  <label class="custom-control-label" for="unAssignedByPlayer">Un Assigned (By Player)</label>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="assignedByPlayer"
+                    v-model="filters.assignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                  <label class="custom-control-label" for="assignedByPlayer">Assigned (By Player)</label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -78,15 +146,17 @@
             </div>
           </div>
           <div class="card-body">
+            <Pagination :links="transactions.links" />
             <div class="table-responsive b-0" data-pattern="priority-columns">
               <table class="table table-xs table-striped">
                 <thead>
                   <tr>
+                    <th>#</th>
                     <th>Customer Email</th>
-                    <th>Event Name</th>
-                    <th>Player Name</th>
-                    <th>New Event Name</th>
-                    <th>New Player Name</th>
+                    <th>Event Name (New)</th>
+                    <th>Player Name (New)</th>
+                    <th>Event Name (Old)</th>
+                    <th>Player Name (Old)</th>
                     <th>Status</th>
                     <th>Created Date</th>
                     <th>Customer ID</th>
@@ -97,11 +167,12 @@
                 </thead>
                 <tbody>
                   <tr v-for="(transaction, index) in transactions.data" :key="index">
+                    <td>{{ index+1 }}</td>
                     <td>{{ transaction.customer_email }}</td>
-                    <td>{{ transaction.event_name }}</td>
-                    <td>{{ transaction.description }}</td>
                     <td>{{ transaction.camp.name }}</td>
                     <td>{{ playerName(transaction.player) }}</td>
+                    <td>{{ transaction.event_name }}</td>
+                    <td>{{ transaction.description }}</td>
                     <td v-html="transaction.status_lebel"></td>
                     <td>{{ transaction.date_label }}</td>
                     <td>{{ transaction.customer_id }}</td>
@@ -168,6 +239,13 @@ const filters = reactive(defaults({}, props.filters, {
   customer_id: '',
   event_name: '',
   status: null,
+  allUnAssigned: false,
+  unAssignedByEvent: false,
+  unAssignedByPlayer: false,
+  allAssigned: false,
+  paginateBySize: '100',
+  assignedByEvent: false,
+  assignedByPlayer: false,
 }));
 
 watch(filters, () => {

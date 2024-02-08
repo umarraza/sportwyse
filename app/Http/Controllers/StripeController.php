@@ -43,6 +43,24 @@ class StripeController extends Controller
             ->when($request->event_name, function ($q) use ($request) {
                 $q->where('event_name', 'like', "%{$request->event_name}%");
             })
+            ->when(request()->boolean('allUnAssigned'), function ($q) {
+                $q->whereNull('player_id')->whereNull('camp_id');
+            })
+            ->when(request()->boolean('unAssignedByEvent'), function ($q) {
+                $q->whereNull('camp_id');
+            })
+            ->when(request()->boolean('unAssignedByPlayer'), function ($q) {
+                $q->whereNull('player_id');
+            })
+            ->when(request()->boolean('allAssigned'), function ($q) {
+                $q->whereNotNull('player_id')->whereNotNull('camp_id');
+            })
+            ->when(request()->boolean('assignedByEvent'), function ($q) {
+                $q->whereNotNull('camp_id');
+            })
+            ->when(request()->boolean('assignedByPlayer'), function ($q) {
+                $q->whereNotNull('player_id');
+            })
             ->select(
                 'id',
                 'camp_id',
@@ -59,7 +77,7 @@ class StripeController extends Controller
                 'application_id',
             )
             ->with('player.user:id,first_name,last_name', 'camp:id,name')
-            ->paginate(100)
+            ->paginate($request->paginateBySize ?? config('app.default_transactions_pagination_size'))
             ->withQueryString();
 
         // Retrieve players and camps
@@ -80,6 +98,13 @@ class StripeController extends Controller
                 'status',
                 'customer_id',
                 'event_name',
+                'allUnAssigned',
+                'unAssignedByEvent',
+                'unAssignedByPlayer',
+                'allAssigned',
+                'paginateBySize',
+                'assignedByEvent',
+                'assignedByPlayer',
             ]),
         ]);
     }
