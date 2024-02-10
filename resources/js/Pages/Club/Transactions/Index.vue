@@ -73,46 +73,47 @@
               <div class="row mt-2">
                 <div class="col-md-4">
                   <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="allUnAssigned" v-model="filters.allUnAssigned"
-                      data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="allUnAssigned">All Un Assigned</label>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="allAssigned" v-model="filters.allAssigned"
                       data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="allAssigned">All Assigned</label>
+                    <label class="custom-control-label" for="allAssigned">Assigned (Event & Player): {{ allAssignedCount }}</label>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="unAssignedByEvent"
-                      v-model="filters.unAssignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="unAssignedByEvent">Un Assigned (By Event)</label>
+                    <input type="checkbox" class="custom-control-input" id="assignedByEvent"
+                      v-model="filters.assignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="assignedByEvent">Assigned (By Event): {{ allAssignedByEventCount }}</label>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="assignedByPlayer"
+                      v-model="filters.assignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="assignedByPlayer">Assigned (By Player): {{ allAssignedByPlayerCount }}</label>
                   </div>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col-md-4">
                   <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="assignedByEvent"
-                      v-model="filters.assignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="assignedByEvent">Assigned (By Event)</label>
+                    <input type="checkbox" class="custom-control-input" id="allUnAssigned" v-model="filters.allUnAssigned"
+                      data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="allUnAssigned">Pending (Event & Player): {{ unAssingedCount }}</label>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="unAssignedByEvent"
+                      v-model="filters.unAssignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
+                    <label class="custom-control-label" for="unAssignedByEvent">Pending (By Event): {{ unAssingedByEventCount }}</label>
+                  </div>
+                </div> 
+          
+                <div class="col-md-4">
+                  <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="unAssignedByPlayer"
                       v-model="filters.unAssignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="unAssignedByPlayer">Un Assigned (By Player)</label>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="assignedByPlayer"
-                      v-model="filters.assignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="assignedByPlayer">Assigned (By Player)</label>
+                    <label class="custom-control-label" for="unAssignedByPlayer">Pending (By Player): {{ unAssingedByPlayerCount }}</label>
                   </div>
                 </div>
               </div>
@@ -124,22 +125,37 @@
               </div>
               <div class="row mt-5">
                 <div class="col-md-12">
-                  <Pagination :links="transactions.links" />
+                  <div class="alert alert-success text-center" role="alert" v-if="totalFailedTransactionsCount === allAssignedCount">
+                    All transactions are now assigned.
+                  </div>
+                  <div class="pagination-container">
+                    <div class="total">
+                      <label>Total Failed Transactions:</label>{{ totalFailedTransactionsCount }}
+                      <label>Total (This Page):</label>{{ transactionsCount }}
+                      <label>Total Assigned: (Event & Player)</label>{{ allAssignedCount }}
+                      <label>Total Pending (Event & Player):</label>{{ unAssingedCount }}
+                      <label>Total Pending (By Event):</label>{{ unAssingedByEventCount }}
+                      <label>Total Pending (By Player):</label>{{ unAssingedByPlayerCount }}
+                    </div>
+                    <div class="pagination">
+                      <Pagination :links="transactions.links" />
+                    </div>
+                  </div>
                   <div class="table-responsive b-0" data-pattern="priority-columns">
                     <table class="table table-xs table-striped">
                       <thead>
                         <tr>
                           <th>#</th>
-                          <th>Customer Email</th>
+                          <th @click="orderByParam('customer_email')">Customer Email <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                           <th>Event Name (New)</th>
                           <th>Player Name (New)</th>
-                          <th>Event Name (Old)</th>
-                          <th>Player Name (Old)</th>
+                          <th @click="orderByParam('event_name')">Event Name (Old) <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
+                          <th @click="orderByParam('description')">Player Name (Old) <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                           <th>Status</th>
-                          <th>Created Date</th>
+                          <th @click="orderByParam('created_date')">Created Date <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                           <th>Customer ID</th>
                           <th>Invoice Number</th>
-                          <th>Amount</th>
+                          <th @click="orderByParam('amount')">Amount <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                           <th>Payment Intent ID</th>
                           <th>Statement Descriptor</th>
                           <th>Customer Description</th>
@@ -147,7 +163,7 @@
                       </thead>
                       <tbody>
                         <tr v-for="(transaction, index) in transactions.data" :key="index">
-                          <td>{{ index+1 }}</td>
+                          <td>{{ index + 1 }}</td>
                           <td>{{ transaction.customer_email }}</td>
                           <td>{{ transaction.camp.name ?? '-' }}</td>
                           <td>{{ playerName(transaction.player) }}</td>
@@ -221,6 +237,14 @@ const props = defineProps({
   transactions: Object,
   uniqueEvents: Object,
   uniquePlayers: Object,
+  unAssingedCount: Number,
+  allAssignedCount: Number,
+  transactionsCount: Number,
+  unAssingedByEventCount: Number,
+  unAssingedByPlayerCount: Number,
+  totalFailedTransactionsCount: Number,
+  allAssignedByEventCount: Number,
+  allAssignedByPlayerCount: Number,
 });
 
 const camp_id = ref('');
@@ -240,7 +264,15 @@ const filters = reactive({
   allAssigned: ref(props.filters.allAssigned ?? false),
   assignedByPlayer: ref(props.filters.assignedByPlayer ?? false),
   assignedByEvent: ref(props.filters.assignedByEvent ?? false),
+  orderByParam: ref(''),
+  orderBy: ref('asc')
 });
+
+const orderByParam = (param) => {
+  filters.orderBy = filters.orderBy === 'asc' ? 'desc' : 'asc';
+  filters.orderByParam = param;
+  runFilters();
+}
 
 watch(filters, () => {
   runFilters();
@@ -254,6 +286,8 @@ const runFilters = () => {
   });
 };
 
+
+
 const resetFilters = () => {
   filters.eventId = '';
   filters.playerId = '';
@@ -261,7 +295,7 @@ const resetFilters = () => {
   filters.toDate = '';
   filters.fromAmount = '';
   filters.toAmount = '';
-  filters.paginateBySize = '';
+  filters.paginateBySize = 100;
   filters.allUnAssigned = false;
   filters.unAssignedByEvent = false;
   filters.unAssignedByPlayer = false;
@@ -299,8 +333,6 @@ const submit = () => {
     assignedByEvent: filters.assignedByEvent,
   };
 
-  console.log(data);
-
   router.post(route('transaction-batch.update'), data, {
     preserveScroll: true,
     onSuccess: () => Promise.all([]),
@@ -308,3 +340,22 @@ const submit = () => {
 };
 
 </script>
+
+<style scoped>
+th {
+  cursor: pointer;
+}
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.total {
+  display: flex;
+  gap: 20px; /* Adjust the gap between stats as needed */
+}
+
+.total span {
+  font-size: 14px; /* Adjust the font size as needed */
+}
+</style>

@@ -21,7 +21,7 @@
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                <label class="col-form-label">Select New Player</label>
+                  <label class="col-form-label">Select New Player</label>
                   <model-select :options="playerOptions" v-model="filters.player_id" placeholder="Select New Player"
                     @blur="onselect(index, item)">
                     <template v-slot="{ option }">
@@ -134,7 +134,7 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4 class="pl-2">Teams</h4>
+            <h4 class="pl-2">Transactions</h4>
             <div class="card-header-right">
               <Link :href="route('transaction.batch-update.index')" class="btn btn-warning mr-1">
               <i class="fas fa-edit"></i>
@@ -142,9 +142,9 @@
                 Batch Update
               </span>
               </Link>
-              <button class="btn btn-info mr-1" @click="proccessData">
-                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                Processing</button>
+              <button class="btn btn-info mr-1" @click="proccessData" v-if="transactions.data.length">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" v-if="processing"></span>
+                {{ processing ? 'Processing' : 'Process Data' }} </button>
               <AddButton :routeLink="route('stripe.create')"> Import Stripe Data</AddButton>
             </div>
           </div>
@@ -155,22 +155,22 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Customer Email</th>
+                    <th @click="orderByParam('customer_email')">Customer Email <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                     <th>Event Name (New)</th>
                     <th>Player Name (New)</th>
-                    <th>Event Name (Old)</th>
-                    <th>Player Name (Old)</th>
+                    <th @click="orderByParam('event_name')">Event Name (Old) <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
+                    <th @click="orderByParam('description')">Player Name (Old) <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                     <th>Status</th>
-                    <th>Created Date</th>
+                    <th @click="orderByParam('created_date')">Created Date <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                     <th>Customer ID</th>
                     <th>Invoice Number</th>
-                    <th>Amount</th>
+                    <th @click="orderByParam('amount')">Amount <i class="fas fa-long-arrow-alt-up"></i><i class="fas fa-long-arrow-alt-down"></i></th>
                     <th>Customer Description</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr v-for="(transaction, index) in transactions.data" :key="index">
-                    <td>{{ index+1 }}</td>
+                    <td>{{ index + 1 }}</td>
                     <td>{{ transaction.customer_email }}</td>
                     <td>{{ transaction.camp.name }}</td>
                     <td>{{ playerName(transaction.player) }}</td>
@@ -200,10 +200,12 @@ import "vue-search-select/dist/VueSearchSelect.css"
 import { Link, router } from '@inertiajs/vue3';
 import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import AddButton from "@/Pages/Slots/AddButton.vue";
-import { watch, reactive } from 'vue';
+import { watch, reactive, ref } from 'vue';
 import Pagination from '@/Shared/Pagination.vue';
 import { defaults } from 'lodash';
 import { ModelSelect } from 'vue-search-select'
+import { useToast } from "vue-toastification";
+const toast = useToast();
 
 const props = defineProps({
   transactions: Object,
@@ -249,6 +251,8 @@ const filters = reactive(defaults({}, props.filters, {
   paginateBySize: '100',
   assignedByEvent: false,
   assignedByPlayer: false,
+  orderByParam: ref(''),
+  orderBy: ref('asc')
 }));
 
 watch(filters, () => {
@@ -263,12 +267,38 @@ const runFilters = () => {
   });
 };
 
+const orderByParam = (param) => {
+  filters.orderBy = filters.orderBy === 'asc' ? 'desc' : 'asc';
+  filters.orderByParam = param;
+  runFilters();
+}
+
+const processing = ref(false);
+
 const proccessData = () => {
-  router.post(route('stripe.proccess'), {
+
+  const options = {
     preserveState: true,
     preserveScroll: true,
     replace: true,
-  });
+  }
+
+  if (confirm('Are you sure you want to process data?')) {
+    processing.value = true;
+    router.post(route('stripe.proccess'), {}, {
+      onSuccess: (response) => {
+        processing.value = false;
+        if (response.props.flash.warning) {
+          toast.warning(response.props.flash.warning, {
+            position: "bottom-left",
+          });
+        }
+      },
+      onErorr: (error) => {
+        console.log(error);
+      }
+    });
+  }
 };
 
 </script>

@@ -35,6 +35,7 @@ import ShowButton from "../js/Pages/Slots/ShowButton.vue";
 import DeleteButton from "../js/Pages/Slots/DeleteButton.vue";
 import BackToList from "../js/Pages/Slots/BackToList.vue";
 
+
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({

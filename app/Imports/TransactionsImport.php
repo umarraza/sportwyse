@@ -2,7 +2,7 @@
 
 namespace App\Imports;
 
-use App\Models\Transaction;
+use App\Models\TempTransaction;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
@@ -35,12 +35,12 @@ class TransactionsImport implements ToCollection,  WithHeadingRow
     {
         foreach ($rows as $row) 
         {
-            $model = Transaction::where('event_name', $row['eventname_metadata'])->first();
+            $model = TempTransaction::where('event_name', $row['eventname_metadata'])->first();
 
             if ($model) {
-                Transaction::create($this->columns($row) + ['camp_id' => $model->camp_id]);
+                TempTransaction::create($this->columns($row) + ['camp_id' => $model->camp_id]);
             } else {
-                $model = Transaction::create($this->columns($row));
+                $model = TempTransaction::create($this->columns($row));
             }
         }
     }

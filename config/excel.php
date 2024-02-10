@@ -292,7 +292,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Transaction Handler
+    | TempTransaction Handler
     |--------------------------------------------------------------------------
     |
     | By default the import is wrapped in a transaction. This is useful

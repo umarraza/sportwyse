@@ -6,19 +6,19 @@ use App\Models\Camp;
 use App\Models\Player;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Transaction;
+use App\Models\TempTransaction;
 use Inertia\Inertia;
 
 class BatchUpdateTransactionsController extends Controller
 {
     public function index(Request $request)
     {
-        // dd($request->all());
+        $totalFailedTransactionsCount = TempTransaction::failed()->count();
 
-        $eventModel = Transaction::find($request->eventId);
-        $playerModel = Transaction::find($request->playerId);
+        $eventModel = TempTransaction::find($request->eventId);
+        $playerModel = TempTransaction::find($request->playerId);
 
-        $transactions = Transaction::query()
+        $transactions = TempTransaction::query()
             ->search()
             ->where('status', '=', 'Failed')
             ->select(
@@ -39,9 +39,43 @@ class BatchUpdateTransactionsController extends Controller
                 'application_id',
             )
             ->with('player.user:id,first_name,last_name', 'camp:id,name')
-            ->orderBy('created_date', 'asc')
+            ->orderBy($request->orderByParam ?? 'created_date', $request->orderBy ?? 'asc')
             ->paginate($request->paginateBySize ?? config('app.default_transactions_pagination_size'))
             ->withQueryString();
+
+        $unAssingedCount = TempTransaction::query()
+            ->where('status', '=', 'Failed')
+            ->whereNull('camp_id')
+            ->whereNull('player_id')
+            ->count();
+
+        $unAssingedByEventCount = TempTransaction::query()
+            ->where('status', '=', 'Failed')
+            ->whereNull('camp_id')
+            ->count();
+
+        $unAssingedByPlayerCount = TempTransaction::query()
+            ->where('status', '=', 'Failed')
+            ->whereNull('player_id')
+            ->count();
+
+        $allAssignedCount = TempTransaction::query()
+            ->where('status', '=', 'Failed')
+            ->whereNotNull('camp_id')
+            ->whereNotNull('player_id')
+            ->count();
+
+        $allAssignedByEventCount = TempTransaction::query()
+            ->where('status', '=', 'Failed')
+            ->whereNotNull('camp_id')
+            ->count();
+
+        $allAssignedByPlayerCount = TempTransaction::query()
+            ->where('status', '=', 'Failed')
+            ->whereNotNull('camp_id')
+            ->count();
+
+        $transactionsCount = $transactions->count();
 
         return Inertia::render('Club/Transactions/Index', [
             'campsOptions' => $this->existingCamps(),
@@ -49,6 +83,14 @@ class BatchUpdateTransactionsController extends Controller
             'transactions' => $transactions,
             'uniqueEvents' => $this->uniqueEvents(),
             'uniquePlayers' => $this->uniquePlayers(),
+            'unAssingedCount' => $unAssingedCount,
+            'transactionsCount' => $transactionsCount,
+            'allAssignedCount' => $allAssignedCount,
+            'unAssingedByEventCount' => $unAssingedByEventCount,
+            'unAssingedByPlayerCount' => $unAssingedByPlayerCount,
+            'totalFailedTransactionsCount' => $totalFailedTransactionsCount,
+            'allAssignedByEventCount' => $allAssignedByEventCount,
+            'allAssignedByPlayerCount' => $allAssignedByPlayerCount,
             'filters' => $request->all() + [
                 'eventId' => $eventModel ? $eventModel->id : '',
                 'playerId' => $playerModel ? $playerModel->id : ''
@@ -58,7 +100,7 @@ class BatchUpdateTransactionsController extends Controller
 
     private function uniqueEvents()
     {
-        return Transaction::select('id', 'event_name')
+        return TempTransaction::select('id', 'event_name')
             ->whereNotNull('event_name')
             ->distinct()->get()
             ->map(function ($event) {
@@ -71,7 +113,7 @@ class BatchUpdateTransactionsController extends Controller
 
     public function uniquePlayers()
     {
-        return Transaction::select('id', 'description')
+        return TempTransaction::select('id', 'description')
             ->whereNotNull('description')
             ->distinct()->get()
             ->map(function ($player) {
@@ -107,16 +149,23 @@ class BatchUpdateTransactionsController extends Controller
 
     public function update(Request $request)
     {
-        $models = Transaction::query()
+        $models = TempTransaction::query()
             ->search()
             ->where('status', '=', 'Failed')
             ->get();
 
         foreach ($models as $model) {
-            $model->update([
+
+            $updateData = [
                 'camp_id' => $request->camp_id,
                 'player_id' => $request->player_id,
-            ]);
+            ];
+
+            foreach ($models as $model) {
+                $model->update(array_filter($updateData, function ($value) {
+                    return $value !== null;
+                }));
+            }
         }
 
         return redirect()->route('stripe.index')->with('success', 'Transactions updated successfully');

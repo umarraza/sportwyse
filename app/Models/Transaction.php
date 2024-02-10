@@ -6,7 +6,6 @@ use App\Models\Camp;
 use App\Models\Player;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -78,7 +77,7 @@ class Transaction extends Model
     }
 
     /**
-     * Get the player that owns the Transaction
+     * Get the player that owns the TempTransaction
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -88,69 +87,12 @@ class Transaction extends Model
     }
 
     /**
-     * Get the camp that owns the Transaction
+     * Get the camp that owns the TempTransaction
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function camp(): BelongsTo
     {
         return $this->belongsTo(Camp::class)->withDefault();
-    }
-
-    /**
-     * Apply search filters to the query.
-     *
-     * @param Builder $query The query builder instance.
-     * @return void
-     */
-    public function scopeSearch(Builder $query): void
-    {
-        $eventModel = Transaction::find(request()->eventId);
-        $playerModel = Transaction::find(request()->playerId);
-
-        $query->when(isset($eventModel), function ($q) use ($eventModel) {
-            $q->where('event_name', $eventModel->event_name);
-        })
-        ->when(isset($playerModel), function ($q) use ($playerModel) {
-            $q->where('description', $playerModel->description);
-        })
-        ->when(request()->fromDate && request()->toDate, function ($q) {
-            $q->whereDate('created_date', '>=', request()->date('fromDate'))
-                ->whereDate('created_date', '<=', request()->date('toDate'));
-        })
-        ->when(request()->fromDate && !request()->toDate, function($q) {
-            $q->whereDate('created_date', '>=', request()->date('fromDate'));
-        })
-        ->when(!request()->fromDate && request()->toDate, function($q) {
-            $q->whereDate('created_date', '<=', request()->date('toDate'));
-        })
-        ->when(request()->fromAmount && request()->toAmount, function ($q) {
-            $q->where('amount', '>=', request()->fromAmount)
-                ->where('amount', '<=', request()->toAmount);
-        })
-        ->when(request()->fromAmount && !request()->toAmount, function($q) {
-            $q->where('amount', '>=', request()->fromAmount);
-        })
-        ->when(!request()->fromAmount && request()->toAmount, function($q) {
-            $q->where('amount', '<=', request()->toAmount);
-        })
-        ->when(request()->boolean('allUnAssigned'), function ($q) {
-            $q->whereNull('player_id')->whereNull('camp_id');
-        })
-        ->when(request()->boolean('unAssignedByEvent'), function ($q) {
-            $q->whereNull('camp_id');
-        })
-        ->when(request()->boolean('unAssignedByPlayer'), function ($q) {
-            $q->whereNull('player_id');
-        })
-        ->when(request()->boolean('allAssigned'), function ($q) {
-            $q->whereNotNull('player_id')->whereNotNull('camp_id');
-        })
-        ->when(request()->boolean('assignedByEvent'), function ($q) {
-            $q->whereNotNull('camp_id');
-        })
-        ->when(request()->boolean('assignedByPlayer'), function ($q) {
-            $q->whereNotNull('player_id');
-        });
     }
 }

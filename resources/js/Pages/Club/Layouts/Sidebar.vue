@@ -30,10 +30,15 @@ import { Link } from '@inertiajs/vue3';
           <i class="fab fa-stripe-s"></i>
           <span> Stripe </span>
           </Link>
-          <Link :href="route('model-select')" class="sidebar-item">
+          <Link :href="route('transactions.index')" class="sidebar-item">
+          <i class="fab fa-stripe-s"></i>
+          <span> Transactions </span>
+          </Link>
+          
+          <!-- <Link :href="route('model-select')" class="sidebar-item">
           <i class="fab fa-stripe-s"></i>
           <span> Model Select </span>
-          </Link>
+          </Link> -->
         </ul>
       </div>
       <div class="clearfix"></div>

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Camp;
 use Inertia\Inertia;
 use App\Models\Player;
-use App\Models\Transaction;
+use App\Models\TempTransaction;
 use Illuminate\Http\Request;
 use App\Imports\TransactionsImport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -21,7 +21,8 @@ class StripeController extends Controller
     public function index(Request $request)
     {
         // Retrieve transactions with optional filters
-        $transactions = Transaction::query()
+        $transactions = TempTransaction::query()
+            ->failed()
             ->when($request->camp_id, function ($q) use ($request) {
                 $q->where('camp_id', $request->camp_id);
             })
@@ -134,7 +135,7 @@ class StripeController extends Controller
 
     public function proccess(Request $request)
     {
-        $models = Transaction::all();
+        $models = TempTransaction::all();
 
         dd($models);
     }
