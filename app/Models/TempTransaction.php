@@ -114,24 +114,30 @@ class TempTransaction extends Model
         ->when(isset($playerModel), function ($q) use ($playerModel) {
             $q->where('description', $playerModel->description);
         })
+        ->when(request()->newPlayerId, function ($q) {
+            $q->where('player_id', request()->newPlayerId);
+        })
+        ->when(request()->newEventId, function ($q) {
+            $q->where('camp_id', request()->newEventId);
+        })
         ->when(request()->fromDate && request()->toDate, function ($q) {
             $q->whereDate('created_date', '>=', request()->date('fromDate'))
                 ->whereDate('created_date', '<=', request()->date('toDate'));
         })
-        ->when(request()->fromDate && !request()->toDate, function($q) {
+        ->when(request()->fromDate && !request()->toDate, function ($q) {
             $q->whereDate('created_date', '>=', request()->date('fromDate'));
         })
-        ->when(!request()->fromDate && request()->toDate, function($q) {
+        ->when(!request()->fromDate && request()->toDate, function ($q) {
             $q->whereDate('created_date', '<=', request()->date('toDate'));
         })
         ->when(request()->fromAmount && request()->toAmount, function ($q) {
             $q->where('amount', '>=', request()->fromAmount)
                 ->where('amount', '<=', request()->toAmount);
         })
-        ->when(request()->fromAmount && !request()->toAmount, function($q) {
+        ->when(request()->fromAmount && !request()->toAmount, function ($q) {
             $q->where('amount', '>=', request()->fromAmount);
         })
-        ->when(!request()->fromAmount && request()->toAmount, function($q) {
+        ->when(!request()->fromAmount && request()->toAmount, function ($q) {
             $q->where('amount', '<=', request()->toAmount);
         })
         ->when(request()->boolean('allUnAssigned'), function ($q) {
@@ -151,6 +157,12 @@ class TempTransaction extends Model
         })
         ->when(request()->boolean('assignedByPlayer'), function ($q) {
             $q->whereNotNull('player_id');
+        })
+        ->when(request()->status, function ($q) {
+            $q->where('status', request()->status);
+        })
+        ->when(!request()->status, function ($q) {
+            $q->failed();
         });
     }
 
@@ -160,5 +172,35 @@ class TempTransaction extends Model
     public function scopeFailed(Builder $query)
     {
         $query->where('status', 'Failed');
+    }
+
+    public function scopeUnassigned($query)
+    {
+        return $query->whereNull('camp_id')->whereNull('player_id');
+    }
+
+    public function scopeAssigned($query)
+    {
+        return $query->whereNotNull('camp_id')->whereNotNull('player_id');
+    }
+
+    public function scopeAssignedByEvent($query)
+    {
+        return $query->whereNotNull('camp_id');
+    }
+
+    public function scopeUnAssignedByEvent($query)
+    {
+        return $query->whereNull('camp_id');
+    }
+
+    public function scopeAssignedByPlayer($query)
+    {
+        return $query->whereNotNull('player_id');
+    }
+
+    public function scopeUnAssignedByPlayer($query)
+    {
+        return $query->whereNull('player_id');
     }
 }

@@ -82,14 +82,14 @@
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="assignedByEvent"
                       v-model="filters.assignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="assignedByEvent">Assigned (By Event): {{ allAssignedByEventCount }}</label>
+                    <label class="custom-control-label" for="assignedByEvent">Assigned (By Event): {{ assignedByEventCount }}</label>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="assignedByPlayer"
                       v-model="filters.assignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="assignedByPlayer">Assigned (By Player): {{ allAssignedByPlayerCount }}</label>
+                    <label class="custom-control-label" for="assignedByPlayer">Assigned (By Player): {{ assignedByPlayerCount }}</label>
                   </div>
                 </div>
               </div>
@@ -98,14 +98,14 @@
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="allUnAssigned" v-model="filters.allUnAssigned"
                       data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="allUnAssigned">Pending (Event & Player): {{ unAssingedCount }}</label>
+                    <label class="custom-control-label" for="allUnAssigned">Pending (Event & Player): {{ unAssignedCount }}</label>
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="unAssignedByEvent"
                       v-model="filters.unAssignedByEvent" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="unAssignedByEvent">Pending (By Event): {{ unAssingedByEventCount }}</label>
+                    <label class="custom-control-label" for="unAssignedByEvent">Pending (By Event): {{ unAssignedByEventCount }}</label>
                   </div>
                 </div> 
           
@@ -113,7 +113,7 @@
                   <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="unAssignedByPlayer"
                       v-model="filters.unAssignedByPlayer" data-parsley-multiple="groups" data-parsley-mincheck="2">
-                    <label class="custom-control-label" for="unAssignedByPlayer">Pending (By Player): {{ unAssingedByPlayerCount }}</label>
+                    <label class="custom-control-label" for="unAssignedByPlayer">Pending (By Player): {{ unAssignedByPlayerCount }}</label>
                   </div>
                 </div>
               </div>
@@ -133,9 +133,9 @@
                       <label>Total Failed Transactions:</label>{{ totalFailedTransactionsCount }}
                       <label>Total (This Page):</label>{{ transactionsCount }}
                       <label>Total Assigned: (Event & Player)</label>{{ allAssignedCount }}
-                      <label>Total Pending (Event & Player):</label>{{ unAssingedCount }}
-                      <label>Total Pending (By Event):</label>{{ unAssingedByEventCount }}
-                      <label>Total Pending (By Player):</label>{{ unAssingedByPlayerCount }}
+                      <label>Total Pending (Event & Player):</label>{{ unAssignedCount }}
+                      <label>Total Pending (By Event):</label>{{ unAssignedByEventCount }}
+                      <label>Total Pending (By Player):</label>{{ unAssignedByPlayerCount }}
                     </div>
                     <div class="pagination">
                       <Pagination :links="transactions.links" />
@@ -237,14 +237,14 @@ const props = defineProps({
   transactions: Object,
   uniqueEvents: Object,
   uniquePlayers: Object,
-  unAssingedCount: Number,
+  unAssignedCount: Number,
   allAssignedCount: Number,
   transactionsCount: Number,
-  unAssingedByEventCount: Number,
-  unAssingedByPlayerCount: Number,
+  unAssignedByEventCount: Number,
+  unAssignedByPlayerCount: Number,
   totalFailedTransactionsCount: Number,
-  allAssignedByEventCount: Number,
-  allAssignedByPlayerCount: Number,
+  assignedByEventCount: Number,
+  assignedByPlayerCount: Number,
 });
 
 const camp_id = ref('');
