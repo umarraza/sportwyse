@@ -7,11 +7,11 @@ use Laravel\Fortify\RoutePath;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
-use App\Http\Controllers\StripeController;
 use App\Http\Controllers\JsonViewerController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\TempTransactionController;
+use App\Http\Controllers\UploadStripeDataController;
 use App\Http\Controllers\BatchUpdateTransactionsController;
 
 /*
@@ -62,7 +62,6 @@ Fortify::loginView(function () {
     ]);
 });
 
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -71,16 +70,17 @@ Route::middleware([
     Route::get('import', [JsonViewerController::class, 'index'])->name('import');
 });
 
-Route::get('stripe', [StripeController::class, 'index'])->name('stripe.index');
-Route::get('stripe/create', [StripeController::class, 'create'])->name('stripe.create');
-Route::post('stripe', [StripeController::class, 'store'])->name('stripe.store');
+Route::get('stripe', [UploadStripeDataController::class, 'index'])->name('stripe.index');
+Route::post('stripe', [UploadStripeDataController::class, 'store'])->name('stripe.store');
+Route::get('stripe/edit', [UploadStripeDataController::class, 'edit'])->name('stripe.edit');
+Route::post('stripe/update', [UploadStripeDataController::class, 'update'])->name('stripe.update');
+Route::get('stripe/create', [UploadStripeDataController::class, 'create'])->name('stripe.create');
 
 Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
 Route::post('stripe/proccess', [TransactionController::class, 'proccess'])->name('stripe.proccess');
 
 Route::patch('transactions/{transaction}', [TempTransactionController::class, 'update'])->name('transaction.update');
 Route::get('transactions/index', [BatchUpdateTransactionsController::class, 'index'])->name('transaction.batch-update.index');
-Route::post('transactions/batch-update', [BatchUpdateTransactionsController::class, 'update'])->name('transaction-batch.update');
 
 Route::middleware([
     'auth:sanctum',

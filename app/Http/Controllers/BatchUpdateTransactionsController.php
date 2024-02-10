@@ -43,18 +43,18 @@ class BatchUpdateTransactionsController extends Controller
             ->paginate($request->paginateBySize ?? config('app.default_transactions_pagination_size'))
             ->withQueryString();
 
-        $unAssingedCount = TempTransaction::query()
+        $unAssignedCount = TempTransaction::query()
             ->where('status', '=', 'Failed')
             ->whereNull('camp_id')
             ->whereNull('player_id')
             ->count();
 
-        $unAssingedByEventCount = TempTransaction::query()
+        $unAssignedByEventCount = TempTransaction::query()
             ->where('status', '=', 'Failed')
             ->whereNull('camp_id')
             ->count();
 
-        $unAssingedByPlayerCount = TempTransaction::query()
+        $unAssignedByPlayerCount = TempTransaction::query()
             ->where('status', '=', 'Failed')
             ->whereNull('player_id')
             ->count();
@@ -65,12 +65,12 @@ class BatchUpdateTransactionsController extends Controller
             ->whereNotNull('player_id')
             ->count();
 
-        $allAssignedByEventCount = TempTransaction::query()
+        $assignedByEventCount = TempTransaction::query()
             ->where('status', '=', 'Failed')
             ->whereNotNull('camp_id')
             ->count();
 
-        $allAssignedByPlayerCount = TempTransaction::query()
+        $assignedByPlayerCount = TempTransaction::query()
             ->where('status', '=', 'Failed')
             ->whereNotNull('camp_id')
             ->count();
@@ -83,14 +83,14 @@ class BatchUpdateTransactionsController extends Controller
             'transactions' => $transactions,
             'uniqueEvents' => $this->uniqueEvents(),
             'uniquePlayers' => $this->uniquePlayers(),
-            'unAssingedCount' => $unAssingedCount,
+            'unAssignedCount' => $unAssignedCount,
             'transactionsCount' => $transactionsCount,
             'allAssignedCount' => $allAssignedCount,
-            'unAssingedByEventCount' => $unAssingedByEventCount,
-            'unAssingedByPlayerCount' => $unAssingedByPlayerCount,
+            'unAssignedByEventCount' => $unAssignedByEventCount,
+            'unAssignedByPlayerCount' => $unAssignedByPlayerCount,
             'totalFailedTransactionsCount' => $totalFailedTransactionsCount,
-            'allAssignedByEventCount' => $allAssignedByEventCount,
-            'allAssignedByPlayerCount' => $allAssignedByPlayerCount,
+            'assignedByEventCount' => $assignedByEventCount,
+            'assignedByPlayerCount' => $assignedByPlayerCount,
             'filters' => $request->all() + [
                 'eventId' => $eventModel ? $eventModel->id : '',
                 'playerId' => $playerModel ? $playerModel->id : ''

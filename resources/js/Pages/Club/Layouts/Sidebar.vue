@@ -28,7 +28,7 @@ import { Link } from '@inertiajs/vue3';
           </Link>
           <Link :href="route('stripe.index')" class="sidebar-item">
           <i class="fab fa-stripe-s"></i>
-          <span> Stripe </span>
+          <span> Upload Stripe Data </span>
           </Link>
           <Link :href="route('transactions.index')" class="sidebar-item">
           <i class="fab fa-stripe-s"></i>
