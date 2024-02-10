@@ -73,6 +73,7 @@ Route::middleware([
 Route::get('stripe', [StripeController::class, 'index'])->name('stripe.index');
 Route::get('stripe/create', [StripeController::class, 'create'])->name('stripe.create');
 Route::post('stripe', [StripeController::class, 'store'])->name('stripe.store');
+Route::post('stripe/proccess', [StripeController::class, 'proccess'])->name('stripe.proccess');
 
 Route::patch('transactions/{transaction}', [TransactionController::class, 'update'])->name('transaction.update');
 Route::get('transactions/index', [BatchUpdateTransactionsController::class, 'index'])->name('transaction.batch-update.index');

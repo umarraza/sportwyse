@@ -131,6 +131,13 @@ class StripeController extends Controller
 
         return redirect()->route('stripe.index')->with('success', 'Transactions imported successfully');
     }
+
+    public function proccess(Request $request)
+    {
+        $models = Transaction::all();
+
+        dd($models);
+    }
 }
 
 

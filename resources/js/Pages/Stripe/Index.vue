@@ -142,6 +142,9 @@
                 Batch Update
               </span>
               </Link>
+              <button class="btn btn-info mr-1" @click="proccessData">
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Processing</button>
               <AddButton :routeLink="route('stripe.create')"> Import Stripe Data</AddButton>
             </div>
           </div>
@@ -254,6 +257,14 @@ watch(filters, () => {
 
 const runFilters = () => {
   router.get('/stripe', filters, {
+    preserveState: true,
+    preserveScroll: true,
+    replace: true,
+  });
+};
+
+const proccessData = () => {
+  router.post(route('stripe.proccess'), {
     preserveState: true,
     preserveScroll: true,
     replace: true,
