@@ -95,8 +95,8 @@
                   <tr>
                     <th>#</th>
                     <th>Customer Email</th>
-                    <th>Event Name (New)</th>
-                    <th>Player Name (New)</th>
+                    <th>Event Name</th>
+                    <th>Player Name</th>
                     <th>Status</th>
                     <th>Created Date</th>
                     <th>Customer ID</th>

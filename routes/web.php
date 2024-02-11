@@ -41,10 +41,19 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     }
 });
 
+Route::get('stripe', [UploadStripeDataController::class, 'index'])->name('stripe.index');
+Route::post('stripe', [UploadStripeDataController::class, 'store'])->name('stripe.store');
+Route::get('stripe/edit', [UploadStripeDataController::class, 'edit'])->name('stripe.edit');
+Route::get('stripe/create', [UploadStripeDataController::class, 'create'])->name('stripe.create');
+Route::post('stripe/update', [UploadStripeDataController::class, 'update'])->name('stripe.update');
+ 
+Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
+Route::post('stripe/proccess', [TransactionController::class, 'proccess'])->name('stripe.proccess');
+
+Route::patch('transactions/{transaction}', [TempTransactionController::class, 'update'])->name('transaction.update');
 
 
 Route::get('/', function () {
-
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -69,18 +78,6 @@ Route::middleware([
 ])->group(function () {
     Route::get('import', [JsonViewerController::class, 'index'])->name('import');
 });
-
-Route::get('stripe', [UploadStripeDataController::class, 'index'])->name('stripe.index');
-Route::post('stripe', [UploadStripeDataController::class, 'store'])->name('stripe.store');
-Route::get('stripe/edit', [UploadStripeDataController::class, 'edit'])->name('stripe.edit');
-Route::post('stripe/update', [UploadStripeDataController::class, 'update'])->name('stripe.update');
-Route::get('stripe/create', [UploadStripeDataController::class, 'create'])->name('stripe.create');
-
-Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
-Route::post('stripe/proccess', [TransactionController::class, 'proccess'])->name('stripe.proccess');
-
-Route::patch('transactions/{transaction}', [TempTransactionController::class, 'update'])->name('transaction.update');
-Route::get('transactions/index', [BatchUpdateTransactionsController::class, 'index'])->name('transaction.batch-update.index');
 
 Route::middleware([
     'auth:sanctum',

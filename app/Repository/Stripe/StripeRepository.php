@@ -39,8 +39,8 @@ class StripeRepository implements StripeRepositoryInterface
     public function update($data)
     {
         $models = TempTransaction::query()
+            ->failed()
             ->search()
-            ->where('status', '=', 'Failed')
             ->get();
 
         foreach ($models as $model) {
@@ -62,13 +62,15 @@ class StripeRepository implements StripeRepositoryInterface
 
     public function getCounts()
     {
+        $q = TempTransaction::failed();
+
         return [
-            'allAssignedCount' => TempTransaction::failed()->assigned()->count(),
-            'unAssignedCount' => TempTransaction::failed()->unassigned()->count(),
-            'assignedByEventCount' => TempTransaction::failed()->assignedByEvent()->count(),
-            'unAssignedByEventCount' => TempTransaction::failed()->unAssignedByEvent()->count(),
-            'assignedByPlayerCount' => TempTransaction::failed()->assignedByPlayer()->count(),
-            'unAssignedByPlayerCount' => TempTransaction::failed()->unAssignedByPlayer()->count(),
+            'allAssignedCount' => $q->assigned()->count(),
+            'unAssignedCount' => $q->unassigned()->count(),
+            'assignedByEventCount' => $q->assignedByEvent()->count(),
+            'unAssignedByEventCount' => $q->unAssignedByEvent()->count(),
+            'assignedByPlayerCount' => $q->assignedByPlayer()->count(),
+            'unAssignedByPlayerCount' => $q->unAssignedByPlayer()->count(),
         ];
     }
 

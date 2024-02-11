@@ -243,7 +243,7 @@ const filters = reactive({
   allAssigned: ref(props.filters.allAssigned ?? false),
   assignedByPlayer: ref(props.filters.assignedByPlayer ?? false),
   assignedByEvent: ref(props.filters.assignedByEvent ?? false),
-  status: ref(props.filters.status ?? null),
+  status: ref(props.filters.status ?? 'Failed'),
   orderByParam: ref(''),
   orderBy: ref('asc')
 });
@@ -282,7 +282,7 @@ const resetFilters = () => {
   filters.allAssigned = false;
   filters.assignedByPlayer = false;
   filters.assignedByEvent = false;
-  filters.status = null;
+  filters.status = 'Failed';
 };
 
 const playerName = (player) => {
