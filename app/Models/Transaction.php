@@ -6,6 +6,7 @@ use App\Models\Camp;
 use App\Models\Player;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -94,5 +95,48 @@ class Transaction extends Model
     public function camp(): BelongsTo
     {
         return $this->belongsTo(Camp::class)->withDefault();
+    }
+
+    public function scopeSearch(Builder $query)
+    {
+        $query->when(request()->camp_id, function ($query) {
+            $query->where('camp_id', request()->camp_id);
+        })
+        ->when(request()->player_id, function ($query) {
+            $query->where('player_id', request()->player_id);
+        })
+        ->when(request()->email, function ($query) {
+            $query->where('customer_email', 'like', "%{request()->email}%");
+        })
+        ->when(request()->customer_description, function ($query) {
+            $query->where('customer_description', 'like', '%'.request()->customer_description.'%');
+        })
+        ->when(request()->status, function ($query) {
+            $query->where('status', request()->status);
+        })
+        ->when(request()->customer_id, function ($query) {
+            $query->where('customer_id', request()->customer_id);
+        })
+        ->when(request()->event_name, function ($query) {
+            $query->where('event_name', 'like', '%'.request()->event_name.'%');
+        })
+        ->when(request()->boolean('allUnAssigned'), function ($query) {
+            $query->whereNull('player_id')->whereNull('camp_id');
+        })
+        ->when(request()->boolean('unAssignedByEvent'), function ($query) {
+            $query->whereNull('camp_id');
+        })
+        ->when(request()->boolean('unAssignedByPlayer'), function ($query) {
+            $query->whereNull('player_id');
+        })
+        ->when(request()->boolean('allAssigned'), function ($query) {
+            $query->whereNotNull('player_id')->whereNotNull('camp_id');
+        })
+        ->when(request()->boolean('assignedByEvent'), function ($query) {
+            $query->whereNotNull('camp_id');
+        })
+        ->when(request()->boolean('assignedByPlayer'), function ($query) {
+            $query->whereNotNull('player_id');
+        });
     }
 }

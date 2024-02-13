@@ -64,3 +64,7 @@
 .multiselect__tags {
     border: 1px solid #ced4da !important;
 }
+
+.error-class {
+    border: 1px solid #fc5454 !important;
+}
