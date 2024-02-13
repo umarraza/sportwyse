@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\JsonViewerController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\SearchFilterController;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\TempTransactionController;
 use App\Http\Controllers\UploadStripeDataController;
+use App\Http\Controllers\SaveSearchParametersController;
 use App\Http\Controllers\BatchUpdateTransactionsController;
 
 /*
@@ -46,10 +48,11 @@ Route::post('stripe', [UploadStripeDataController::class, 'store'])->name('strip
 Route::get('stripe/edit', [UploadStripeDataController::class, 'edit'])->name('stripe.edit');
 Route::get('stripe/create', [UploadStripeDataController::class, 'create'])->name('stripe.create');
 Route::post('stripe/update', [UploadStripeDataController::class, 'update'])->name('stripe.update');
- 
+
 Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
 Route::post('stripe/proccess', [TransactionController::class, 'proccess'])->name('stripe.proccess');
 
+Route::post('search-filters', [SearchFilterController::class, 'store'])->name('search-filters.store');
 Route::patch('transactions/{transaction}', [TempTransactionController::class, 'update'])->name('transaction.update');
 
 

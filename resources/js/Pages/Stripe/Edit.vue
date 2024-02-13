@@ -232,22 +232,25 @@
           </div>
         </div>
       </div>
-      <h3>{{ camp_id }}</h3>
       <SaveSearch 
-        :prop_filters="filters" 
-        :prop_camp_id="camp_id" 
-        :prop_player_id="player_id"
-        :camps="camps"
-        :players="players"
-        :uniqueEvents="uniqueEvents"
-        :uniquePlayers="uniquePlayers"
+        :propCampId="camp_id"
+        :propPlayerId="player_id"
+        :propToAmount="filters.toAmount"
+        :propFromAmount="filters.fromAmount"
+        :propFromDate="filters.fromDate"
+        :propToDate="filters.toDate"
+        :propOldCampName="oldCampName"
+        :propOldPlayerName="oldPlayerName"
+        :propCamps="camps"
+        :propPlayers="players"
+        :errors="errors"
         />
     </div>
   </AppLayout>
 </template>
   
 <script setup>
-import { watch, ref, reactive } from 'vue';
+import { watch, ref, reactive, onBeforeMount, onMounted } from 'vue';
 import "vue-search-select/dist/VueSearchSelect.css"
 import { ModelSelect } from 'vue-search-select'
 import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
@@ -257,6 +260,7 @@ import CancelButton from "@/Pages/Slots/CancelButton.vue";
 import SaveSearch from './SaveSearch.vue';
 
 const props = defineProps({
+  errors: Object,
   camps: Object,
   players: Object,
   filters: Object,
@@ -277,12 +281,14 @@ const props = defineProps({
 
 const camp_id = ref('');
 const player_id = ref('');
+const oldPlayerName = ref('');
+const oldCampName = ref('');
 
 const filters = reactive({
-  toDate: ref(props.filters.toDate),
+  toDate: ref(props.filters.toDate ?? ''),
   fromDate: ref(props.filters.fromDate ?? ''),
   toAmount: ref(props.filters.toAmount ?? ''),
-  fromAmount: ref(props.filters.fromAmount),
+  fromAmount: ref(props.filters.fromAmount ?? ''),
   playerId: ref(props.filters.playerId ? parseInt(props.filters.playerId) : ''),
   eventId: ref(props.filters.eventId ? parseInt(props.filters.eventId) : ''),
   paginateBySize: ref(props.filters.paginateBySize ?? 100),
@@ -302,7 +308,35 @@ const orderByParam = (param) => {
   runFilters();
 }
 
+const getPlayerAndEventNames = () => {
+  // Set the old camp and player name to show in the save search modal
+  if (filters.eventId) {
+    oldCampName.value = props.uniqueEvents.find(event => event.value === filters.eventId).text;
+  }
+  
+  if (filters.playerId) {
+    oldPlayerName.value = props.uniquePlayers.find(player => player.value === filters.playerId).text;
+  }
+}
+
+onMounted(() => {
+  var modalBackdrop = document.querySelector('.modal-backdrop fade show');
+
+  // Check if the element exists before attempting to remove it
+  if (modalBackdrop) {
+      // Remove the element from the DOM
+      modalBackdrop.parentNode.removeChild(modalBackdrop);
+  }
+}),
+
+onBeforeMount(() => {
+  getPlayerAndEventNames();
+})
+
 watch(filters, () => {
+
+  getPlayerAndEventNames();
+
   runFilters();
 }, { deep: true });
 

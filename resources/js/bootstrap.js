@@ -20,7 +20,12 @@ axios.interceptors.response.use(function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
     if (response.data.props) {
-        if (response.data.props.flash.success) {
+        
+        let message = response.data.props.flash.success;
+      
+        message = message ?? '';
+
+        if (message.length > 0) {
             toast.success(response.data.props.flash.success, {
                 position: "bottom-left",
             });
@@ -36,8 +41,8 @@ axios.interceptors.response.use(function (response) {
         const response = error.response;
 
         if (response) {
-            if (response.status === 500) {
-                toast.success(response.data.message, {
+            if (response.status === 500 && response.data.messag !== undefined) {
+                toast.error(response.data.message, {
                     position: "bottom-left",
                 });
             }
