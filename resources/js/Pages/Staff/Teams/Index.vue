@@ -3,6 +3,8 @@
 import AppLayout from '@/Pages/Staff/Layouts/AppLayout.vue';
 import Players from "@/Pages/Staff/Teams/Players.vue";
 import AddPlayer from "@/Pages/Staff/Teams/AddPlayer.vue";
+import { Link } from '@inertiajs/vue3';
+import { router } from '@inertiajs/vue3';
 
 defineProps({
   teams: {
@@ -34,28 +36,22 @@ defineProps({
                   <thead>
                     <tr>
                       <th>Team Name</th>
-                      <th>Players</th>
                       <th>Gender</th>
                       <th>Start Date</th>
                       <th>End Date</th>
                       <th>Status</th>
-                      <th>Register</th>
+                      <th>Players</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="(team, index) in teams" :key="index">
                       <td>{{ team.name }}</td>
-                      <td>
-                        <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal"
-                          :data-target="`.staffMembersModal${team.id}`"><i class="fas fa-users"></i> ({{
-                            team.players_count }})</button>
-                      </td>
                       <td>{{ team.gender }}</td>
                       <td>{{ team.start_date }}</td>
                       <td>{{ team.end_date }}</td>
                       <td>
-                        <svg v-if="team.is_archived" stroke="currentColor" fill="currentColor" stroke-width="0"
+                        <svg v-if="team.status" stroke="currentColor" fill="currentColor" stroke-width="0"
                           viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
                           style="color: rgb(12, 241, 12);">
                           <circle cx="8" cy="8" r="8"></circle>
@@ -66,15 +62,19 @@ defineProps({
                           <circle cx="8" cy="8" r="8"></circle>
                         </svg>
                       </td>
-                      <td></td>
                       <td>
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                          <button class="btn btn-primary" data-toggle="modal" :data-target="`.addPlayers${team.id}`"><i
-                              class="fa fa-plus"></i> Add Players</button>
-                        </div>
-                        <AddPlayer :team="team" :players="players" :errors="errors" />
+                        <Link :href="route('staff.teams.players.index', team.id)">Players ({{ team.players_count }})</Link>
                       </td>
-                      <Players :team="team" />
+                      <td>
+                        <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
+                          <ShowButton :routeLink="route('club.teams.show', team.id)"></ShowButton>
+                          <EditButton :routeLink="route('club.teams.edit', team.id)"></EditButton>
+                          <button type="button" class="btn btn-danger btn-sm waves-effect waves-light"
+                            @click="deleteTeam(team.id)">
+                            <i class="fa fa-trash"></i>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
