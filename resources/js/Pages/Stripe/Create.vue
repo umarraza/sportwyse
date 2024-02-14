@@ -19,7 +19,7 @@
               <div class="form-group">
                 <div class="">
                   <CancelButton :routeLink="route('stripe.index')" />
-                  <button type="submit" class="btn btn-primary waves-effect ml-1 waves-light" :disabled="form.processing">Import</button>
+                  <button type="submit" class="btn btn-primary waves-effect ml-1 waves-light" :disabled="form.processing"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" v-if="form.processing"></span> {{ !form.processing ? 'Import' : 'Importing' }}</button>
                 </div>
               </div>
             </form>
