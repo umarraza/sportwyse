@@ -64,8 +64,6 @@ class StaffTeamRepository implements StaffTeamRepositoryInterface
                 'start_date' => Carbon::parse($input['birth_year_start_date']),
                 'end_date' => Carbon::parse($input['birth_year_end_date']),
             ]);
-
-            $team->staffMembers()->sync($input['staff']);
         });
     }
 

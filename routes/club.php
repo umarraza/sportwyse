@@ -15,8 +15,6 @@ Route::name('club.')->prefix('club')->group(function () {
     Route::resource('parents', ParentController::class);
     Route::resource('parents.players', ParentPlayerController::class)->except('show')->shallow();
     Route::get('players/{player}', [ParentPlayerController::class, 'show'])->name('parent.players.show');
-    
-
     Route::resource('teams', TeamController::class);
 
     /**

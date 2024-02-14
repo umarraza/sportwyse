@@ -15,7 +15,7 @@ class TeamRepository implements TeamRepositoryInterface
      */
     public function index()
     {
-        return Team::select('id', 'name', 'gender', 'start_date', 'status', 'end_date')
+        return Team::select('id', 'name', 'gender', 'start_date', 'end_date')
                     ->withCount(['staffMembers', 'players'])
                     ->with('staffMembers.user:id,first_name,last_name', 'players')
                     ->get();

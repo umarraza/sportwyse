@@ -67,8 +67,8 @@ defineProps({
                       </td>
                       <td>
                         <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
-                          <ShowButton :routeLink="route('club.teams.show', team.id)"></ShowButton>
-                          <EditButton :routeLink="route('club.teams.edit', team.id)"></EditButton>
+                          <ShowButton :routeLink="route('staff.teams.show', team.id)"></ShowButton>
+                          <EditButton :routeLink="route('staff.teams.edit', team.id)"></EditButton>
                           <button type="button" class="btn btn-danger btn-sm waves-effect waves-light"
                             @click="deleteTeam(team.id)">
                             <i class="fa fa-trash"></i>
