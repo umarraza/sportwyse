@@ -53,6 +53,7 @@ Route::get('transactions', [TransactionController::class, 'index'])->name('trans
 Route::post('stripe/proccess', [TransactionController::class, 'proccess'])->name('stripe.proccess');
 
 Route::post('search-filters', [SearchFilterController::class, 'store'])->name('search-filters.store');
+Route::post('search-filters/run', [SearchFilterController::class, 'run'])->name('search-filters.run');
 Route::patch('transactions/{transaction}', [TempTransactionController::class, 'update'])->name('transaction.update');
 
 

@@ -6,6 +6,8 @@
           <div class="card-header">
             <h4 class="pl-2">All Transactions</h4>
             <div class="card-header-right">
+              <button type="button" class="btn btn-success waves-effect mr-1 waves-light" data-toggle="modal"
+                data-target="#runBatchScriptsModal"><i class="fa fa-terminal"></i> Run Batch Scripts</button>
               <Link :href="route('stripe.edit')" class="btn btn-warning mr-1">
               <i class="fas fa-edit"></i>
               <span>
@@ -14,6 +16,7 @@
               </Link>
               <button class="btn btn-info mr-1" @click="proccessData" v-if="transactions.data.length">
                 <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" v-if="processing"></span>
+                <i class="fa fa-database"></i>
                 {{ processing ? 'Processing' : 'Process Data' }} </button>
               <AddButton :routeLink="route('stripe.create')"> Import Stripe Data</AddButton>
             </div>
@@ -23,13 +26,15 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="col-form-label">Select Event (New)</label>
-                  <model-select :options="campOptions" v-model="filters.newEventId" placeholder="Select Event (New)"></model-select>
+                  <model-select :options="campOptions" v-model="filters.newEventId"
+                    placeholder="Select Event (New)"></model-select>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label class="col-form-label">Select Player (New)</label>
-                  <model-select :options="playerOptions" v-model="filters.newPlayerId" placeholder="Select Player (New)"></model-select>
+                  <model-select :options="playerOptions" v-model="filters.newPlayerId"
+                    placeholder="Select Player (New)"></model-select>
                 </div>
               </div>
               <div class="col-md-4">
@@ -180,6 +185,7 @@
         </div>
       </div>
     </div>
+    <RunBatchScripts :prop_scripts="savedFilters" />
   </AppLayout>
 </template>
 
@@ -191,11 +197,13 @@ import AppLayout from "@/Pages/Club/Layouts/AppLayout.vue";
 import { Link, router } from '@inertiajs/vue3';
 import Pagination from '@/Shared/Pagination.vue';
 import CancelButton from "@/Pages/Slots/CancelButton.vue";
+import RunBatchScripts from './RunBatchScripts.vue';
 
 const props = defineProps({
   camps: Object,
   players: Object,
   filters: Object,
+  savedFilters: Object,
   campsOptions: Object,
   transactions: Object,
   uniqueEvents: Object,

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Camp;
 use Inertia\Inertia;
 use App\Models\Player;
+use App\Models\SearchFilter;
 use Illuminate\Http\Request;
 use App\Models\TempTransaction;
 use App\Imports\TransactionsImport;
@@ -41,9 +42,13 @@ class UploadStripeDataController extends Controller
         $transactionsCount  = $transactions->count();
         $counts             = $this->repository->getCounts();
 
+
+        $savedFilters = SearchFilter::with(['camp:id,name','player.user:id,first_name,last_name'])->get();
+
         return Inertia::render('Stripe/Index', [
             'camps' => $camps,
             'players' => $players,
+            'savedFilters' => $savedFilters,
             'transactions' => $transactions,
             'uniqueEvents' => $this->repository->uniqueEvents(),
             'campsOptions' => $this->repository->existingCamps(),

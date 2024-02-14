@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreSearchFiltersRequest;
 use App\Models\SearchFilter;
+use Illuminate\Http\Request;
+use App\Models\TempTransaction;
+use App\Http\Requests\StoreSearchFiltersRequest;
 
 class SearchFilterController extends Controller
 {
@@ -23,5 +24,17 @@ class SearchFilterController extends Controller
         ]);
 
         return redirect()->route('stripe.index')->with('success', 'Search filter created successfully');
+    }
+
+    public function run(Request $request)
+    {
+        foreach ($request->scripts as $script) 
+        {
+            $script = SearchFilter::find($script);
+
+            $script->run();
+        }
+
+        return redirect()->route('stripe.index')->with('success', 'Scripts ran successfully.');
     }
 }
