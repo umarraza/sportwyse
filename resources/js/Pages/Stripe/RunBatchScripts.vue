@@ -11,7 +11,7 @@
                 </div>
                 <form @submit.prevent="submit">
                     <div class="modal-body">
-                        <ul>
+                        <ul v-if="prop_scripts.length">
                             <li v-for="(script, index) in prop_scripts" :key="index">
                                 <div class="custom-control custom-checkbox pl-5 pt-4 pb-4">
                                     <input type="checkbox" class="custom-control-input" :id="script.id"
@@ -49,10 +49,11 @@
                                 </div>
                             </li>
                         </ul>
+                        <p v-else class="text-center">No scripts found!</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary waves-effect waves-light"><i class="fa fa-terminal"></i> Run</button>
+                        <button type="submit" class="btn waves-effect waves-light" :disabled="!prop_scripts.length" :class="[prop_scripts.length ? 'btn-primary' : 'btn-light disabled']"><i class="fa fa-terminal"></i> Run</button>
                     </div>
                 </form>
             </div>

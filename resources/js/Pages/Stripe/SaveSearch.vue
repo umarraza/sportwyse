@@ -50,15 +50,27 @@
                             <div class="col-md-6 mt-3">
                                 <label class="col-form-label" for="newEvent">New Event:</label>
                                 <input type="text" id="newEvent" :value="campName" class="form-control"
-                                    :class="{ 'error-class': errors.camp_id }" readonly>
-                                <InputError class="mt-2" :message="errors.camp_id" />
+                                    :class="{ 'error-class': errors.camp_player }" readonly>
+                                <!-- <InputError class="mt-2" :message="errors.camp_player" /> -->
 
                             </div>
                             <div class="col-md-6 mt-3">
                                 <label class="col-form-label" for="newPlayer">New Player:</label>
                                 <input type="text" id="newPlayer" :value="playerName" class="form-control"
-                                    :class="{ 'error-class': errors.player_id }" readonly>
-                                <InputError class="mt-2" :message="errors.player_id" />
+                                    :class="{ 'error-class': errors.camp_player }" readonly>
+                                <!-- <InputError class="mt-2" :message="errors.camp_player" /> -->
+                            </div>
+                        </div>
+                        <div class="row mt-5" v-if="errors.camp_player || errors.old_camp_player">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                                    v-if="errors.camp_player">
+                                    {{ errors.camp_player }}
+                                </div>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert"
+                                    v-if="errors.old_camp_player">
+                                    {{ errors.old_camp_player }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -118,11 +130,6 @@ const props = defineProps({
         type: Array,
         required: true,
     },
-    errors: {
-        type: Object,
-        required: true,
-        default: () => ({}),
-    },
 });
 
 const campId = toRef(props, 'propCampId')
@@ -156,40 +163,67 @@ watch(() => props.propPlayerId, () => {
     if (player) playerName.value = player.user.first_name + ' ' + player.user.last_name;
 });
 
-// const form = reactive({
-//     search_name: search_name.value,
-//     camp_id: campId.value,
-//     player_id: ref(playerId.value),
-//     fromDate: fromDate.value,
-//     toDate: toDate.value,
-//     fromAmount: fromAmount.value,
-//     toAmount: toAmount.value,
-//     oldCampName: oldCampName.value,
-//     oldPlayerName: oldPlayerName.value,
-// })
+const errors = ref({});
+
+const validateForm = () => {
+    let formIsValid = true;
+    errors.value = {};
+
+    // Perform validation for each field
+
+    if (!search_name.value.trim()) {
+        errors.value.search_name = 'Search name is required.';
+        formIsValid = false;
+    }
+
+    // Validate either camp or player, but not both
+    const campIsEmpty = !campId.value;
+    const playerIsEmpty = !playerId.value;
+
+    if (campIsEmpty && playerIsEmpty) {
+        errors.value.camp_player = 'Please choose either a new event or a new player.';
+        formIsValid = false;
+    }
+
+    const oldCampIsEmpty = !oldCampName.value;
+    const oldPlayerIsEmpty = !oldPlayerName.value;
+
+    if (oldCampIsEmpty && oldPlayerIsEmpty) {
+        errors.value.old_camp_player = 'Please choose either an old event or an old player.';
+        formIsValid = false;
+    }
+
+    // Add validation for other fields here
+
+    return formIsValid;
+};
+
 
 const submit = () => {
 
-    const data = {
-        search_name: search_name.value,
-        camp_id: campId.value,
-        player_id: playerId.value,
-        fromDate: fromDate.value,
-        toDate: toDate.value,
-        fromAmount: fromAmount.value,
-        toAmount: toAmount.value,
-        oldCampName: oldCampName.value,
-        oldPlayerName: oldPlayerName.value,
-    };
+    if (validateForm()) {
+        const data = {
+            search_name: search_name.value,
+            camp_id: campId.value,
+            player_id: playerId.value,
+            fromDate: fromDate.value,
+            toDate: toDate.value,
+            fromAmount: fromAmount.value,
+            toAmount: toAmount.value,
+            oldCampName: oldCampName.value,
+            oldPlayerName: oldPlayerName.value,
+        };
 
-    router.post(route('search-filters.store'), data, {
-        preserveScroll: true,
-        preserveState: false,
-        onSuccess: () => {
-        },
-    });
+        router.post(route('search-filters.store'), data, {
+            preserveScroll: true,
+            preserveState: false,
+            onSuccess: () => {
+                document.querySelector('.close-button').click();
+            },
+        });
 
-    document.querySelector('.close-button').click();
+        document.querySelector('.close-button').click();
+    }
 };
 
 

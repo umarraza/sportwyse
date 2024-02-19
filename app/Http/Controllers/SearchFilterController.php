@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\SearchFilter;
 use Illuminate\Http\Request;
-use App\Models\TempTransaction;
-use App\Http\Requests\StoreSearchFiltersRequest;
 
 class SearchFilterController extends Controller
 {
@@ -23,7 +21,7 @@ class SearchFilterController extends Controller
             'to_amount' => $request->toAmount,
         ]);
 
-        return redirect()->route('stripe.index')->with('success', 'Search filter created successfully');
+        return redirect()->route('stripe.edit')->with('success', 'Search filter created successfully');
     }
 
     public function run(Request $request)
