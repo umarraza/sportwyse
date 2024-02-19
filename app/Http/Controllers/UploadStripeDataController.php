@@ -33,7 +33,7 @@ class UploadStripeDataController extends Controller
     {
         $totalFailedTransactionsCount = TempTransaction::failed()->count();
 
-        $camps              = Camp::all();
+        $camps              = Camp::where('club_id', auth()->user()->club->id)->get;
         $eventModel         = TempTransaction::find($request->eventId);
         $playerModel        = TempTransaction::find($request->playerId);
         $players            = Player::with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email')->get();
@@ -101,7 +101,7 @@ class UploadStripeDataController extends Controller
     {
         $totalFailedTransactionsCount = TempTransaction::failed()->count();
 
-        $camps              = Camp::all();
+        $camps              = Camp::where('club_id', auth()->user()->club->id)->get;
         $eventModel         = TempTransaction::find($request->eventId);
         $playerModel        = TempTransaction::find($request->playerId);
         $players            = Player::with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email')->get();
