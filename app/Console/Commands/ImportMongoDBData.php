@@ -127,7 +127,6 @@ class ImportMongoDBData extends Command
 
                 });
             });
-
         });
     }
 
