@@ -46,8 +46,8 @@ class StripeRepository implements StripeRepositoryInterface
         foreach ($models as $model) {
 
             $updateData = [
-                'camp_id' => $data['camp_id'],
-                'player_id' => $data['player_id'],
+                'camp_id' => $data['camp_id'] ?? NULL,
+                'player_id' => $data['player_id'] ?? NULL,
             ];
 
             foreach ($models as $model) {
@@ -62,42 +62,34 @@ class StripeRepository implements StripeRepositoryInterface
 
     public function getCounts()
     {
-        $q = TempTransaction::failed();
-
         return [
-            'allAssignedCount' => $q->assigned()->count(),
-            'unAssignedCount' => $q->unassigned()->count(),
-            'assignedByEventCount' => $q->assignedByEvent()->count(),
-            'unAssignedByEventCount' => $q->unAssignedByEvent()->count(),
-            'assignedByPlayerCount' => $q->assignedByPlayer()->count(),
-            'unAssignedByPlayerCount' => $q->unAssignedByPlayer()->count(),
+            'allAssignedCount' => TempTransaction::failed()->assigned()->count(),
+            'unAssignedCount' => TempTransaction::failed()->unassigned()->count(),
+            'assignedByEventCount' => TempTransaction::failed()->assignedByEvent()->count(),
+            'unAssignedByEventCount' => TempTransaction::failed()->unAssignedByEvent()->count(),
+            'assignedByPlayerCount' => TempTransaction::failed()->assignedByPlayer()->count(),
+            'unAssignedByPlayerCount' => TempTransaction::failed()->unAssignedByPlayer()->count(),
         ];
     }
 
     public function uniqueEvents()
     {
-        return TempTransaction::select('id', 'event_name')
-            ->whereNotNull('event_name')
-            ->distinct()->get()
-            ->map(function ($event) {
-                return [
-                    'value' => $event->id,
-                    'text' => $event->event_name,
-                ];
-            });
+        return TempTransaction::whereNotNull('event_name')->get()->groupBy('event_name')->map(function($collection, $name) {
+            return [
+                'value' => $collection->first()->id,
+                'text' => $name,
+            ];
+        })->values();
     }
 
     public function uniquePlayers()
     {
-        return TempTransaction::select('id', 'description')
-            ->whereNotNull('description')
-            ->distinct()->get()
-            ->map(function ($player) {
-                return [
-                    'value' => $player->id,
-                    'text' => $player->description,
-                ];
-            });
+        return TempTransaction::whereNotNull('description')->get()->groupBy('description')->map(function($collection, $name) {
+            return [
+                'value' => $collection->first()->id,
+                'text' => $name,
+            ];
+        })->values();
     }
 
     public function existingPlayers()

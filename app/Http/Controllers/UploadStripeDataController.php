@@ -31,6 +31,7 @@ class UploadStripeDataController extends Controller
      */
     public function index(Request $request)
     {
+
         $totalFailedTransactionsCount = TempTransaction::failed()->count();
 
         $camps              = Camp::where('club_id', auth()->user()->club->id)->get();
@@ -44,6 +45,7 @@ class UploadStripeDataController extends Controller
 
 
         $savedFilters = SearchFilter::with(['camp:id,name','player.user:id,first_name,last_name'])->get();
+
 
         return Inertia::render('Stripe/Index', [
             'camps' => $camps,
