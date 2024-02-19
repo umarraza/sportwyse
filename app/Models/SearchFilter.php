@@ -47,13 +47,29 @@ class SearchFilter extends Model
     {
         $models = TempTransaction::query()
             ->failed()
-            ->where('event_name', $this->event_name)
-            ->where('description', $this->player_name)
-            ->where(function($q) {
+            ->when(isset($this->event_name), function ($q) {
+                $q->where('event_name', $this->event_name);
+            })
+            ->when(isset($this->player_name), function ($q) {
+                $q->where('description', $this->player_name);
+            })
+            ->when($this->from_date, function($q) {
+                $q->whereDate('created_date', '>=', $this->from_date);
+            })
+            ->when($this->to_date, function($q) {
+                $q->whereDate('created_date', '<=', $this->to_date);
+            })
+            ->when($this->from_date && $this->to_date, function($q) {
                 $q->whereDate('created_date', '>=', $this->from_date)
                     ->whereDate('created_date', '<=', $this->to_date);
             })
-            ->where(function($q) {
+            ->when($this->from_amount, function($q) {
+                $q->where('amount', '>=', $this->from_amount);
+            })
+            ->when($this->to_amount, function($q) {
+                $q->where('amount', '<=', $this->to_amount);
+            })
+            ->when($this->amount, function($q) {
                 $q->where('amount', '>=', $this->from_amount)
                     ->where('amount', '<=', $this->to_amount);
             })

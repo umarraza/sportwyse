@@ -25,7 +25,7 @@
                                             <th>Event Name (New):</th>
                                             <td>{{ script.camp.name }}</td>
                                             <th>Player Name (New):</th>
-                                            <td>{{ script.player.user.first_name + ' ' + script.player.user.last_name }}</td>
+                                            <td v-if="script.player">{{ script.player.user.first_name + ' ' + script.player.user.last_name }}</td>
                                         </tr>
                                         <tr>
                                             <th>Event Name (Old):</th>
