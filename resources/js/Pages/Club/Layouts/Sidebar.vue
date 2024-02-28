@@ -34,6 +34,10 @@ import { Link } from '@inertiajs/vue3';
           <i class="fab fa-stripe-s"></i>
           <span> Transactions </span>
           </Link>
+          <Link :href="route('club.reports')" class="sidebar-item">
+          <i class="fas fa-chart-bar"></i>
+          <span> Reports </span>
+          </Link>
           
           <!-- <Link :href="route('model-select')" class="sidebar-item">
           <i class="fab fa-stripe-s"></i>
