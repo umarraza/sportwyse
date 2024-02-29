@@ -40,7 +40,7 @@ class Camp extends Model
      */
     public function teams(): BelongsToMany
     {
-        return $this->belongsToMany(Team::class);
+        return $this->belongsToMany(Team::class)->withPivot(['active', 'joining_date', 'leaving_date']);
     }
 
     /**

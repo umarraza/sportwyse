@@ -35,7 +35,7 @@ class Team extends Model
      */
     public function camps(): BelongsToMany
     {
-        return $this->belongsToMany(Camp::class);
+        return $this->belongsToMany(Camp::class)->withPivot(['active', 'joining_date', 'leaving_date']);
     }
 
     /**

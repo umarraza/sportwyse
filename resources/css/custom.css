@@ -68,3 +68,9 @@
 .error-class {
     border: 1px solid #fc5454 !important;
 }
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

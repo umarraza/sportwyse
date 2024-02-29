@@ -1,10 +1,41 @@
 <template>
   <AppLayout title="Reports">
     <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label">Select Event</label>
+                  <model-select :options="camps" v-model="filters.camp_id" placeholder="Select Event"></model-select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label">From Date</label>
+                  <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.from_date" auto-apply
+                    placeholder="From Date" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label">To Date</label>
+                  <VueDatePicker position="left" :enable-time-picker="false" v-model="filters.to_date" auto-apply
+                    placeholder="To Date" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4 class="pl-2">Reports</h4>
+            <h4 class="pl-2">Teams</h4>
           </div>
           <div class="card-body">
             <div class="table-responsive b-0" data-pattern="priority-columns">
@@ -14,8 +45,8 @@
                     <th>Team Name</th>
                     <th>Staff</th>
                     <th>Gender</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
+                    <th>Joining Date</th>
+                    <th>Leaving Date</th>
                     <th>Status</th>
                     <th>Players</th>
                     <th>Actions</th>
@@ -28,8 +59,8 @@
                       <Link href="" class="">{{ team.staff_members_count }}</Link>
                     </td>
                     <td>{{ team.gender }}</td>
-                    <td>{{ team.start_date }}</td>
-                    <td>{{ team.end_date }}</td>
+                    <td>{{ team.pivot ? team.pivot.joining_date : '' }}</td>
+                    <td>{{ team.pivot ? team.pivot.leaving_date : '' }}</td>
                     <td>
                       <svg v-if="team.status" stroke="currentColor" fill="currentColor" stroke-width="0"
                         viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +75,11 @@
                     </td>
                     <td>
                       {{ team.players_count }}
-                      </td>
+                    </td>
                     <td>
                       <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
                         <Link :href="route('club.team.reports', team.id)" class="btn btn-info">
-                          <i class="fas fa-chart-bar"></i> Players Reports
+                        <i class="fas fa-chart-bar"></i> Players Reports
                         </Link>
                       </div>
                     </td>
@@ -65,20 +96,40 @@
   
 <script setup>
 
+import "vue-search-select/dist/VueSearchSelect.css"
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
-import AddButton from "@/Pages/Slots/AddButton.vue";
-import Pagination from '@/Shared/Pagination.vue';
-import { Link } from '@inertiajs/vue3';
+import { Link, router } from '@inertiajs/vue3';
+import { ModelSelect } from 'vue-search-select'
+import { watch, ref, reactive } from 'vue';
 
-defineProps({
+const props = defineProps({
+  camps: {
+    type: Object,
+    required: true
+  },
   teams: {
     type: Object,
     required: true
-  }
+  },
+  filters: Object,
 });
 
-const playerName = (player) => {
-  return player.user ? `${player.user.first_name} ${player.user.last_name}` : '';
+const filters = reactive({
+  camp_id: ref(props.filters.camp_id ?? ''),
+  from_date: ref(props.filters.from_date ?? ''),
+  to_date: ref(props.filters.to_date ?? ''),
+});
+
+watch(filters, () => {
+  runFilters();
+}, { deep: true });
+
+const runFilters = () => {
+  router.get(route('club.reports'), filters, {
+    preserveState: true,
+    preserveScroll: true,
+    replace: true,
+  });
 };
 
 </script>

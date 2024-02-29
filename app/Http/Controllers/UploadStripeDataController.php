@@ -43,9 +43,7 @@ class UploadStripeDataController extends Controller
         $transactionsCount  = $transactions->count();
         $counts             = $this->repository->getCounts();
 
-
         $savedFilters = SearchFilter::with(['camp:id,name','player.user:id,first_name,last_name'])->get();
-
 
         return Inertia::render('Stripe/Index', [
             'camps' => $camps,

@@ -88,6 +88,9 @@
                     </tr>
                   </tbody>
                 </table>
+                <div class="pagination-container">
+                  <Pagination :links="camps.links" />
+                </div>
               </div>
             </div>
             <div v-else>
@@ -106,6 +109,7 @@ import AddButton from "@/Pages/Slots/AddButton.vue";
 import EditButton from "@/Pages/Slots/EditButton.vue";
 import ShowButton from "@/Pages/Slots/ShowButton.vue";
 import { router } from '@inertiajs/vue3';
+import Pagination from '@/Shared/Pagination.vue';
 
 const props = defineProps({
   camps: {
