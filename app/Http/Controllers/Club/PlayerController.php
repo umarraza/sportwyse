@@ -7,6 +7,7 @@ use Inertia\Inertia;
 use App\Models\Player;
 use App\Http\Controllers\Controller;
 use App\Repository\Player\PlayerRepositoryInterface;
+use App\Repository\Stripe\StripeRepositoryInterface;
 
 class PlayerController extends Controller
 {
@@ -23,8 +24,13 @@ class PlayerController extends Controller
 
     public function show(Player $player)
     {
+        $player->load('user', 'transactions.camp:id,name');
+
+        $campsOptions = app(StripeRepositoryInterface::class)->existingCamps();
+
         return Inertia::render('Club/Players/Show', [
             'player' => $this->repository->show($player),
+            'campsOptions' => $campsOptions,
         ]);
     }
 

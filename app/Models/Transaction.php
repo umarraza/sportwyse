@@ -29,6 +29,7 @@ class Transaction extends Model
         'created_date',
         'customer_id',
         'status',
+        'payment_type',
         'invoice_number',
         'amount',
         'currency',
