@@ -36,6 +36,6 @@ Route::name('club.')->prefix('club')->group(function () {
     Route::post('player/{player}/teams/{team}/update-status', [PlayerController::class, 'updateStatus'])->name('players.teams.update-status');
 
     Route::get('reports', [ReportingController::class, 'index'])->name('reports');
-    Route::get('teams/{team}/report', [ReportingController::class, 'playerReports'])->name('team.reports');
+    Route::get('camps/{camp}/teams/{team}/report', [ReportingController::class, 'playerReports'])->name('team.reports');
     Route::get('teams/{team}/players/{player}/report', [ReportingController::class, 'finalReport'])->name('team.reports.final');
 });

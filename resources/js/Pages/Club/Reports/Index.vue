@@ -30,7 +30,6 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -43,7 +42,6 @@
                 <thead>
                   <tr>
                     <th>Team Name</th>
-                    <th>Staff</th>
                     <th>Gender</th>
                     <th>Joining Date</th>
                     <th>Leaving Date</th>
@@ -53,11 +51,8 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(team, index) in teams" :key="index">
+                  <tr v-for="(team, index) in teams.data" :key="index">
                     <td>{{ team.name }}</td>
-                    <td>
-                      <Link href="" class="">{{ team.staff_members_count }}</Link>
-                    </td>
                     <td>{{ team.gender }}</td>
                     <td>{{ team.pivot ? team.pivot.joining_date : '' }}</td>
                     <td>{{ team.pivot ? team.pivot.leaving_date : '' }}</td>
@@ -77,8 +72,8 @@
                       {{ team.players_count }}
                     </td>
                     <td>
-                      <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
-                        <Link :href="route('club.team.reports', team.id)" class="btn btn-info">
+                      <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center" v-if="filters.camp_id">
+                        <Link :href="route('club.team.reports', [filters.camp_id, team.id])" class="btn btn-info">
                         <i class="fas fa-chart-bar"></i> Players Reports
                         </Link>
                       </div>
@@ -86,6 +81,11 @@
                   </tr>
                 </tbody>
               </table>
+              <div class="pagination-container">
+                <div class="pagination">
+                  <Pagination :links="teams.links" />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -100,7 +100,8 @@ import "vue-search-select/dist/VueSearchSelect.css"
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
 import { Link, router } from '@inertiajs/vue3';
 import { ModelSelect } from 'vue-search-select'
-import { watch, ref, reactive } from 'vue';
+import { watch, ref, reactive, onMounted } from 'vue';
+import Pagination from '@/Shared/Pagination.vue';
 
 const props = defineProps({
   camps: {
@@ -111,13 +112,13 @@ const props = defineProps({
     type: Object,
     required: true
   },
-  filters: Object,
+  prop_filters: Object,
 });
 
 const filters = reactive({
-  camp_id: ref(props.filters.camp_id ?? ''),
-  from_date: ref(props.filters.from_date ?? ''),
-  to_date: ref(props.filters.to_date ?? ''),
+  camp_id: ref(props.prop_filters.camp_id ? parseInt(props.prop_filters.camp_id) : ''),
+  from_date: ref(props.prop_filters.from_date ?? ''),
+  to_date: ref(props.prop_filters.to_date ?? ''),
 });
 
 watch(filters, () => {
@@ -133,3 +134,12 @@ const runFilters = () => {
 };
 
 </script>
+
+<style scoped>
+.pagination-container {
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style>

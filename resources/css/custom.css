@@ -74,3 +74,23 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.btn {
+    text-transform: uppercase !important;
+    vertical-align: bottom !important;
+    border: 0 !important;
+    box-shadow: 0 4px 9px -4px rgba(0,0,0,.35) !important;
+    font-weight: 500 !important;
+    padding: 0.625rem 1.5rem 0.5rem !important;
+    font-size: .75rem !important;
+    line-height: 1.5 !important;
+}
+
+.btn-primary {
+    background-color: #3b71ca !important;
+}
+
+.btn-secondary {
+    background-color: #e2eaf7 !important;
+    color: #294f8d !important;
+}
