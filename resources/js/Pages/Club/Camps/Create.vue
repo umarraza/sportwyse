@@ -4,7 +4,7 @@
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
-            <h4>Crate Event</h4>
+            <h4>Create Event</h4>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.camps.index')"> Back</BackToList>
             </div>

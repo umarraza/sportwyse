@@ -52,7 +52,7 @@ class CampRepository implements CampRepositoryInterface
                 'installment' => $data['installment'],
             ]);
     
-            $camp->teams()->attach($data['teams']);
+            $camp->teams()->attach($data['teams'], ['joining_date' => now()]);
         });
     }
 
@@ -87,8 +87,14 @@ class CampRepository implements CampRepositoryInterface
                 'payment_pay_type' => $data['payment_pay_type'],
                 'installment' => $data['installment'],
             ]);
-    
-            $camp->teams()->sync($data['teams']);
+
+            $existingTeams = $camp->teams()->pluck('id')->toArray();
+
+            $newTeams = $data['teams'];
+
+            $teamsToAdd = array_diff($newTeams, $existingTeams);
+
+            $camp->teams()->attach($teamsToAdd, ['joining_date' => now()]);
         });
     }
 
