@@ -4,9 +4,11 @@ namespace App\Models;
 
 use App\Models\Team;
 use App\Models\Guardian;
+use App\Models\Transaction;
 use App\Traits\Scopes\ClubScope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -57,5 +59,15 @@ class Player extends Model
     public function guardian(): BelongsTo
     {
         return $this->belongsTo(Guardian::class, 'guardian_id');
+    }
+
+    /**
+     * Get all of the transactions for the Player
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactions(): HasMany
+    {
+        return $this->hasMany(Transaction::class);
     }
 }
