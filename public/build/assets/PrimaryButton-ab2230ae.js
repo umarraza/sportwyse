@@ -1,0 +1,1 @@
+import{o as r,e as s,r as n}from"./app-e45a4bc1.js";const o=["type"],c={__name:"PrimaryButton",props:{type:{type:String,default:"submit"}},setup(t){return(e,a)=>(r(),s("button",{type:t.type,class:"btn btn-primary btn-block btn-lg waves-effect waves-light"},[n(e.$slots,"default")],8,o))}};export{c as _};

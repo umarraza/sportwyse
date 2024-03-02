@@ -1,1 +1,0 @@
-import{o as t,c as r,w as s,a as n,r as o,u as c,l,f as u}from"./app-7a8b179d.js";const d={__name:"CancelButton",props:{routeLink:{type:String}},setup(e){return(a,f)=>(t(),r(c(l),{href:e.routeLink,class:"btn btn-secondary waves-effect"},{default:s(()=>[n("span",null,[o(a.$slots,"default",{},()=>[u("Cancel")])])]),_:3},8,["href"]))}};export{d as default};
