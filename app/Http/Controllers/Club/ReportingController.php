@@ -219,9 +219,11 @@ class ReportingController extends Controller
                 $query->whereDate('transactions.created_date', '>=', $from_date)
                     ->whereDate('transactions.created_date', '<=', $to_date);
             })
-            ->whereYear('transactions.created_date', $request->year)
+            ->where(function ($query) use ($request) {
+                $query->whereYear('transactions.created_date', $request->year)
+                ->orWhereRaw('MONTH(created_date) = ?', [date('m', strtotime($request->month))]);
+            })
             ->select('id', DB::raw("DATE_FORMAT(created_date, '%m-%d-%Y') as date"), 'amount', 'payment_type')
-            ->whereRaw('MONTH(created_date) = ?', [date('m', strtotime($request->month))])
             ->get();
 
         return response()->json($payments);
