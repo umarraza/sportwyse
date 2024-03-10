@@ -6,10 +6,10 @@
           <div class="card-header">
             <h4 class="pl-2">{{ team.name }}</h4>
             <div class="card-header-right">
-              <BackToList :backToListRoute="route('club.reports')"> Back</BackToList>
-              <button type="button" class="btn btn-primary waves-effect waves-light" data-toggle="modal"
-          data-target=".add-transaction-modal"><i class="fas fa-plus"></i> Add</button>
-        <!-- <AddTransactionModal :players="players" /> -->
+              <BackToList :backToListRoute="route('club.reports')" class="mr-1"> Back</BackToList>
+              <button type="button" class="btn btn-success waves-effect waves-light" data-toggle="modal"
+                data-target=".add-transaction-modal"><i class="fas fa-plus"></i> Add Payment</button>
+              <AddTransactionModal :propPlayerOptions="playerOptions" :propCampId="camp.id" :propTeamId="team.id" />
             </div>
           </div>
           <div class="card-body">
@@ -22,7 +22,8 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="year" class="col-form-label">Select Year</label>
-                  <select class="form-control form-select" :disabled="diffInYears <= 0" v-model="filters.year" @change="getYearlyData">
+                  <select class="form-control form-select" v-model="filters.year"
+                    @change="getYearlyData">
                     <option value="">Select Year</option>
                     <option :value="item" v-for="(item, index) in years" :key="index">{{ item }}</option>
                   </select>
@@ -228,6 +229,10 @@ const props = defineProps({
     type: String,
     required: false
   },
+  campsOptions: {
+    type: Array,
+    required: true
+  },
 });
 
 const playersList = ref(props.players);
@@ -235,6 +240,14 @@ const playersList = ref(props.players);
 const year = ref('');
 const diffInYears = ref(props.yearDiff);
 const years = ref(props.propYears);
+
+
+const playerOptions = props.players.map((player) => {
+  return {
+    value: player.id,
+    text: player.first_name + ' ' + player.last_name,
+  }
+});
 
 const filters = reactive({
   year: ref(''),
@@ -244,11 +257,11 @@ const filters = reactive({
 });
 
 watch(filters, () => {
-  
+
   if (filters.to_date === null) {
     year.value = '';
   }
-  
+
   runFilters();
 }, { deep: true });
 

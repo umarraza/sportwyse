@@ -6,9 +6,19 @@ use App\Models\Player;
 use App\Models\Transaction;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePlayerTransactionRequest;
+use App\Repository\Club\PlayerTransaction\PlayerTransactionRepositoryInterface;
 
 class PlayerTransactionController extends Controller
 {
+    /**
+     * PlayerTransactionController constructor.
+     *
+     * @param PlayerTransactionRepositoryInterface $repository The repository for player transactions.
+     */
+    public function __construct(private PlayerTransactionRepositoryInterface $repository)
+    {
+    }
+
     /**
      * Store a new player transaction.
      *
@@ -18,13 +28,11 @@ class PlayerTransactionController extends Controller
      */
     public function store(StorePlayerTransactionRequest $request, Player $player) 
     {
-        $player->transactions()->create([
-            'created_date' => $request->date('date'),
-            'amount' => $request->amount,
-            'camp_id' => $request->camp_id,
-            'payment_type' => $request->payment_type,
-            'status' => 'Paid'
-        ]);
+        $this->repository->store($request->all(), $player);
+
+        if($request->boolean('redirect_otherwise')) {
+            return redirect()->route('club.player.reports', [$request->camp_id, $request->player_id])->with('success', 'Transaction added successfully');
+        }
 
         return redirect()->route('club.players.details', $player->id)->with('success', 'Transaction added successfully');
     }

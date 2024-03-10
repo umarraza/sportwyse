@@ -133,7 +133,7 @@ class ReportingController extends Controller
             $yearDiff = $maxDate->diffInYears($minDate);
         }
 
-        if (!$from_date && !$to_date) {
+        if ((!$from_date && !$to_date) || !$request->to_date) {
 
             $models = Team::join('player_team as pt', function (JoinClause $join) use ($team) {
                 $join->on('teams.id', '=', 'pt.team_id')
@@ -180,11 +180,14 @@ class ReportingController extends Controller
             return response()->json($response);
         }
 
+        $campsOptions = app(StripeRepositoryInterface::class)->existingCamps();
+
         return Inertia::render('Club/Reports/Players', [
             'team' => $team,
             'camp' => $camp,
             'players' => $players,
             'yearDiff' => $yearDiff,
+            'campsOptions' => $campsOptions,
             'from_date' => $from_date ? $from_date->format('Y-m-d') : '',
             'to_date' => $to_date ? $to_date->format('Y-m-d') : '',
             'propYears' => $formattedYears,
@@ -212,7 +215,7 @@ class ReportingController extends Controller
                 $query->whereDate('transactions.created_date', '<=', $to_date)
                     ->whereYear('transactions.created_date', $to_date->year);
             })
-            ->when($from_date && $to_date, function ($query) use ($request, $from_date, $to_date) {
+            ->when($from_date && $to_date, function ($query) use ($from_date, $to_date) {
                 $query->whereDate('transactions.created_date', '>=', $from_date)
                     ->whereDate('transactions.created_date', '<=', $to_date);
             })

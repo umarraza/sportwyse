@@ -23,7 +23,7 @@ class StorePlayerTransactionRequest extends FormRequest
     {
         return [
             'amount' => 'required',
-            'camp_id' => 'required',
+            'camp_id' => 'required|sometimes',
         ];
     }
 
