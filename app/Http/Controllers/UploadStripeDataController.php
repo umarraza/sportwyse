@@ -31,7 +31,6 @@ class UploadStripeDataController extends Controller
      */
     public function index(Request $request)
     {
-
         $totalFailedTransactionsCount = TempTransaction::failed()->count();
 
         $camps              = Camp::where('club_id', auth()->user()->club->id)->get();

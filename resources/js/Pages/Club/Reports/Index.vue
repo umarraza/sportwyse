@@ -37,7 +37,7 @@
             <h4 class="pl-2">Teams</h4>
           </div>
           <div class="card-body">
-            <div class="table-responsive b-0" data-pattern="priority-columns">
+            <div class="table-responsive b-0" data-pattern="priority-columns" v-if="teams.data">
               <table id="tech-companies-1" class="table  table-striped">
                 <thead>
                   <tr>
@@ -46,7 +46,6 @@
                     <th>Joining Date</th>
                     <th>Leaving Date</th>
                     <th>Status</th>
-                    <th>Players</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -54,8 +53,8 @@
                   <tr v-for="(team, index) in teams.data" :key="index">
                     <td>{{ team.name }}</td>
                     <td>{{ team.gender }}</td>
-                    <td>{{ team.pivot ? team.pivot.joining_date : '' }}</td>
-                    <td>{{ team.pivot ? team.pivot.leaving_date : '' }}</td>
+                    <td>{{ formatDate(team.joining_date) }}</td>
+                    <td>{{ formatDate(team.leaving_date) }}</td>
                     <td>
                       <svg v-if="team.status" stroke="currentColor" fill="currentColor" stroke-width="0"
                         viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
@@ -69,11 +68,8 @@
                       </svg>
                     </td>
                     <td>
-                      {{ team.players_count }}
-                    </td>
-                    <td>
                       <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center" v-if="filters.camp_id">
-                        <Link :href="route('club.team.reports', [filters.camp_id, team.id])" class="btn btn-info">
+                        <Link :href="`/club/camps/${filters.camp_id}/teams/${team.id}/report?from_date=${filters.from_date}&to_date=${filters.to_date}`" class="btn btn-info">
                         <i class="fas fa-chart-bar"></i> Players Reports
                         </Link>
                       </div>
@@ -85,6 +81,11 @@
                 <div class="pagination">
                   <Pagination :links="teams.links" />
                 </div>
+              </div>
+            </div>
+            <div v-else>
+              <div class="text-center">
+                <p>Please select an event to view teams.</p>
               </div>
             </div>
           </div>
@@ -102,6 +103,7 @@ import { Link, router } from '@inertiajs/vue3';
 import { ModelSelect } from 'vue-search-select'
 import { watch, ref, reactive, onMounted } from 'vue';
 import Pagination from '@/Shared/Pagination.vue';
+import moment from 'moment';
 
 const props = defineProps({
   camps: {
@@ -131,6 +133,10 @@ const runFilters = () => {
     preserveScroll: true,
     replace: true,
   });
+};
+
+const formatDate = (date, format = 'M-D-YYYY') => {
+  return date ? moment(date).format(format) : '-';
 };
 
 </script>
