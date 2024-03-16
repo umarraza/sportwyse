@@ -1,2330 +1,2332 @@
-[{
-  "_id": "65c1c987-efcc-4c5f-8f29-04157daa2e36",
-  "gotSportClubId": "13087",
-  "parent_members": 1496,
-  "child_members": 1204,
-  "invoiced": 896180.8600000486,
-  "paid": 881728.5256667153,
-  "pending": 1485.9399999999998,
-  "registrations": 2681,
-  "product": {
-    "id": "prod_IuGoeuU2BIrmLF",
-    "object": "product",
-    "active": true,
-    "attributes": [],
-    "created": 1612762020,
-    "images": [],
-    "livemode": true,
-    "name": "userId:acct_1IISGM2fr7fmjgxm",
-    "type": "service",
-    "updated": 1612762020
-  },
-  "adminUserId": "30202668-37b2-436f-be67-7f28bf15780a",
-  "scope": "express",
-  "loginLink": "https://connect.stripe.com/express/pI42p7FMpTxu",
-  "livemode": true,
-  "token_type": "bearer",
-  "access_token": "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",
-  "refresh_token": "rt_IuGoBIuYUIXgNsplCQUy3489CPwoqnNHqCOqsjNTXTqgz5s7",
-  "stripe_user_id": "acct_1IISGM2fr7fmjgxm",
-  "stripe_publishable_key": "pk_live_51IISGM2fr7fmjgxmXsvDTTeVvl42TAbY8yHG7oR5bkAb5lLy1UnhhZIYaBQrqkJpPf23PiXfyyaXm9zKmwYKHGD7009dIexDlm",
-  "newsDetails": [
+[
     {
-      "_id": "c96c8174-a1ab-41af-8c91-7bdfddcf47c2",
-      "url": "https://www.usclubsoccer.org/registration-player-age-divisions",
-      "name": "Player Age Chart",
-      "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1616090752315_birthmatrix.png"
+        "_id": "65c1c987-efcc-4c5f-8f29-04157daa2e36",
+        "gotSportClubId": "13087",
+        "parent_members": 1619.0,
+        "child_members": 1323.0,
+        "invoiced": 916079.9800000527,
+        "paid": 901116.9156667194,
+        "pending": 1276.6699999999998,
+        "registrations": 2709.0,
+        "product": {
+            "id": "prod_IuGoeuU2BIrmLF",
+            "object": "product",
+            "active": true,
+            "attributes": [],
+            "created": 1612762020,
+            "images": [],
+            "livemode": true,
+            "name": "userId:acct_1IISGM2fr7fmjgxm",
+            "type": "service",
+            "updated": 1612762020
+        },
+        "adminUserId": "30202668-37b2-436f-be67-7f28bf15780a",
+        "scope": "express",
+        "loginLink": "https://connect.stripe.com/express/pI42p7FMpTxu",
+        "livemode": true,
+        "token_type": "bearer",
+        "access_token": "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",
+        "refresh_token": "rt_IuGoBIuYUIXgNsplCQUy3489CPwoqnNHqCOqsjNTXTqgz5s7",
+        "stripe_user_id": "acct_1IISGM2fr7fmjgxm",
+        "stripe_publishable_key": "pk_live_51IISGM2fr7fmjgxmXsvDTTeVvl42TAbY8yHG7oR5bkAb5lLy1UnhhZIYaBQrqkJpPf23PiXfyyaXm9zKmwYKHGD7009dIexDlm",
+        "newsDetails": [
+            {
+                "_id": "c96c8174-a1ab-41af-8c91-7bdfddcf47c2",
+                "url": "https://www.usclubsoccer.org/registration-player-age-divisions",
+                "name": "Player Age Chart",
+                "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1616090752315_birthmatrix.png"
+            },
+            {
+                "_id": "e796badc-93c5-4e08-9e15-479d8eba2fa4",
+                "url": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&portalid=12879&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=369761",
+                "name": "Rush Soccer Kit Reveal 2021",
+                "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1614701463902_Local-Slider.png"
+            },
+            {
+                "_id": "5ad936d0-3524-43bd-8372-b73e6de1c477",
+                "url": "https://smile.amazon.com/ref=smi_ext_ch_81-3076892_dl?_encoding=UTF8&ein=81-3076892&ref_=smi_chpf_redirect&ref_=smi_ext_ch_81-3076892_cl",
+                "name": "Support San Jose Rush",
+                "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1615045956381_amazonsmile.jpg"
+            },
+            {
+                "_id": "b7260f16-b7fc-4080-a0ba-8428badf13c6",
+                "url": "https://www.youtube.com/watch?v=j9TKUa-X2Ec",
+                "name": "San Jose Rush Select Coach Staff",
+                "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1616104652681_hugo.JPG"
+            },
+            {
+                "_id": "305cc4c6-6863-4a2b-b53c-9388261476b1",
+                "url": "https://norcalpremier.com/return-to-play-competition-policies-faq/",
+                "name": "Return to Play Competition Policies/FAQ",
+                "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1614959704679_norcal-emblem.png"
+            },
+            {
+                "_id": "72ed2a29-6991-4c03-ac90-53fb77fde270",
+                "url": "https://learning.ussoccer.com/referee/courses/available/6/details/2199",
+                "name": "Referee Info",
+                "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1615917379738_referee.jpg"
+            }
+        ],
+        "createdAt": {
+            "$date": "2021-04-12T19:28:46.965Z"
+        },
+        "updatedAt": {
+            "$date": "2024-03-14T05:14:10.556Z"
+        },
+        "__v": 0,
+        "name": "San Jose Rush",
+        "registerForm": [
+            {
+                "page": 1,
+                "name": "step 1",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff info"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": 1,
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 2,
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 3,
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 4,
+                        "placeholder": "Relationship with child",
+                        "keyName": "relationShipWithChild",
+                        "name": "relationShipWithChild",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 5,
+                        "placeholder": "Player First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 6,
+                        "placeholder": "Player Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 7,
+                        "placeholder": "Player Birthday",
+                        "keyName": "birthday",
+                        "name": "Birthday",
+                        "inputType": "datepicker",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 8,
+                        "placeholder": "Player Phone (Optional)",
+                        "keyName": "playerPhone",
+                        "name": "Player Phone",
+                        "inputType": "number",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
+                        "placeholder": "Select Parent | Guardian | Staff",
+                        "keyName": "parentId",
+                        "name": "parentId",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": []
+                    },
+                    {
+                        "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
+                        "placeholder": "Player Email (Optional)",
+                        "keyName": "playerEmail",
+                        "name": "Player Email",
+                        "inputType": "text",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9a33285f-e3eb-496a-910a-2e7b94167fc1",
+                        "placeholder": "Gender",
+                        "keyName": "gender",
+                        "name": "Gender",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Male",
+                            "Female"
+                        ]
+                    },
+                    {
+                        "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
+                        "placeholder": "Address",
+                        "keyName": "address",
+                        "name": "Address",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
+                        "placeholder": "City",
+                        "keyName": "city",
+                        "name": "City",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
+                        "placeholder": "State",
+                        "keyName": "state",
+                        "name": "State",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
+                        "placeholder": "Zip code",
+                        "keyName": "zipcode",
+                        "name": "Zip code",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 111,
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": 222,
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": 3,
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "a5e9c6d5-6924-4191-84e6-ba4d6410ac4a",
+                        "placeholder": "Coach Name",
+                        "keyName": "coachName",
+                        "name": "Coach Name",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "29a8600b-ed1e-4d3d-a7d2-fcf499e7bb33",
+                        "placeholder": "Program",
+                        "keyName": "event",
+                        "name": "Program",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Competitive",
+                            "Recreation"
+                        ]
+                    }
+                ]
+            },
+            {
+                "page": 2,
+                "name": "step 2",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Profile"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Profile"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": 10,
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 12,
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 13,
+                        "placeholder": "Birth Certificate",
+                        "keyName": "birthCertificate",
+                        "name": "birthCertificate",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "Photo",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
+                        "placeholder": "Staff Certificate",
+                        "keyName": "staffCertificate",
+                        "name": "Staff Certificate",
+                        "inputType": "fileupload",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "715d6603-9af6-4420-a333-5df39f11aa65",
+                        "placeholder": "NorCal - US CLUB form",
+                        "keyName": "norCal-USCLUBform",
+                        "name": "NorCal - US CLUB form",
+                        "inputType": "fileupload",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "8b36e167-2439-4e13-ac0d-0cd079e61bad",
+                        "placeholder": "CalNorth - 1601 form",
+                        "keyName": "calNorth-1601form",
+                        "name": "CalNorth - 1601 form",
+                        "inputType": "fileupload",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "type": "image"
+                    }
+                ]
+            }
+        ],
+        "childRegisteredForEvent": 2464.0,
+        "parentRegisteredForEvent": 207.0,
+        "links": [
+            {
+                "_id": "8fdbb384-6319-487e-b687-c9fa56ecc919",
+                "url": "https://sanjoserush.com",
+                "name": "About",
+                "icon": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/links/1615557103780_about.png"
+            }
+        ],
+        "refund": 13351.39433333333,
+        "staticRushNationalNews": [
+            [
+                {
+                    "guid": "https://rush.sportwyse.com",
+                    "post_title": "Rush Soccer",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
+                    "post_title": "Rush Lobos thriving with four teams in USYS nationals",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
+                    "post_title": "From Colorado to Valencia, Spain",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
+                    "post_title": "Colorado Rush WPSL Team",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
+                    "post_title": "Rush Players Signed With AS Monaco Feminine",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
+                }
+            ]
+        ],
+        "SPIEvent": false,
+        "clubEmails": []
     },
-    {
-      "_id": "e796badc-93c5-4e08-9e15-479d8eba2fa4",
-      "url": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&portalid=12879&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=369761",
-      "name": "Rush Soccer Kit Reveal 2021",
-      "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1614701463902_Local-Slider.png"
-    },
-    {
-      "_id": "5ad936d0-3524-43bd-8372-b73e6de1c477",
-      "url": "https://smile.amazon.com/ref=smi_ext_ch_81-3076892_dl?_encoding=UTF8&ein=81-3076892&ref_=smi_chpf_redirect&ref_=smi_ext_ch_81-3076892_cl",
-      "name": "Support San Jose Rush",
-      "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1615045956381_amazonsmile.jpg"
-    },
-    {
-      "_id": "b7260f16-b7fc-4080-a0ba-8428badf13c6",
-      "url": "https://www.youtube.com/watch?v=j9TKUa-X2Ec",
-      "name": "San Jose Rush Select Coach Staff",
-      "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1616104652681_hugo.JPG"
-    },
-    {
-      "_id": "305cc4c6-6863-4a2b-b53c-9388261476b1",
-      "url": "https://norcalpremier.com/return-to-play-competition-policies-faq/",
-      "name": "Return to Play Competition Policies/FAQ",
-      "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1614959704679_norcal-emblem.png"
-    },
-    {
-      "_id": "72ed2a29-6991-4c03-ac90-53fb77fde270",
-      "url": "https://learning.ussoccer.com/referee/courses/available/6/details/2199",
-      "name": "Referee Info",
-      "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1615917379738_referee.jpg"
-    }
-  ],
-  "createdAt": {
-    "$date": "2021-04-12T19:28:46.965Z"
-  },
-  "updatedAt": {
-    "$date": "2023-11-06T17:50:53.157Z"
-  },
-  "__v": 0,
-  "name": "San Jose Rush",
-  "registerForm": [
-    {
-      "page": 1,
-      "name": "step 1",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult info"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player info"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff info"
-        }
-      ],
-      "fields": [
-        {
-          "_id": 1,
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 2,
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 3,
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 4,
-          "placeholder": "Relationship with child",
-          "keyName": "relationShipWithChild",
-          "name": "relationShipWithChild",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 5,
-          "placeholder": "Player First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 6,
-          "placeholder": "Player Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 7,
-          "placeholder": "Player Birthday",
-          "keyName": "birthday",
-          "name": "Birthday",
-          "inputType": "datepicker",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 8,
-          "placeholder": "Player Phone (Optional)",
-          "keyName": "playerPhone",
-          "name": "Player Phone",
-          "inputType": "number",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
-          "placeholder": "Select Parent | Guardian | Staff",
-          "keyName": "parentId",
-          "name": "parentId",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": []
-        },
-        {
-          "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
-          "placeholder": "Player Email (Optional)",
-          "keyName": "playerEmail",
-          "name": "Player Email",
-          "inputType": "text",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9a33285f-e3eb-496a-910a-2e7b94167fc1",
-          "placeholder": "Gender",
-          "keyName": "gender",
-          "name": "Gender",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Male",
-            "Female"
-          ]
-        },
-        {
-          "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
-          "placeholder": "Address",
-          "keyName": "address",
-          "name": "Address",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
-          "placeholder": "City",
-          "keyName": "city",
-          "name": "City",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
-          "placeholder": "State",
-          "keyName": "state",
-          "name": "State",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
-          "placeholder": "Zip code",
-          "keyName": "zipcode",
-          "name": "Zip code",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 111,
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": 222,
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": 3,
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "a5e9c6d5-6924-4191-84e6-ba4d6410ac4a",
-          "placeholder": "Coach Name",
-          "keyName": "coachName",
-          "name": "Coach Name",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "29a8600b-ed1e-4d3d-a7d2-fcf499e7bb33",
-          "placeholder": "Program",
-          "keyName": "event",
-          "name": "Program",
-          "inputType": "dropdown",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Competitive",
-            "Recreation"
-          ]
-        }
-      ]
-    },
-    {
-      "page": 2,
-      "name": "step 2",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Profile"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Profile"
-        }
-      ],
-      "fields": [
-        {
-          "_id": 10,
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 12,
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 13,
-          "placeholder": "Birth Certificate",
-          "keyName": "birthCertificate",
-          "name": "birthCertificate",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "Photo",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
-          "placeholder": "Staff Certificate",
-          "keyName": "staffCertificate",
-          "name": "Staff Certificate",
-          "inputType": "fileupload",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "715d6603-9af6-4420-a333-5df39f11aa65",
-          "placeholder": "NorCal - US CLUB form",
-          "keyName": "norCal-USCLUBform",
-          "name": "NorCal - US CLUB form",
-          "inputType": "fileupload",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "8b36e167-2439-4e13-ac0d-0cd079e61bad",
-          "placeholder": "CalNorth - 1601 form",
-          "keyName": "calNorth-1601form",
-          "name": "CalNorth - 1601 form",
-          "inputType": "fileupload",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "type": "image"
-        }
-      ]
-    }
-  ],
-  "childRegisteredForEvent": 2442,
-  "parentRegisteredForEvent": 207,
-  "links": [
-    {
-      "_id": "8fdbb384-6319-487e-b687-c9fa56ecc919",
-      "url": "https://sanjoserush.com",
-      "name": "About",
-      "icon": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/links/1615557103780_about.png"
-    }
-  ],
-  "refund": 12631.39433333333,
-  "staticRushNationalNews": [
-    [
-      {
-        "guid": "https://rush.sportwyse.com",
-        "post_title": "Rush Soccer",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
-        "post_title": "Rush Lobos thriving with four teams in USYS nationals",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
-        "post_title": "From Colorado to Valencia, Spain",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
-        "post_title": "Colorado Rush WPSL Team",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
-        "post_title": "Rush Players Signed With AS Monaco Feminine",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
-      }
-    ]
-  ],
-  "SPIEvent": false,
-  "clubEmails": []
-},
 {
-  "_id": "7a673cb5-e965-42a9-8614-00edb1d81f8a",
-  "parent_members": 888,
-  "child_members": 770,
-  "parentRegisteredForEvent": 39,
-  "childRegisteredForEvent": 646,
-  "invoiced": 733859.279999998,
-  "paid": 712255.668333332,
-  "pending": 3265.98,
-  "refund": 17110.8266666667,
-  "registrations": 688,
-  "product": {
-    "id": "prod_JTKOXaAqK3WxI0",
-    "object": "product",
-    "active": true,
-    "attributes": [],
-    "created": 1620847726,
-    "description": null,
-    "images": [],
-    "livemode": true,
-    "name": "userId:acct_1IqNVQ2cPcdOgeOl",
-    "package_dimensions": null,
-    "shippable": null,
-    "statement_descriptor": null,
-    "type": "service",
-    "unit_label": null,
-    "updated": 1620847726,
-    "url": null
-  },
-  "adminUserId": "aebfc605-4444-4253-9f35-4792eeffd375",
-  "scope": "express",
-  "loginLink": "https://connect.stripe.com/express/VEbC9PFG2jvG",
-  "livemode": true,
-  "token_type": "bearer",
-  "access_token": "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",
-  "refresh_token": "rt_JTKOeV6geNU04J4NDlqLCyaW4w4Vc08JtuyQ54oL8mnLyNoc",
-  "stripe_user_id": "acct_1IqNVQ2cPcdOgeOl",
-  "stripe_publishable_key": "pk_live_51IqNVQ2cPcdOgeOljf48wofIAhha7uE9wL2f6NFWILpT55K1v7hrn6Mfe3cKjxquwF58VfhntUovXSvlVsXpPMZz00AOJYxAei",
-  "registerForm": [
-    {
-      "page": 1,
-      "name": "step 1",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult info"
+        "_id": "7a673cb5-e965-42a9-8614-00edb1d81f8a",
+        "parent_members": 889,
+        "child_members": 771,
+        "parentRegisteredForEvent": 39,
+        "childRegisteredForEvent": 646,
+        "invoiced": 733859.279999998,
+        "paid": 712255.668333332,
+        "pending": 3265.98,
+        "refund": 17110.8266666667,
+        "registrations": 688,
+        "product": {
+            "id": "prod_JTKOXaAqK3WxI0",
+            "object": "product",
+            "active": true,
+            "attributes": [],
+            "created": 1620847726,
+            "description": null,
+            "images": [],
+            "livemode": true,
+            "name": "userId:acct_1IqNVQ2cPcdOgeOl",
+            "package_dimensions": null,
+            "shippable": null,
+            "statement_descriptor": null,
+            "type": "service",
+            "unit_label": null,
+            "updated": 1620847726,
+            "url": null
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Info"
+        "adminUserId": "aebfc605-4444-4253-9f35-4792eeffd375",
+        "scope": "express",
+        "loginLink": "https://connect.stripe.com/express/VEbC9PFG2jvG",
+        "livemode": true,
+        "token_type": "bearer",
+        "access_token": "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",
+        "refresh_token": "rt_JTKOeV6geNU04J4NDlqLCyaW4w4Vc08JtuyQ54oL8mnLyNoc",
+        "stripe_user_id": "acct_1IqNVQ2cPcdOgeOl",
+        "stripe_publishable_key": "pk_live_51IqNVQ2cPcdOgeOljf48wofIAhha7uE9wL2f6NFWILpT55K1v7hrn6Mfe3cKjxquwF58VfhntUovXSvlVsXpPMZz00AOJYxAei",
+        "registerForm": [
+            {
+                "page": 1,
+                "name": "step 1",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff info"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
+                        "placeholder": "Relationship with child",
+                        "keyName": "relationShipWithChild",
+                        "name": "relationShipWithChild",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
+                        "placeholder": "Player First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
+                        "placeholder": "Player Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
+                        "placeholder": "Player Birthday",
+                        "keyName": "birthday",
+                        "name": "Birthday",
+                        "inputType": "datepicker",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
+                        "placeholder": "Player Phone (Optional)",
+                        "keyName": "playerPhone",
+                        "name": "Player Phone",
+                        "inputType": "number",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
+                        "placeholder": "Select Parent | Guardian | Staff",
+                        "keyName": "parentId",
+                        "name": "parentId",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": []
+                    },
+                    {
+                        "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
+                        "placeholder": "Player Email (Optional)",
+                        "keyName": "playerEmail",
+                        "name": "Player Email",
+                        "inputType": "text",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9a33285f-e3eb-496a-910a-2e7b94167fc1",
+                        "placeholder": "Gender",
+                        "keyName": "gender",
+                        "name": "Gender",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Male",
+                            "Female"
+                        ]
+                    },
+                    {
+                        "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
+                        "placeholder": "Address",
+                        "keyName": "address",
+                        "name": "Address",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
+                        "placeholder": "City",
+                        "keyName": "city",
+                        "name": "City",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
+                        "placeholder": "State",
+                        "keyName": "state",
+                        "name": "State",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
+                        "placeholder": "Zip code",
+                        "keyName": "zipcode",
+                        "name": "Zip code",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    }
+                ]
+            },
+            {
+                "page": 2,
+                "name": "step 2",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Credentials"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
+                        "placeholder": "Birth Certificate",
+                        "keyName": "birthCertificate",
+                        "name": "birthCertificate",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "Photo",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
+                        "placeholder": "Staff Certificate",
+                        "keyName": "staffCertificate",
+                        "name": "Staff Certificate",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    }
+                ]
+            },
+            {
+                "page": 3,
+                "name": "step 3",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Waivers"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Waivers"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Waivers"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "1fd6b056-b449-435d-a7ac-c79e0512a6fa",
+                        "placeholder": "Medical Information & Release (HIPPA)",
+                        "keyName": "medicalInformationReleaseHIPPA",
+                        "name": "Medical Information & Release (HIPPA)",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "The Health Insurance Portability and Accountability Act has been in effect across the country for facilities that use health care providers as of April 14, 2003. There are three parts to this act. The first rule is the Transaction Rule, intended to standardize procedures, codes, and electronic billing format. The second rule is the Security Rule. This rule is designed to secure personally identifiable health care information being transmitted electronically. The third rule is the Privacy Rule. This rule creates national standards to protect individuals personal health information and gives patients increased access to their medical records."
+                    },
+                    {
+                        "_id": "b153b55b-3eac-42df-9c18-dda145bb3aed",
+                        "placeholder": "Consent for Treatment",
+                        "keyName": "consentforTreatment",
+                        "name": "Consent for Treatment",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "I understand that I may be injured while participating in athletics with CO Rush Soccer Club. I authorize the coach, team parent, or athletic trainer to seek any emergency medical care that may become necessary while participating or traveling with CO Rush Soccer. I assume the financial responsibility for any medical treatment for my child. I also authorize the athletic trainer to administer treatments related to injury prevention and rehabilitation."
+                    },
+                    {
+                        "_id": "96c046a3-d300-4e8c-ab97-3ec335923163",
+                        "placeholder": "Acceptance of Risk",
+                        "keyName": "acceptanceofRisk",
+                        "name": "Acceptance of Risk",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "I understand that participation in sports requires an acceptance of the risk of an injury. I understand that I may be permanently injured while playing sports and accept the risk. I understand I must follow all the rules of my sport. I understand that I must refrain from practice or play while injured or ill, whether or not receiving medical treatment and during medical treatment until I am discharged from treatment or given permission by a physician to return to participation despite continuing treatment."
+                    },
+                    {
+                        "_id": "8b1fb403-bd6d-45f3-a945-d2ec2a381f1f",
+                        "placeholder": "Refund Policy",
+                        "keyName": "refundPolicy",
+                        "name": "Refund Policy",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "If a player, for medical reasons, cannot complete the remainder of a season, a prorated amount of the variable fee may be refunded upon request. Written documentation setting forth the medical reason(s) must be provided to the Club by a medical practitioner prior to refund consideration. Other circumstances that lead to a player not participating will be reviewed on a case by case basis with the possibility of no more than fifty percent reimbursement. A letter of request for refund must be sent to the Rush office (by email) detailing the reason for the refund request. I have read and understand the refund policy.\n\nRefunds for Suspension of Play due to Environmental Factors\nIn the event any season is disrupted by a suspension of play due to environmental factors outside the Colorado Rush's control, i.e. weather, health pandemic, Acts of God, etc. The Colorado Rush will make its best effort to make-up for any lost playing time. If the disruption becomes significant and play cannot be made up, Colorado Rush may issue a partial refund. Any refunds issued for such an event will be at the discretion of the Colorado Rush Executive Committee and will take into account most expenses incurred upfront and therefore cannot be recaptured."
+                    },
+                    {
+                        "_id": "35fbf4a1-494f-40da-92c1-1a196d86c878",
+                        "placeholder": "Delinquent Payment Policy",
+                        "keyName": "delinquentPaymentPolicy",
+                        "name": "Delinquent Payment Policy",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "The player is responsible for paying registration fees and staying current with payment plans. If a payment becomes delinquent, a notification email will be sent and it is the responsibility of the player to go into their Blue Sombrero account and pay the delinquent invoice as well as update the credit card information for future payments. If this does not occur, the player will be benched and they cannot participate in practices or games until the payment is made and the account is up to date. I have read and understand the delinquent payment policy."
+                    },
+                    {
+                        "_id": "79bad37b-ce8e-448c-b7f4-139596b232eb",
+                        "placeholder": "Concussion Information Sheet",
+                        "keyName": "concussionInformationSheet",
+                        "name": "Concussion Information Sheet",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "What is a Concussion? The following information is from the CDC’s Heads Up Concussion In Youth Sports website. A Fact Sheet For PARENTS: A concussion is a brain injury. Concussions are caused by a bump or blow to the head. Even a ding, getting your bell rung, or what seems to be a mild bump or blow to the head can be serious. You can't see a concussion. Signs and symptoms of concussion can show up right after the injury or may not appear or be noticed until days or weeks after the injury. If your child reports any symptoms of concussion, or if you notice the symptoms yourself, seek medical attention right away. What are the SIGNS and SYMPTOMS of a Concussion? If your child has experienced a bump or blow to the head during a game or practice, look for any of the following signs and symptoms of a concussion. Signs Observed by Coach, Parents or Guardians 1. Appears dazed or stunned 2. Is confused about assignment or position 3. Forgets an instruction 4. Is unsure of game, score, or opponent 5. Moves clumsily 6. Answers questions slowly 7. Loses consciousness, even briefly 8. Shows behavior or personality changes 9. Can't recall events prior to hit or fall 10. Can't recall events after hit or fall Symptoms Reported by Athlete 1. Headache or pressure in head 2. Nausea or vomiting 3. Balance problems or dizziness 4. Double or blurry vision 5. Sensitivity to light 6. Sensitivity to noise 7. Feeling sluggish, hazy, foggy, or groggy 8. Concentration or memory problems 9. Confusion 10. Does not feel right . How can you help your child prevent a concussion? Every sport is different, but there are steps your children can take to protect themselves from concussion. Ensure that they follow their coach's rules for safety and the rules of the sport. Encourage them to practice good sportsmanship at all times. Make sure they wear the right protective equipment for their activity, such as helmets, padding, shin guards, and eye and mouth guards. Protective equipment should fit properly, be well maintained, and be worn consistently and correctly. Learn the signs and symptoms of a concussion. What should you do if you think your child has a concussion. Seek medical attention right away. A health care professional will be able to decide how serious the concussion is and when it is safe for your child to return to sports. Keep your child out of play. Concussions take time to heal. Don't let your child return to play until a health care professional says it's ok. Children who return to play too soon, while the brain is still healing, risk a greater chance of having a second concussion. Second or later concussions can be very serious. They can cause permanent brain damage, affecting your child for a lifetime. Tell your coach about any recent concussion. Coaches should know if your child had a recent concussion in ANY sport. Your child's coach may not know about a concussion your child received in another sport or activity unless you tell the coach. I have read and understand the Concussion Information Sheet and Reviewed the information with my child."
+                    },
+                    {
+                        "_id": "14ed5d4c-c66b-422c-b4e1-1e42864bc790",
+                        "placeholder": "Concussion Information Acknowledgement",
+                        "keyName": "concussionInformationAcknowledgement",
+                        "name": "Concussion Information Acknowledgement",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "I understand that it is my responsibility to report all my child's injuries and illnesses to my coach and/or athletic trainer and have discussed the importance of doing so with my child. After reading the Concussion Information Sheet, I agree with and am aware of the following information: A concussion is a brain injury, which I am responsible for reporting to my coach or athletic trainer. A concussion can affect my child's ability to perform everyday activities, and affect reaction time, balance, sleep, and classroom performance. You cannot see a concussion, but you might notice some of the symptoms right away. Other symptoms can show up hours or days after the injury. My child will not return to play in a game or practice if he or she has received a blow to the head or body that results in concussion-related symptoms. Following concussion the brain needs time to heal. You are much more likely to have a repeat concussion if you return to play before your symptoms resolve. In rare cases, repeat concussions can cause permanent brain damage, and even death. If my child suffers a concussion, I will take him or her to see an appropriate health care provider. I acknowledge that my child will only be allowed to participate in training or games once I have provided a note from my health care provider clearing my child to play."
+                    },
+                    {
+                        "_id": "bf1b3272-f424-4453-ac3e-2978eb0a53fa",
+                        "placeholder": "Appearance Agreement",
+                        "keyName": "appearanceAgreement",
+                        "name": "Appearance Agreement",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "I FURTHER CONSENT AND GRANT TO RUSH SOCCER AND PARTNER CLUBS, PERMISSION TO THE WORLDWIDE RIGHT IN PERPETUITY TO USE AND TO PERMIT TO OTHERS TO USE, AT NO COST, SAID CHILD’S NAME, VOICE, LIKENESS, PHOTOGRAPH, IMAGE (STILL AND/OR MOVING) AND BIOGRAPHICAL MATERIAL CONCERNING THAT CHILD IN CONNECTION WITH ANY AND ALL RECORDINGS OR EXPLOITATIONS BUT NOT LIMITED TO VIDEO, AUDIO, OR INTERNET REBROADCASTS RELATED TO SAID CHILD’S PARTICIPATION IN RUSH SOCCER CLUB AND IT’S SPONSORED EVENTS. THE UNDERSIGNED HEREBY WAIVES ANY RIGHTS TO INSPECT OR TO APPROVE ANY USE TO WHICH IT IS APPLIED. EXECUTION OF THIS RELEASE AND WAIVER CONSTITUTES ACKNOWLEDGEMENT BY YOU THAT YOU HAVE HAD THE OPPORTUNITY TO SEEK ADVICE OF COUNSEL IN CONNECTION WITH THE TERMS AND CONDITIONS SET FORTH HEREIN OR HAVE DEEMED IT NECESSARY."
+                    }
+                ]
+            }
+        ],
+        "newsDetails": [
+            {}
+        ],
+        "links": [],
+        "createdAt": {
+            "$date": "2021-05-12T19:28:46.965Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff info"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
+        "updatedAt": {
+            "$date": "2024-01-31T14:48:22.02Z"
         },
-        {
-          "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
-          "placeholder": "Relationship with child",
-          "keyName": "relationShipWithChild",
-          "name": "relationShipWithChild",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
-          "placeholder": "Player First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
-          "placeholder": "Player Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
-          "placeholder": "Player Birthday",
-          "keyName": "birthday",
-          "name": "Birthday",
-          "inputType": "datepicker",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
-          "placeholder": "Player Phone (Optional)",
-          "keyName": "playerPhone",
-          "name": "Player Phone",
-          "inputType": "number",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
-          "placeholder": "Select Parent | Guardian | Staff",
-          "keyName": "parentId",
-          "name": "parentId",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": []
-        },
-        {
-          "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
-          "placeholder": "Player Email (Optional)",
-          "keyName": "playerEmail",
-          "name": "Player Email",
-          "inputType": "text",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9a33285f-e3eb-496a-910a-2e7b94167fc1",
-          "placeholder": "Gender",
-          "keyName": "gender",
-          "name": "Gender",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Male",
-            "Female"
-          ]
-        },
-        {
-          "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
-          "placeholder": "Address",
-          "keyName": "address",
-          "name": "Address",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
-          "placeholder": "City",
-          "keyName": "city",
-          "name": "City",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
-          "placeholder": "State",
-          "keyName": "state",
-          "name": "State",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
-          "placeholder": "Zip code",
-          "keyName": "zipcode",
-          "name": "Zip code",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        }
-      ]
+        "__v": 0,
+        "name": "Colorado Rush",
+        "staticRushNationalNews": [
+            [
+                {
+                    "guid": "https://rush.sportwyse.com",
+                    "post_title": "Rush Soccer",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
+                    "post_title": "Rush Lobos thriving with four teams in USYS nationals",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
+                    "post_title": "From Colorado to Valencia, Spain",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
+                    "post_title": "Colorado Rush WPSL Team",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
+                    "post_title": "Rush Players Signed With AS Monaco Feminine",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
+                }
+            ]
+        ],
+        "SPIEvent": false,
+        "clubEmails": []
     },
-    {
-      "page": 2,
-      "name": "step 2",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Credentials"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
-          "placeholder": "Birth Certificate",
-          "keyName": "birthCertificate",
-          "name": "birthCertificate",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "Photo",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
-          "placeholder": "Staff Certificate",
-          "keyName": "staffCertificate",
-          "name": "Staff Certificate",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        }
-      ]
-    },
-    {
-      "page": 3,
-      "name": "step 3",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Waivers"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Waivers"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Waivers"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "1fd6b056-b449-435d-a7ac-c79e0512a6fa",
-          "placeholder": "Medical Information & Release (HIPPA)",
-          "keyName": "medicalInformationReleaseHIPPA",
-          "name": "Medical Information & Release (HIPPA)",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "The Health Insurance Portability and Accountability Act has been in effect across the country for facilities that use health care providers as of April 14, 2003. There are three parts to this act. The first rule is the Transaction Rule, intended to standardize procedures, codes, and electronic billing format. The second rule is the Security Rule. This rule is designed to secure personally identifiable health care information being transmitted electronically. The third rule is the Privacy Rule. This rule creates national standards to protect individuals personal health information and gives patients increased access to their medical records."
-        },
-        {
-          "_id": "b153b55b-3eac-42df-9c18-dda145bb3aed",
-          "placeholder": "Consent for Treatment",
-          "keyName": "consentforTreatment",
-          "name": "Consent for Treatment",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "I understand that I may be injured while participating in athletics with CO Rush Soccer Club. I authorize the coach, team parent, or athletic trainer to seek any emergency medical care that may become necessary while participating or traveling with CO Rush Soccer. I assume the financial responsibility for any medical treatment for my child. I also authorize the athletic trainer to administer treatments related to injury prevention and rehabilitation."
-        },
-        {
-          "_id": "96c046a3-d300-4e8c-ab97-3ec335923163",
-          "placeholder": "Acceptance of Risk",
-          "keyName": "acceptanceofRisk",
-          "name": "Acceptance of Risk",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "I understand that participation in sports requires an acceptance of the risk of an injury. I understand that I may be permanently injured while playing sports and accept the risk. I understand I must follow all the rules of my sport. I understand that I must refrain from practice or play while injured or ill, whether or not receiving medical treatment and during medical treatment until I am discharged from treatment or given permission by a physician to return to participation despite continuing treatment."
-        },
-        {
-          "_id": "8b1fb403-bd6d-45f3-a945-d2ec2a381f1f",
-          "placeholder": "Refund Policy",
-          "keyName": "refundPolicy",
-          "name": "Refund Policy",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "If a player, for medical reasons, cannot complete the remainder of a season, a prorated amount of the variable fee may be refunded upon request. Written documentation setting forth the medical reason(s) must be provided to the Club by a medical practitioner prior to refund consideration. Other circumstances that lead to a player not participating will be reviewed on a case by case basis with the possibility of no more than fifty percent reimbursement. A letter of request for refund must be sent to the Rush office (by email) detailing the reason for the refund request. I have read and understand the refund policy.\n\nRefunds for Suspension of Play due to Environmental Factors\nIn the event any season is disrupted by a suspension of play due to environmental factors outside the Colorado Rush's control, i.e. weather, health pandemic, Acts of God, etc. The Colorado Rush will make its best effort to make-up for any lost playing time. If the disruption becomes significant and play cannot be made up, Colorado Rush may issue a partial refund. Any refunds issued for such an event will be at the discretion of the Colorado Rush Executive Committee and will take into account most expenses incurred upfront and therefore cannot be recaptured."
-        },
-        {
-          "_id": "35fbf4a1-494f-40da-92c1-1a196d86c878",
-          "placeholder": "Delinquent Payment Policy",
-          "keyName": "delinquentPaymentPolicy",
-          "name": "Delinquent Payment Policy",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "The player is responsible for paying registration fees and staying current with payment plans. If a payment becomes delinquent, a notification email will be sent and it is the responsibility of the player to go into their Blue Sombrero account and pay the delinquent invoice as well as update the credit card information for future payments. If this does not occur, the player will be benched and they cannot participate in practices or games until the payment is made and the account is up to date. I have read and understand the delinquent payment policy."
-        },
-        {
-          "_id": "79bad37b-ce8e-448c-b7f4-139596b232eb",
-          "placeholder": "Concussion Information Sheet",
-          "keyName": "concussionInformationSheet",
-          "name": "Concussion Information Sheet",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "What is a Concussion? The following information is from the CDC’s Heads Up Concussion In Youth Sports website. A Fact Sheet For PARENTS: A concussion is a brain injury. Concussions are caused by a bump or blow to the head. Even a ding, getting your bell rung, or what seems to be a mild bump or blow to the head can be serious. You can't see a concussion. Signs and symptoms of concussion can show up right after the injury or may not appear or be noticed until days or weeks after the injury. If your child reports any symptoms of concussion, or if you notice the symptoms yourself, seek medical attention right away. What are the SIGNS and SYMPTOMS of a Concussion? If your child has experienced a bump or blow to the head during a game or practice, look for any of the following signs and symptoms of a concussion. Signs Observed by Coach, Parents or Guardians 1. Appears dazed or stunned 2. Is confused about assignment or position 3. Forgets an instruction 4. Is unsure of game, score, or opponent 5. Moves clumsily 6. Answers questions slowly 7. Loses consciousness, even briefly 8. Shows behavior or personality changes 9. Can't recall events prior to hit or fall 10. Can't recall events after hit or fall Symptoms Reported by Athlete 1. Headache or pressure in head 2. Nausea or vomiting 3. Balance problems or dizziness 4. Double or blurry vision 5. Sensitivity to light 6. Sensitivity to noise 7. Feeling sluggish, hazy, foggy, or groggy 8. Concentration or memory problems 9. Confusion 10. Does not feel right . How can you help your child prevent a concussion? Every sport is different, but there are steps your children can take to protect themselves from concussion. Ensure that they follow their coach's rules for safety and the rules of the sport. Encourage them to practice good sportsmanship at all times. Make sure they wear the right protective equipment for their activity, such as helmets, padding, shin guards, and eye and mouth guards. Protective equipment should fit properly, be well maintained, and be worn consistently and correctly. Learn the signs and symptoms of a concussion. What should you do if you think your child has a concussion. Seek medical attention right away. A health care professional will be able to decide how serious the concussion is and when it is safe for your child to return to sports. Keep your child out of play. Concussions take time to heal. Don't let your child return to play until a health care professional says it's ok. Children who return to play too soon, while the brain is still healing, risk a greater chance of having a second concussion. Second or later concussions can be very serious. They can cause permanent brain damage, affecting your child for a lifetime. Tell your coach about any recent concussion. Coaches should know if your child had a recent concussion in ANY sport. Your child's coach may not know about a concussion your child received in another sport or activity unless you tell the coach. I have read and understand the Concussion Information Sheet and Reviewed the information with my child."
-        },
-        {
-          "_id": "14ed5d4c-c66b-422c-b4e1-1e42864bc790",
-          "placeholder": "Concussion Information Acknowledgement",
-          "keyName": "concussionInformationAcknowledgement",
-          "name": "Concussion Information Acknowledgement",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "I understand that it is my responsibility to report all my child's injuries and illnesses to my coach and/or athletic trainer and have discussed the importance of doing so with my child. After reading the Concussion Information Sheet, I agree with and am aware of the following information: A concussion is a brain injury, which I am responsible for reporting to my coach or athletic trainer. A concussion can affect my child's ability to perform everyday activities, and affect reaction time, balance, sleep, and classroom performance. You cannot see a concussion, but you might notice some of the symptoms right away. Other symptoms can show up hours or days after the injury. My child will not return to play in a game or practice if he or she has received a blow to the head or body that results in concussion-related symptoms. Following concussion the brain needs time to heal. You are much more likely to have a repeat concussion if you return to play before your symptoms resolve. In rare cases, repeat concussions can cause permanent brain damage, and even death. If my child suffers a concussion, I will take him or her to see an appropriate health care provider. I acknowledge that my child will only be allowed to participate in training or games once I have provided a note from my health care provider clearing my child to play."
-        },
-        {
-          "_id": "bf1b3272-f424-4453-ac3e-2978eb0a53fa",
-          "placeholder": "Appearance Agreement",
-          "keyName": "appearanceAgreement",
-          "name": "Appearance Agreement",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "I FURTHER CONSENT AND GRANT TO RUSH SOCCER AND PARTNER CLUBS, PERMISSION TO THE WORLDWIDE RIGHT IN PERPETUITY TO USE AND TO PERMIT TO OTHERS TO USE, AT NO COST, SAID CHILD’S NAME, VOICE, LIKENESS, PHOTOGRAPH, IMAGE (STILL AND/OR MOVING) AND BIOGRAPHICAL MATERIAL CONCERNING THAT CHILD IN CONNECTION WITH ANY AND ALL RECORDINGS OR EXPLOITATIONS BUT NOT LIMITED TO VIDEO, AUDIO, OR INTERNET REBROADCASTS RELATED TO SAID CHILD’S PARTICIPATION IN RUSH SOCCER CLUB AND IT’S SPONSORED EVENTS. THE UNDERSIGNED HEREBY WAIVES ANY RIGHTS TO INSPECT OR TO APPROVE ANY USE TO WHICH IT IS APPLIED. EXECUTION OF THIS RELEASE AND WAIVER CONSTITUTES ACKNOWLEDGEMENT BY YOU THAT YOU HAVE HAD THE OPPORTUNITY TO SEEK ADVICE OF COUNSEL IN CONNECTION WITH THE TERMS AND CONDITIONS SET FORTH HEREIN OR HAVE DEEMED IT NECESSARY."
-        }
-      ]
-    }
-  ],
-  "newsDetails": [
-    {}
-  ],
-  "links": [],
-  "createdAt": {
-    "$date": "2021-05-12T19:28:46.965Z"
-  },
-  "updatedAt": {
-    "$date": "2023-09-08T12:48:13.895Z"
-  },
-  "__v": 0,
-  "name": "Colorado Rush",
-  "staticRushNationalNews": [
-    [
-      {
-        "guid": "https://rush.sportwyse.com",
-        "post_title": "Rush Soccer",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
-        "post_title": "Rush Lobos thriving with four teams in USYS nationals",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
-        "post_title": "From Colorado to Valencia, Spain",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
-        "post_title": "Colorado Rush WPSL Team",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
-        "post_title": "Rush Players Signed With AS Monaco Feminine",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
-      }
-    ]
-  ],
-  "SPIEvent": false,
-  "clubEmails": []
-},
 {
-  "_id": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
-  "parent_members": 336,
-  "child_members": 1,
-  "parentRegisteredForEvent": 0,
-  "childRegisteredForEvent": 354,
-  "invoiced": 710274.1700000005,
-  "paid": 681259.7600000005,
-  "pending": 0,
-  "refund": 29014.41,
-  "registrations": 355,
-  "product": {
-    "id": "prod_K13GyrNaqK3uAq",
-    "object": "product",
-    "active": true,
-    "attributes": [],
-    "created": 1628625744,
-    "description": null,
-    "images": [],
-    "livemode": true,
-    "name": "userId:acct_1JN13m2ctVSuJ1Vh",
-    "package_dimensions": null,
-    "shippable": null,
-    "statement_descriptor": null,
-    "tax_code": null,
-    "type": "service",
-    "unit_label": null,
-    "updated": 1628625744,
-    "url": null
-  },
-  "adminUserId": "02d7df88-a580-40f1-b209-a6a30842f297",
-  "scope": "express",
-  "loginLink": "https://connect.stripe.com/express/4Otmu0dmd5DT",
-  "livemode": true,
-  "token_type": "bearer",
-  "access_token": "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",
-  "refresh_token": "rt_K13GeMMgoON5Nt2Ldgyh91DCpfbVMlcz8eicUNfx4eCX7XSS",
-  "stripe_user_id": "acct_1JN13m2ctVSuJ1Vh",
-  "stripe_publishable_key": "pk_live_51JN13m2ctVSuJ1VhkuGr4IG7EoYZx82WM2g2Ji1vNAiMGZgy0kTKHno3Svk5VpdDETFXzOJmSAKPM7JlQBWBMA5p00WOhpBzuv",
-  "registerForm": [
-    {
-      "page": 1,
-      "name": "step 1",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
+        "_id": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
+        "parent_members": 336,
+        "child_members": 1,
+        "parentRegisteredForEvent": 0,
+        "childRegisteredForEvent": 354,
+        "invoiced": 710274.1700000005,
+        "paid": 681259.7600000005,
+        "pending": 0,
+        "refund": 29014.41,
+        "registrations": 355,
+        "product": {
+            "id": "prod_K13GyrNaqK3uAq",
+            "object": "product",
+            "active": true,
+            "attributes": [],
+            "created": 1628625744,
+            "description": null,
+            "images": [],
+            "livemode": true,
+            "name": "userId:acct_1JN13m2ctVSuJ1Vh",
+            "package_dimensions": null,
+            "shippable": null,
+            "statement_descriptor": null,
+            "tax_code": null,
+            "type": "service",
+            "unit_label": null,
+            "updated": 1628625744,
+            "url": null
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player info"
+        "adminUserId": "02d7df88-a580-40f1-b209-a6a30842f297",
+        "scope": "express",
+        "loginLink": "https://connect.stripe.com/express/4Otmu0dmd5DT",
+        "livemode": true,
+        "token_type": "bearer",
+        "access_token": "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",
+        "refresh_token": "rt_K13GeMMgoON5Nt2Ldgyh91DCpfbVMlcz8eicUNfx4eCX7XSS",
+        "stripe_user_id": "acct_1JN13m2ctVSuJ1Vh",
+        "stripe_publishable_key": "pk_live_51JN13m2ctVSuJ1VhkuGr4IG7EoYZx82WM2g2Ji1vNAiMGZgy0kTKHno3Svk5VpdDETFXzOJmSAKPM7JlQBWBMA5p00WOhpBzuv",
+        "registerForm": [
+            {
+                "page": 1,
+                "name": "step 1",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff info"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
+                        "placeholder": "Relationship with child",
+                        "keyName": "relationShipWithChild",
+                        "name": "relationShipWithChild",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
+                        "placeholder": "Player First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
+                        "placeholder": "Player Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
+                        "placeholder": "Select Parent | Guardian | Staff",
+                        "keyName": "parentId",
+                        "name": "parentId",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": []
+                    },
+                    {
+                        "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
+                        "placeholder": "Player Birthday",
+                        "keyName": "birthday",
+                        "name": "Birthday",
+                        "inputType": "datepicker",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
+                        "placeholder": "Player Phone (Optional)",
+                        "keyName": "playerPhone",
+                        "name": "Player Phone",
+                        "inputType": "number",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
+                        "placeholder": "Player Email (Optional)",
+                        "keyName": "playerEmail",
+                        "name": "Player Email",
+                        "inputType": "text",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
+                        "placeholder": "Gender",
+                        "keyName": "gender",
+                        "name": "Gender",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Male",
+                            "Female"
+                        ]
+                    },
+                    {
+                        "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
+                        "placeholder": "Address",
+                        "keyName": "address",
+                        "name": "Address",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
+                        "placeholder": "City",
+                        "keyName": "city",
+                        "name": "City",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
+                        "placeholder": "State",
+                        "keyName": "state",
+                        "name": "State",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
+                        "placeholder": "Zip code",
+                        "keyName": "zipcode",
+                        "name": "Zip code",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "5024ce59-6ec5-4aea-bf30-98830c8bcb7d",
+                        "placeholder": "Street Address",
+                        "keyName": "streetAddress",
+                        "name": "Street Address",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "55b6d540-fc3f-4935-9d99-b3096e1691aa",
+                        "placeholder": "City",
+                        "keyName": "city",
+                        "name": "City",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "587ca96f-3bb9-42b3-8669-809e1196cab6",
+                        "placeholder": "State",
+                        "keyName": "state",
+                        "name": "State",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "99b10ccb-089d-4de7-b82a-5e8008c4a8c9",
+                        "placeholder": "Postal Code",
+                        "keyName": "postalCode",
+                        "name": "Postal Code",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "6a68a18b-16c1-4c85-b79a-cbddc54f80d9",
+                        "placeholder": "Players Current Rush Club",
+                        "keyName": "playersCurrentRushClub",
+                        "name": "Players Current Rush Club",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2cdc5a48-7878-4107-860d-63c65fad1b11",
+                        "placeholder": "Country of Birth",
+                        "keyName": "countryofBirth",
+                        "name": "Country of Birth",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "749f373a-7464-460b-bc1b-b5af451f6360",
+                        "placeholder": "Country of Citizenship",
+                        "keyName": "countryofCitizenship",
+                        "name": "Country of Citizenship",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    }
+                ]
+            },
+            {
+                "page": 2,
+                "name": "step 2",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Credentials"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
+                        "placeholder": "Birth Certificate",
+                        "keyName": "birthCertificate",
+                        "name": "birthCertificate",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "Photo",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
+                        "placeholder": "Staff Certificate",
+                        "keyName": "staffCertificate",
+                        "name": "Staff Certificate",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    }
+                ]
+            },
+            {
+                "page": 3,
+                "name": "step 3",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Acknowledgement Statements"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
+                        "placeholder": "Travel Insurance",
+                        "keyName": "travelInsurance",
+                        "name": "Travel Insurance",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "xxx"
+                    },
+                    {
+                        "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
+                        "placeholder": "Flight Statement",
+                        "keyName": "flightStatement",
+                        "name": "Flight Statement",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "xxx"
+                    }
+                ]
+            }
+        ],
+        "newsDetails": [],
+        "links": [],
+        "createdAt": {
+            "$date": "2021-08-10T20:02:24.446Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff info"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
+        "updatedAt": {
+            "$date": "2023-08-19T05:05:08.85Z"
         },
-        {
-          "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
-          "placeholder": "Relationship with child",
-          "keyName": "relationShipWithChild",
-          "name": "relationShipWithChild",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
-          "placeholder": "Player First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
-          "placeholder": "Player Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
-          "placeholder": "Select Parent | Guardian | Staff",
-          "keyName": "parentId",
-          "name": "parentId",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": []
-        },
-        {
-          "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
-          "placeholder": "Player Birthday",
-          "keyName": "birthday",
-          "name": "Birthday",
-          "inputType": "datepicker",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
-          "placeholder": "Player Phone (Optional)",
-          "keyName": "playerPhone",
-          "name": "Player Phone",
-          "inputType": "number",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
-          "placeholder": "Player Email (Optional)",
-          "keyName": "playerEmail",
-          "name": "Player Email",
-          "inputType": "text",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
-          "placeholder": "Gender",
-          "keyName": "gender",
-          "name": "Gender",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Male",
-            "Female"
-          ]
-        },
-        {
-          "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
-          "placeholder": "Address",
-          "keyName": "address",
-          "name": "Address",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
-          "placeholder": "City",
-          "keyName": "city",
-          "name": "City",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
-          "placeholder": "State",
-          "keyName": "state",
-          "name": "State",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
-          "placeholder": "Zip code",
-          "keyName": "zipcode",
-          "name": "Zip code",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "5024ce59-6ec5-4aea-bf30-98830c8bcb7d",
-          "placeholder": "Street Address",
-          "keyName": "streetAddress",
-          "name": "Street Address",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "55b6d540-fc3f-4935-9d99-b3096e1691aa",
-          "placeholder": "City",
-          "keyName": "city",
-          "name": "City",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "587ca96f-3bb9-42b3-8669-809e1196cab6",
-          "placeholder": "State",
-          "keyName": "state",
-          "name": "State",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "99b10ccb-089d-4de7-b82a-5e8008c4a8c9",
-          "placeholder": "Postal Code",
-          "keyName": "postalCode",
-          "name": "Postal Code",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "6a68a18b-16c1-4c85-b79a-cbddc54f80d9",
-          "placeholder": "Players Current Rush Club",
-          "keyName": "playersCurrentRushClub",
-          "name": "Players Current Rush Club",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2cdc5a48-7878-4107-860d-63c65fad1b11",
-          "placeholder": "Country of Birth",
-          "keyName": "countryofBirth",
-          "name": "Country of Birth",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "749f373a-7464-460b-bc1b-b5af451f6360",
-          "placeholder": "Country of Citizenship",
-          "keyName": "countryofCitizenship",
-          "name": "Country of Citizenship",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        }
-      ]
+        "__v": 0,
+        "name": "SPI Rush",
+        "staticRushNationalNews": [
+            [
+                {
+                    "guid": "https://rush.sportwyse.com",
+                    "post_title": "Rush Soccer",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
+                    "post_title": "Rush Lobos thriving with four teams in USYS nationals",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
+                    "post_title": "From Colorado to Valencia, Spain",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
+                    "post_title": "Colorado Rush WPSL Team",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
+                    "post_title": "Rush Players Signed With AS Monaco Feminine",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
+                }
+            ]
+        ],
+        "SPIEvent": true,
+        "clubEmails": []
     },
-    {
-      "page": 2,
-      "name": "step 2",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Credentials"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
-          "placeholder": "Birth Certificate",
-          "keyName": "birthCertificate",
-          "name": "birthCertificate",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "Photo",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
-          "placeholder": "Staff Certificate",
-          "keyName": "staffCertificate",
-          "name": "Staff Certificate",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        }
-      ]
-    },
-    {
-      "page": 3,
-      "name": "step 3",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Acknowledgement Statements"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
-          "placeholder": "Travel Insurance",
-          "keyName": "travelInsurance",
-          "name": "Travel Insurance",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "xxx"
-        },
-        {
-          "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
-          "placeholder": "Flight Statement",
-          "keyName": "flightStatement",
-          "name": "Flight Statement",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "xxx"
-        }
-      ]
-    }
-  ],
-  "newsDetails": [],
-  "links": [],
-  "createdAt": {
-    "$date": "2021-08-10T20:02:24.446Z"
-  },
-  "updatedAt": {
-    "$date": "2023-08-19T05:05:08.850Z"
-  },
-  "__v": 0,
-  "name": "SPI Rush",
-  "staticRushNationalNews": [
-    [
-      {
-        "guid": "https://rush.sportwyse.com",
-        "post_title": "Rush Soccer",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
-        "post_title": "Rush Lobos thriving with four teams in USYS nationals",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
-        "post_title": "From Colorado to Valencia, Spain",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
-        "post_title": "Colorado Rush WPSL Team",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
-        "post_title": "Rush Players Signed With AS Monaco Feminine",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
-      }
-    ]
-  ],
-  "SPIEvent": true,
-  "clubEmails": []
-},
 {
-  "_id": "dd32a579-8058-4e6a-92c2-4271aa58bd39",
-  "parent_members": 344,
-  "child_members": 262,
-  "parentRegisteredForEvent": 19,
-  "childRegisteredForEvent": 203,
-  "invoiced": 162869.44,
-  "paid": 158063.666666667,
-  "pending": 1799.99333333333,
-  "registrations": 224,
-  "product": {
-    "id": "prod_J3SBOTzV2gVIT1",
-    "object": "product",
-    "active": true,
-    "attributes": [],
-    "created": 1614880055,
-    "images": [],
-    "livemode": true,
-    "name": "userId:acct_1IRL7l2ey39Fjjlm",
-    "type": "service",
-    "updated": 1614880055
-  },
-  "adminUserId": "bc29b84a-4963-4d81-a565-2c50df5f198d",
-  "scope": "express",
-  "loginLink": "https://connect.stripe.com/express/2eKdzMce61df",
-  "livemode": true,
-  "token_type": "bearer",
-  "access_token": "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",
-  "refresh_token": "rt_J3SBWtsWcA4SiaXPrwyvb6KlppqenccbnQ4WWLL2SxrzF9zN",
-  "stripe_user_id": "acct_1IRL7l2ey39Fjjlm",
-  "stripe_publishable_key": "pk_live_51IRL7l2ey39FjjlmDA9PMsDzeVnHkNxXAKabyzIkvgSvrglD8xJxp3HhBxr5bwhi7vV7zDsiK2xabpd4nhLxH8dS00jipBAmDc",
-  "newsDetails": [
-    {
-      "_id": "bf602e02-fa70-408f-b6a8-c191681182e2",
-      "url": "https://www.fremontrush.com/Default.aspx?tabid=2695859",
-      "name": "2021/22 Returning Player Information ",
-      "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1621978545564_Rush email logo.png"
+        "_id": "dd32a579-8058-4e6a-92c2-4271aa58bd39",
+        "parent_members": 344,
+        "child_members": 262,
+        "parentRegisteredForEvent": 19,
+        "childRegisteredForEvent": 203,
+        "invoiced": 162869.44,
+        "paid": 158063.666666667,
+        "pending": 1799.99333333333,
+        "registrations": 224,
+        "product": {
+            "id": "prod_J3SBOTzV2gVIT1",
+            "object": "product",
+            "active": true,
+            "attributes": [],
+            "created": 1614880055,
+            "images": [],
+            "livemode": true,
+            "name": "userId:acct_1IRL7l2ey39Fjjlm",
+            "type": "service",
+            "updated": 1614880055
+        },
+        "adminUserId": "bc29b84a-4963-4d81-a565-2c50df5f198d",
+        "scope": "express",
+        "loginLink": "https://connect.stripe.com/express/2eKdzMce61df",
+        "livemode": true,
+        "token_type": "bearer",
+        "access_token": "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",
+        "refresh_token": "rt_J3SBWtsWcA4SiaXPrwyvb6KlppqenccbnQ4WWLL2SxrzF9zN",
+        "stripe_user_id": "acct_1IRL7l2ey39Fjjlm",
+        "stripe_publishable_key": "pk_live_51IRL7l2ey39FjjlmDA9PMsDzeVnHkNxXAKabyzIkvgSvrglD8xJxp3HhBxr5bwhi7vV7zDsiK2xabpd4nhLxH8dS00jipBAmDc",
+        "newsDetails": [
+            {
+                "_id": "bf602e02-fa70-408f-b6a8-c191681182e2",
+                "url": "https://www.fremontrush.com/Default.aspx?tabid=2695859",
+                "name": "2021/22 Returning Player Information ",
+                "imageUrl": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/1621978545564_Rush email logo.png"
+            }
+        ],
+        "links": [
+            {
+                "_id": "d691b344-7cdd-4d07-8da7-71f7fc511c2e",
+                "url": "https://fremontrush.com",
+                "name": "About",
+                "icon": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/links/1615557149029_about.png"
+            }
+        ],
+        "createdAt": {
+            "$date": "2021-03-04T17:47:36.119Z"
+        },
+        "updatedAt": {
+            "$date": "2023-08-22T00:46:20.794Z"
+        },
+        "__v": 0,
+        "name": "Fremont Rush",
+        "registerForm": [
+            {
+                "page": 1,
+                "name": "step 1",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff info"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": 1,
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 2,
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 3,
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 4,
+                        "placeholder": "Relationship with child",
+                        "keyName": "relationShipWithChild",
+                        "name": "relationShipWithChild",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 5,
+                        "placeholder": "Player First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 6,
+                        "placeholder": "Player Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 7,
+                        "placeholder": "Player Birthday",
+                        "keyName": "birthday",
+                        "name": "Birthday",
+                        "inputType": "datepicker",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 8,
+                        "placeholder": "Player Phone (Optional)",
+                        "keyName": "playerPhone",
+                        "name": "Player Phone",
+                        "inputType": "number",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
+                        "placeholder": "Select Parent | Guardian | Staff",
+                        "keyName": "parentId",
+                        "name": "parentId",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": []
+                    },
+                    {
+                        "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
+                        "placeholder": "Player Email (Optional)",
+                        "keyName": "playerEmail",
+                        "name": "Player Email",
+                        "inputType": "text",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9a33285f-e3eb-496a-910a-2e7b94167fc1",
+                        "placeholder": "Gender",
+                        "keyName": "gender",
+                        "name": "Gender",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Male",
+                            "Female"
+                        ]
+                    },
+                    {
+                        "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
+                        "placeholder": "Address",
+                        "keyName": "address",
+                        "name": "Address",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
+                        "placeholder": "City",
+                        "keyName": "city",
+                        "name": "City",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
+                        "placeholder": "State",
+                        "keyName": "state",
+                        "name": "State",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
+                        "placeholder": "Zip code",
+                        "keyName": "zipcode",
+                        "name": "Zip code",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 111,
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": 222,
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": 3,
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "a5e9c6d5-6924-4191-84e6-ba4d6410ac4a",
+                        "placeholder": "Coach Name",
+                        "keyName": "coachName",
+                        "name": "Coach Name",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    }
+                ]
+            },
+            {
+                "page": 2,
+                "name": "step 2",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Credentials"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": 10,
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": 12,
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": 13,
+                        "placeholder": "Birth Certificate",
+                        "keyName": "birthCertificate",
+                        "name": "birthCertificate",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "Photo",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
+                        "placeholder": "Staff Certificate",
+                        "keyName": "staffCertificate",
+                        "name": "Staff Certificate",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    }
+                ]
+            }
+        ],
+        "staticRushNationalNews": [
+            [
+                {
+                    "guid": "https://rush.sportwyse.com",
+                    "post_title": "Rush Soccer",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
+                    "post_title": "Rush Lobos thriving with four teams in USYS nationals",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
+                    "post_title": "From Colorado to Valencia, Spain",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
+                    "post_title": "Colorado Rush WPSL Team",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
+                },
+                {
+                    "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
+                    "post_title": "Rush Players Signed With AS Monaco Feminine",
+                    "name": "Story",
+                    "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
+                }
+            ]
+        ],
+        "SPIEvent": false,
+        "refund": 2505.78,
+        "clubEmails": []
     }
-  ],
-  "links": [
-    {
-      "_id": "d691b344-7cdd-4d07-8da7-71f7fc511c2e",
-      "url": "https://fremontrush.com",
-      "name": "About",
-      "icon": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/links/1615557149029_about.png"
-    }
-  ],
-  "createdAt": {
-    "$date": "2021-03-04T17:47:36.119Z"
-  },
-  "updatedAt": {
-    "$date": "2023-08-22T00:46:20.794Z"
-  },
-  "__v": 0,
-  "name": "Fremont Rush",
-  "registerForm": [
-    {
-      "page": 1,
-      "name": "step 1",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult info"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player info"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff info"
-        }
-      ],
-      "fields": [
-        {
-          "_id": 1,
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 2,
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 3,
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 4,
-          "placeholder": "Relationship with child",
-          "keyName": "relationShipWithChild",
-          "name": "relationShipWithChild",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 5,
-          "placeholder": "Player First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 6,
-          "placeholder": "Player Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 7,
-          "placeholder": "Player Birthday",
-          "keyName": "birthday",
-          "name": "Birthday",
-          "inputType": "datepicker",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 8,
-          "placeholder": "Player Phone (Optional)",
-          "keyName": "playerPhone",
-          "name": "Player Phone",
-          "inputType": "number",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
-          "placeholder": "Select Parent | Guardian | Staff",
-          "keyName": "parentId",
-          "name": "parentId",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": []
-        },
-        {
-          "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
-          "placeholder": "Player Email (Optional)",
-          "keyName": "playerEmail",
-          "name": "Player Email",
-          "inputType": "text",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9a33285f-e3eb-496a-910a-2e7b94167fc1",
-          "placeholder": "Gender",
-          "keyName": "gender",
-          "name": "Gender",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Male",
-            "Female"
-          ]
-        },
-        {
-          "_id": "82d0d307-7608-4c4a-a535-d88e8b44d8c1",
-          "placeholder": "Address",
-          "keyName": "address",
-          "name": "Address",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "a6dfeee2-1266-430c-a38c-34b1b50d9ad7",
-          "placeholder": "City",
-          "keyName": "city",
-          "name": "City",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "bf023f6b-ac0d-41de-89a0-f62a57b687df",
-          "placeholder": "State",
-          "keyName": "state",
-          "name": "State",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "5de804bd-8fa1-49ee-9e87-38f7a9181f70",
-          "placeholder": "Zip code",
-          "keyName": "zipcode",
-          "name": "Zip code",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 111,
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": 222,
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": 3,
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "a5e9c6d5-6924-4191-84e6-ba4d6410ac4a",
-          "placeholder": "Coach Name",
-          "keyName": "coachName",
-          "name": "Coach Name",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        }
-      ]
-    },
-    {
-      "page": 2,
-      "name": "step 2",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Credentials"
-        }
-      ],
-      "fields": [
-        {
-          "_id": 10,
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": 12,
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": 13,
-          "placeholder": "Birth Certificate",
-          "keyName": "birthCertificate",
-          "name": "birthCertificate",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "Photo",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
-          "placeholder": "Staff Certificate",
-          "keyName": "staffCertificate",
-          "name": "Staff Certificate",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        }
-      ]
-    }
-  ],
-  "staticRushNationalNews": [
-    [
-      {
-        "guid": "https://rush.sportwyse.com",
-        "post_title": "Rush Soccer",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/stagingimage.zocial.io/page/rushsoccer/select.jpeg"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388782",
-        "post_title": "Rush Lobos thriving with four teams in USYS nationals",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider1.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388628",
-        "post_title": "From Colorado to Valencia, Spain",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider2.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388524",
-        "post_title": "Colorado Rush WPSL Team",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider3.png"
-      },
-      {
-        "guid": "https://www.rushsoccer.com/Default.aspx?tabid=1191480&tw=350&th=170&w=350&newskeyid=HN1&h=170&mid=1281647&ctl=newsdetail&newsid=388007",
-        "post_title": "Rush Players Signed With AS Monaco Feminine",
-        "name": "Story",
-        "image": "https://cdn.statically.io/img/image.zocial.io/page/rushsoccer/Slider4.png"
-      }
-    ]
-  ],
-  "SPIEvent": false,
-  "refund": 2505.78,
-  "clubEmails": []
-}]
+]

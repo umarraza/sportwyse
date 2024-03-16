@@ -1,1871 +1,1873 @@
-[{
-  "_id": "65f85194-88ed-41e0-9742-1953dfed1647",
-  "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
-  "name": "Rush Travel",
-  "createdAt": {
-    "$date": "2021-09-06T16:58:34.333Z"
-  },
-  "updatedAt": {
-    "$date": "2022-03-03T02:50:25.233Z"
-  },
-  "__v": 0,
-  "registerForm": [
+[
     {
-      "page": 1,
-      "name": "step 1",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
+        "_id": "65f85194-88ed-41e0-9742-1953dfed1647",
+        "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
+        "name": "Rush Travel",
+        "createdAt": {
+            "$date": "2021-09-06T16:58:34.333Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player info"
+        "updatedAt": {
+            "$date": "2022-03-03T02:50:25.233Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff info"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
-          "placeholder": "Relationship with child",
-          "keyName": "relationShipWithChild",
-          "name": "relationShipWithChild",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "584f8f03-d257-4cf7-b440-9a2a7d730ea3",
-          "placeholder": "Quantity",
-          "keyName": "playerQuantity",
-          "name": "Quantity",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"
-          ]
-        },
-        {
-          "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
-          "placeholder": "Select Parent | Guardian | Staff",
-          "keyName": "parentId",
-          "name": "parentId",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": []
-        },
-        {
-          "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
-          "placeholder": "Birthday",
-          "keyName": "birthday",
-          "name": "Birthday",
-          "inputType": "datepicker",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
-          "placeholder": "Player Phone (Optional)",
-          "keyName": "playerPhone",
-          "name": "Player Phone",
-          "inputType": "number",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
-          "placeholder": "Player Email (Optional)",
-          "keyName": "playerEmail",
-          "name": "Player Email",
-          "inputType": "text",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
-          "placeholder": "Gender",
-          "keyName": "gender",
-          "name": "Gender",
-          "inputType": "dropdown",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Male",
-            "Female"
-          ]
-        },
-        {
-          "_id": "5024ce59-6ec5-4aea-bf30-98830c8bcb7d",
-          "placeholder": "Street Address",
-          "keyName": "streetAddress",
-          "name": "Street Address",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "55b6d540-fc3f-4935-9d99-b3096e1691aa",
-          "placeholder": "City",
-          "keyName": "city",
-          "name": "City",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "587ca96f-3bb9-42b3-8669-809e1196cab6",
-          "placeholder": "State",
-          "keyName": "state",
-          "name": "State",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "99b10ccb-089d-4de7-b82a-5e8008c4a8c9",
-          "placeholder": "Postal Code",
-          "keyName": "postalCode",
-          "name": "Postal Code",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "6a68a18b-16c1-4c85-b79a-cbddc54f80d9",
-          "placeholder": "Players Current Rush Club",
-          "keyName": "playersCurrentRushClub",
-          "name": "Players Current Rush Club",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2cdc5a48-7878-4107-860d-63c65fad1b11",
-          "placeholder": "Country of Birth",
-          "keyName": "countryofBirth",
-          "name": "Country of Birth",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "749f373a-7464-460b-bc1b-b5af451f6360",
-          "placeholder": "Country of Citizenship",
-          "keyName": "countryofCitizenship",
-          "name": "Country of Citizenship",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "e36918f6-22f1-40be-8ba9-866f4797b303",
-          "placeholder": "Player Position ",
-          "keyName": "playerPosition",
-          "name": "Player Position ",
-          "inputType": "dropdown",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Fwd",
-            "Df",
-            "GK"
-          ]
-        }
-      ]
+        "__v": 0.0,
+        "registerForm": [
+            {
+                "page": 1,
+                "name": "step 1",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff info"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
+                        "placeholder": "Relationship with child",
+                        "keyName": "relationShipWithChild",
+                        "name": "relationShipWithChild",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "584f8f03-d257-4cf7-b440-9a2a7d730ea3",
+                        "placeholder": "Quantity",
+                        "keyName": "playerQuantity",
+                        "name": "Quantity",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10"
+                        ]
+                    },
+                    {
+                        "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
+                        "placeholder": "Select Parent | Guardian | Staff",
+                        "keyName": "parentId",
+                        "name": "parentId",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": []
+                    },
+                    {
+                        "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
+                        "placeholder": "Birthday",
+                        "keyName": "birthday",
+                        "name": "Birthday",
+                        "inputType": "datepicker",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
+                        "placeholder": "Player Phone (Optional)",
+                        "keyName": "playerPhone",
+                        "name": "Player Phone",
+                        "inputType": "number",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
+                        "placeholder": "Player Email (Optional)",
+                        "keyName": "playerEmail",
+                        "name": "Player Email",
+                        "inputType": "text",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
+                        "placeholder": "Gender",
+                        "keyName": "gender",
+                        "name": "Gender",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Male",
+                            "Female"
+                        ]
+                    },
+                    {
+                        "_id": "5024ce59-6ec5-4aea-bf30-98830c8bcb7d",
+                        "placeholder": "Street Address",
+                        "keyName": "streetAddress",
+                        "name": "Street Address",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "55b6d540-fc3f-4935-9d99-b3096e1691aa",
+                        "placeholder": "City",
+                        "keyName": "city",
+                        "name": "City",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "587ca96f-3bb9-42b3-8669-809e1196cab6",
+                        "placeholder": "State",
+                        "keyName": "state",
+                        "name": "State",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "99b10ccb-089d-4de7-b82a-5e8008c4a8c9",
+                        "placeholder": "Postal Code",
+                        "keyName": "postalCode",
+                        "name": "Postal Code",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "6a68a18b-16c1-4c85-b79a-cbddc54f80d9",
+                        "placeholder": "Players Current Rush Club",
+                        "keyName": "playersCurrentRushClub",
+                        "name": "Players Current Rush Club",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2cdc5a48-7878-4107-860d-63c65fad1b11",
+                        "placeholder": "Country of Birth",
+                        "keyName": "countryofBirth",
+                        "name": "Country of Birth",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "749f373a-7464-460b-bc1b-b5af451f6360",
+                        "placeholder": "Country of Citizenship",
+                        "keyName": "countryofCitizenship",
+                        "name": "Country of Citizenship",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "e36918f6-22f1-40be-8ba9-866f4797b303",
+                        "placeholder": "Player Position ",
+                        "keyName": "playerPosition",
+                        "name": "Player Position ",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Fwd",
+                            "Df",
+                            "GK"
+                        ]
+                    }
+                ]
+            },
+            {
+                "page": 2,
+                "name": "step 2",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Credentials"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
+                        "placeholder": "Birth Certificate",
+                        "keyName": "birthCertificate",
+                        "name": "birthCertificate",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "Photo",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
+                        "placeholder": "Staff Certificate",
+                        "keyName": "staffCertificate",
+                        "name": "Staff Certificate",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    }
+                ]
+            },
+            {
+                "page": 3,
+                "name": "step 3",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Acknowledgement Statements"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
+                        "placeholder": "Travel Insurance",
+                        "keyName": "travelInsurance",
+                        "name": "Travel Insurance",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "xxx"
+                    },
+                    {
+                        "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
+                        "placeholder": "Flight Statement",
+                        "keyName": "flightStatement",
+                        "name": "Flight Statement",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "xxx"
+                    }
+                ]
+            }
+        ],
+        "isRemoved": false
     },
-    {
-      "page": 2,
-      "name": "step 2",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Credentials"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
-          "placeholder": "Birth Certificate",
-          "keyName": "birthCertificate",
-          "name": "birthCertificate",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "Photo",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
-          "placeholder": "Staff Certificate",
-          "keyName": "staffCertificate",
-          "name": "Staff Certificate",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        }
-      ]
-    },
-    {
-      "page": 3,
-      "name": "step 3",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Acknowledgement Statements"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
-          "placeholder": "Travel Insurance",
-          "keyName": "travelInsurance",
-          "name": "Travel Insurance",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "xxx"
-        },
-        {
-          "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
-          "placeholder": "Flight Statement",
-          "keyName": "flightStatement",
-          "name": "Flight Statement",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "xxx"
-        }
-      ]
-    }
-  ],
-  "isRemoved": false
-},
 {
-  "_id": "8a1fa72b-fd15-4dd5-9dfc-3430a040cd64",
-  "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
-  "name": "Rush Fest",
-  "createdAt": {
-    "$date": "2021-09-06T16:58:02.987Z"
-  },
-  "updatedAt": {
-    "$date": "2021-10-18T14:22:53.200Z"
-  },
-  "__v": 0,
-  "registerForm": [
-    {
-      "page": 1,
-      "name": "step 1",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
+        "_id": "8a1fa72b-fd15-4dd5-9dfc-3430a040cd64",
+        "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
+        "name": "Rush Fest",
+        "createdAt": {
+            "$date": "2021-09-06T16:58:02.987Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player info "
+        "updatedAt": {
+            "$date": "2021-10-18T14:22:53.2Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff info"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
-          "placeholder": "Relationship with child",
-          "keyName": "relationShipWithChild",
-          "name": "relationShipWithChild",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "584f8f03-d257-4cf7-b440-9a2a7d730ea3",
-          "placeholder": "Quantity",
-          "keyName": "playerQuantity",
-          "name": "Quantity",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"
-          ]
-        },
-        {
-          "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
-          "placeholder": "Select Parent | Guardian | Staff",
-          "keyName": "parentId",
-          "name": "parentId",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": []
-        },
-        {
-          "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
-          "placeholder": "Birthday",
-          "keyName": "birthday",
-          "name": "Birthday",
-          "inputType": "datepicker",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
-          "placeholder": "Player Phone (Optional)",
-          "keyName": "playerPhone",
-          "name": "Player Phone",
-          "inputType": "number",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
-          "placeholder": "Player Email (Optional)",
-          "keyName": "playerEmail",
-          "name": "Player Email",
-          "inputType": "text",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
-          "placeholder": "Gender",
-          "keyName": "gender",
-          "name": "Gender",
-          "inputType": "dropdown",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Male",
-            "Female"
-          ]
-        },
-        {
-          "_id": "f039ce2d-36a4-4dbc-9051-a8e585c3a04e",
-          "placeholder": "What Rush Club are you with?",
-          "keyName": "whatRushClubareyouwith",
-          "name": "What Rush Club are you with?",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        }
-      ]
+        "__v": 0.0,
+        "registerForm": [
+            {
+                "page": 1,
+                "name": "step 1",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player info "
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff info"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
+                        "placeholder": "Relationship with child",
+                        "keyName": "relationShipWithChild",
+                        "name": "relationShipWithChild",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "584f8f03-d257-4cf7-b440-9a2a7d730ea3",
+                        "placeholder": "Quantity",
+                        "keyName": "playerQuantity",
+                        "name": "Quantity",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10"
+                        ]
+                    },
+                    {
+                        "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
+                        "placeholder": "Select Parent | Guardian | Staff",
+                        "keyName": "parentId",
+                        "name": "parentId",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": []
+                    },
+                    {
+                        "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
+                        "placeholder": "Birthday",
+                        "keyName": "birthday",
+                        "name": "Birthday",
+                        "inputType": "datepicker",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
+                        "placeholder": "Player Phone (Optional)",
+                        "keyName": "playerPhone",
+                        "name": "Player Phone",
+                        "inputType": "number",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
+                        "placeholder": "Player Email (Optional)",
+                        "keyName": "playerEmail",
+                        "name": "Player Email",
+                        "inputType": "text",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
+                        "placeholder": "Gender",
+                        "keyName": "gender",
+                        "name": "Gender",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Male",
+                            "Female"
+                        ]
+                    },
+                    {
+                        "_id": "f039ce2d-36a4-4dbc-9051-a8e585c3a04e",
+                        "placeholder": "What Rush Club are you with?",
+                        "keyName": "whatRushClubareyouwith",
+                        "name": "What Rush Club are you with?",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    }
+                ]
+            },
+            {
+                "page": 2,
+                "name": "step 2",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Credentials"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
+                        "placeholder": "Birth Certificate",
+                        "keyName": "birthCertificate",
+                        "name": "birthCertificate",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "Photo",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
+                        "placeholder": "Staff Certificate",
+                        "keyName": "staffCertificate",
+                        "name": "Staff Certificate",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "93e8626e-3602-40f9-a1e4-9fb8f89f860b",
+                        "placeholder": "Player 2 First & Last Name ",
+                        "keyName": "player2Name",
+                        "name": "Player 2 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "dfa699ff-8cd1-4a7c-a5f6-4ffdf28cb894",
+                        "placeholder": "Player 2 Preferred Position  ",
+                        "keyName": "player2LastName",
+                        "name": "Player 2 Preferred Position  ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender",
+                            "Forward",
+                            "Midfielder ",
+                            "Goalie"
+                        ]
+                    },
+                    {
+                        "_id": "57e4e18b-c4f9-477b-b51f-4d6350824e1a",
+                        "placeholder": "Player 3 First & Last Name ",
+                        "keyName": "player3FirstLastName",
+                        "name": "Player 3 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "454c7afc-1969-40f8-80d4-1ef94ebfec09",
+                        "placeholder": "Player 3 Preferred Position  ",
+                        "keyName": "player3PreferredPosition",
+                        "name": "Player 3 Preferred Position  ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender ",
+                            "Forward ",
+                            "Midfielder",
+                            "Goalie "
+                        ]
+                    },
+                    {
+                        "_id": "3a620c5c-98d2-4550-b556-1c2d72aecded",
+                        "placeholder": "Player 4 First & Last Name ",
+                        "keyName": "player4FirstLastName",
+                        "name": "Player 4 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "8f7404bb-33ec-499f-bd8b-3f5999455715",
+                        "placeholder": "Player 4 Preferred Position ",
+                        "keyName": "player4PreferredPosition",
+                        "name": "Player 4 Preferred Position ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender",
+                            "Forward",
+                            "Midfielder",
+                            "Goalie"
+                        ]
+                    },
+                    {
+                        "_id": "f091f983-ec55-4034-b5ea-a35ce603ca80",
+                        "placeholder": "Player 5 First & Last Name ",
+                        "keyName": "player5FirstLastName",
+                        "name": "Player 5 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "4e6acacf-0c03-4c52-9809-df18f08f16e6",
+                        "placeholder": "Player 5 Preferred Position ",
+                        "keyName": "player5PreferredPosition",
+                        "name": "Player 5 Preferred Position ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender",
+                            "Forward ",
+                            "Midfielder ",
+                            "Goalie "
+                        ]
+                    },
+                    {
+                        "_id": "4e5947b3-a4bf-443a-9a1c-f2c2fe8e600a",
+                        "placeholder": "Player 6 First & Last Name ",
+                        "keyName": "player6FirstLastName",
+                        "name": "Player 6 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "87b9ea88-07b7-496d-857c-12634c61496f",
+                        "placeholder": "Player 6 Preferred Position  ",
+                        "keyName": "player6PreferredPosition",
+                        "name": "Player 6 Preferred Position  ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender ",
+                            "Forward ",
+                            "Midfielder ",
+                            "Goalie "
+                        ]
+                    },
+                    {
+                        "_id": "bbff18c5-7680-4b6f-a376-e454e10db74e",
+                        "placeholder": "Player 7 Frist & Last Name ",
+                        "keyName": "player7FristLastName",
+                        "name": "Player 7 Frist & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "e2e2a4da-3bc2-4dcc-9850-d6d1cbcb69f9",
+                        "placeholder": "Player 7 Preferred Position ",
+                        "keyName": "player7PreferredPosition",
+                        "name": "Player 7 Preferred Position ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender ",
+                            "Forward",
+                            "Midfielder ",
+                            "Goalie"
+                        ]
+                    },
+                    {
+                        "_id": "7829a1b5-be19-4a95-a7fc-dc0c79ef3963",
+                        "placeholder": "Player 8 First & Last Name ",
+                        "keyName": "player8FirstLastName",
+                        "name": "Player 8 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "03d3103b-10ea-4dc5-8512-8c47ab26908f",
+                        "placeholder": "Player 8 Preferred Position ",
+                        "keyName": "player8PreferredPosition",
+                        "name": "Player 8 Preferred Position ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender",
+                            "Forward",
+                            "Midfielder",
+                            "Goalie"
+                        ]
+                    },
+                    {
+                        "_id": "6b6b6d6d-e563-4798-9ff0-ba1007c060fa",
+                        "placeholder": "Player 9 First & Last Name ",
+                        "keyName": "player9FirstLastName",
+                        "name": "Player 9 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "5d6d46b2-3647-45d3-856e-933b4d3bb14c",
+                        "placeholder": "Player 9 Preferred Position ",
+                        "keyName": "player9PreferredPosition",
+                        "name": "Player 9 Preferred Position ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender ",
+                            "Forward",
+                            "Midfielder ",
+                            "Goalie"
+                        ]
+                    },
+                    {
+                        "_id": "b8f1d819-436c-449a-a99a-2f89f259a363",
+                        "placeholder": "Player 10 First & Last Name ",
+                        "keyName": "player10FirstLastName",
+                        "name": "Player 10 First & Last Name ",
+                        "inputType": "text",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "86024912-16d4-465d-8eee-517e3fd7d5c0",
+                        "placeholder": "Player 10 Preferred Position ",
+                        "keyName": "player10PreferredPosition",
+                        "name": "Player 10 Preferred Position ",
+                        "inputType": "dropdown",
+                        "required": false,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Defender",
+                            "Forward",
+                            "Midfielder",
+                            "Goalie"
+                        ]
+                    }
+                ]
+            },
+            {
+                "page": 3,
+                "name": "step 3",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Acknowledgement Statements"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
+                        "placeholder": "COPPA - CHILDREN'S ONLINE PRIVACY PROTECTION ACT",
+                        "keyName": "travelInsurance",
+                        "name": "COPPA - CHILDREN'S ONLINE PRIVACY PROTECTION ACT",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "AS PER COPPA REQUIREMENTS, THIS IS TO CERTIFY THAT THE ABOVE NAMED PLAYER IS MY DEPENDENT AND HAS MY PERMISSION TO USE AND PARTICIPATE ON THE RUSH SOCCER WEBSITE. I UNDERSTAND THAT RUSH SOCCER COLLECTS CERTAIN PIECES OF INFORMATION FROM CHILDREN AND THAT THESE ITEMS ARE USED FOR THE SOLE PURPOSE OF WEB PROGRAMS AND EMAIL COMMUNICATIONS RELATED TO THE RUSH. THIS INFORMATION WILL NEVER BE SOLD TO THIRD PARTIES. THE INFORMATION COLLECTED IS TO HELP CONFIRM RUSH MEMBERSHIP, AS WELL AS POPULATE CERTAIN PROGRAMS AND WEB PAGES WITH USER INFORMATION. I UNDERSTAND THAT RUSH SOCCER POPULATES THESE AREAS WITH ONLY ABSOLUTELY NECESSARY INFORMATION.\n"
+                    },
+                    {
+                        "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
+                        "placeholder": "Injury Liability",
+                        "keyName": "flightStatement",
+                        "name": "Injury Liability",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "I understand that participation in sports requires an acceptance of the risk of an injury. I understand that I/my child may be permanently injured while playing sports and accept the risk. I understand I/my child must follow all the rules of my sport. I understand that I/my child must refrain from practice or play while injured or ill, whether or not I am/my child is receiving medical treatment and during medical treatment until I am/my child is discharged from treatment or given permission by a physician to return to participation despite continuing treatment."
+                    },
+                    {
+                        "_id": "118ec2fc-97a7-4da8-9f03-d4f6f392666c",
+                        "placeholder": "Image Rights",
+                        "keyName": "imageRights",
+                        "name": "Image Rights",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "From time to time, Rush Soccer may post photos and images related to my son/daughter on websites and social media accounts related to soccer during and, or after his/her participation with Rush Soccer. \n"
+                    },
+                    {
+                        "_id": "b1065b6d-30a4-4dff-bfbe-90d50bbe0180",
+                        "placeholder": "Consent of Treatment ",
+                        "keyName": "consentofTreatment",
+                        "name": "Consent of Treatment ",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "I understand that I/my child may be injured while participating in athletics with Rush Soccer. I authorize the coach, team parent, or athletic trainer to seek any emergency medical care that may become necessary while participating or traveling with Rush Soccer. I assume the financial responsibility for any medical treatment for me/my child. I also authorize the athletic trainer to administer treatments related to injury prevention and rehabilitation."
+                    }
+                ]
+            }
+        ],
+        "isRemoved": false
     },
-    {
-      "page": 2,
-      "name": "step 2",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Credentials"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
-          "placeholder": "Birth Certificate",
-          "keyName": "birthCertificate",
-          "name": "birthCertificate",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "Photo",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
-          "placeholder": "Staff Certificate",
-          "keyName": "staffCertificate",
-          "name": "Staff Certificate",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "93e8626e-3602-40f9-a1e4-9fb8f89f860b",
-          "placeholder": "Player 2 First & Last Name ",
-          "keyName": "player2Name",
-          "name": "Player 2 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "dfa699ff-8cd1-4a7c-a5f6-4ffdf28cb894",
-          "placeholder": "Player 2 Preferred Position  ",
-          "keyName": "player2LastName",
-          "name": "Player 2 Preferred Position  ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender",
-            "Forward",
-            "Midfielder ",
-            "Goalie"
-          ]
-        },
-        {
-          "_id": "57e4e18b-c4f9-477b-b51f-4d6350824e1a",
-          "placeholder": "Player 3 First & Last Name ",
-          "keyName": "player3FirstLastName",
-          "name": "Player 3 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "454c7afc-1969-40f8-80d4-1ef94ebfec09",
-          "placeholder": "Player 3 Preferred Position  ",
-          "keyName": "player3PreferredPosition",
-          "name": "Player 3 Preferred Position  ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender ",
-            "Forward ",
-            "Midfielder",
-            "Goalie "
-          ]
-        },
-        {
-          "_id": "3a620c5c-98d2-4550-b556-1c2d72aecded",
-          "placeholder": "Player 4 First & Last Name ",
-          "keyName": "player4FirstLastName",
-          "name": "Player 4 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "8f7404bb-33ec-499f-bd8b-3f5999455715",
-          "placeholder": "Player 4 Preferred Position ",
-          "keyName": "player4PreferredPosition",
-          "name": "Player 4 Preferred Position ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender",
-            "Forward",
-            "Midfielder",
-            "Goalie"
-          ]
-        },
-        {
-          "_id": "f091f983-ec55-4034-b5ea-a35ce603ca80",
-          "placeholder": "Player 5 First & Last Name ",
-          "keyName": "player5FirstLastName",
-          "name": "Player 5 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "4e6acacf-0c03-4c52-9809-df18f08f16e6",
-          "placeholder": "Player 5 Preferred Position ",
-          "keyName": "player5PreferredPosition",
-          "name": "Player 5 Preferred Position ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender",
-            "Forward ",
-            "Midfielder ",
-            "Goalie "
-          ]
-        },
-        {
-          "_id": "4e5947b3-a4bf-443a-9a1c-f2c2fe8e600a",
-          "placeholder": "Player 6 First & Last Name ",
-          "keyName": "player6FirstLastName",
-          "name": "Player 6 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "87b9ea88-07b7-496d-857c-12634c61496f",
-          "placeholder": "Player 6 Preferred Position  ",
-          "keyName": "player6PreferredPosition",
-          "name": "Player 6 Preferred Position  ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender ",
-            "Forward ",
-            "Midfielder ",
-            "Goalie "
-          ]
-        },
-        {
-          "_id": "bbff18c5-7680-4b6f-a376-e454e10db74e",
-          "placeholder": "Player 7 Frist & Last Name ",
-          "keyName": "player7FristLastName",
-          "name": "Player 7 Frist & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "e2e2a4da-3bc2-4dcc-9850-d6d1cbcb69f9",
-          "placeholder": "Player 7 Preferred Position ",
-          "keyName": "player7PreferredPosition",
-          "name": "Player 7 Preferred Position ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender ",
-            "Forward",
-            "Midfielder ",
-            "Goalie"
-          ]
-        },
-        {
-          "_id": "7829a1b5-be19-4a95-a7fc-dc0c79ef3963",
-          "placeholder": "Player 8 First & Last Name ",
-          "keyName": "player8FirstLastName",
-          "name": "Player 8 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "03d3103b-10ea-4dc5-8512-8c47ab26908f",
-          "placeholder": "Player 8 Preferred Position ",
-          "keyName": "player8PreferredPosition",
-          "name": "Player 8 Preferred Position ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender",
-            "Forward",
-            "Midfielder",
-            "Goalie"
-          ]
-        },
-        {
-          "_id": "6b6b6d6d-e563-4798-9ff0-ba1007c060fa",
-          "placeholder": "Player 9 First & Last Name ",
-          "keyName": "player9FirstLastName",
-          "name": "Player 9 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "5d6d46b2-3647-45d3-856e-933b4d3bb14c",
-          "placeholder": "Player 9 Preferred Position ",
-          "keyName": "player9PreferredPosition",
-          "name": "Player 9 Preferred Position ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender ",
-            "Forward",
-            "Midfielder ",
-            "Goalie"
-          ]
-        },
-        {
-          "_id": "b8f1d819-436c-449a-a99a-2f89f259a363",
-          "placeholder": "Player 10 First & Last Name ",
-          "keyName": "player10FirstLastName",
-          "name": "Player 10 First & Last Name ",
-          "inputType": "text",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "86024912-16d4-465d-8eee-517e3fd7d5c0",
-          "placeholder": "Player 10 Preferred Position ",
-          "keyName": "player10PreferredPosition",
-          "name": "Player 10 Preferred Position ",
-          "inputType": "dropdown",
-          "required": false,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Defender",
-            "Forward",
-            "Midfielder",
-            "Goalie"
-          ]
-        }
-      ]
-    },
-    {
-      "page": 3,
-      "name": "step 3",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Acknowledgement Statements"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
-          "placeholder": "COPPA - CHILDREN'S ONLINE PRIVACY PROTECTION ACT",
-          "keyName": "travelInsurance",
-          "name": "COPPA - CHILDREN'S ONLINE PRIVACY PROTECTION ACT",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "AS PER COPPA REQUIREMENTS, THIS IS TO CERTIFY THAT THE ABOVE NAMED PLAYER IS MY DEPENDENT AND HAS MY PERMISSION TO USE AND PARTICIPATE ON THE RUSH SOCCER WEBSITE. I UNDERSTAND THAT RUSH SOCCER COLLECTS CERTAIN PIECES OF INFORMATION FROM CHILDREN AND THAT THESE ITEMS ARE USED FOR THE SOLE PURPOSE OF WEB PROGRAMS AND EMAIL COMMUNICATIONS RELATED TO THE RUSH. THIS INFORMATION WILL NEVER BE SOLD TO THIRD PARTIES. THE INFORMATION COLLECTED IS TO HELP CONFIRM RUSH MEMBERSHIP, AS WELL AS POPULATE CERTAIN PROGRAMS AND WEB PAGES WITH USER INFORMATION. I UNDERSTAND THAT RUSH SOCCER POPULATES THESE AREAS WITH ONLY ABSOLUTELY NECESSARY INFORMATION.\n"
-        },
-        {
-          "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
-          "placeholder": "Injury Liability",
-          "keyName": "flightStatement",
-          "name": "Injury Liability",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "I understand that participation in sports requires an acceptance of the risk of an injury. I understand that I/my child may be permanently injured while playing sports and accept the risk. I understand I/my child must follow all the rules of my sport. I understand that I/my child must refrain from practice or play while injured or ill, whether or not I am/my child is receiving medical treatment and during medical treatment until I am/my child is discharged from treatment or given permission by a physician to return to participation despite continuing treatment."
-        },
-        {
-          "_id": "118ec2fc-97a7-4da8-9f03-d4f6f392666c",
-          "placeholder": "Image Rights",
-          "keyName": "imageRights",
-          "name": "Image Rights",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "From time to time, Rush Soccer may post photos and images related to my son/daughter on websites and social media accounts related to soccer during and, or after his/her participation with Rush Soccer. \n"
-        },
-        {
-          "_id": "b1065b6d-30a4-4dff-bfbe-90d50bbe0180",
-          "placeholder": "Consent of Treatment ",
-          "keyName": "consentofTreatment",
-          "name": "Consent of Treatment ",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "I understand that I/my child may be injured while participating in athletics with Rush Soccer. I authorize the coach, team parent, or athletic trainer to seek any emergency medical care that may become necessary while participating or traveling with Rush Soccer. I assume the financial responsibility for any medical treatment for me/my child. I also authorize the athletic trainer to administer treatments related to injury prevention and rehabilitation."
-        }
-      ]
-    }
-  ],
-  "isRemoved": false
-},
 {
-  "_id": "acdfa72b-fd15-4dd5-9dfc-3430a040cd64",
-  "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
-  "name": "Rush Select",
-  "createdAt": {
-    "$date": "2021-09-06T16:58:02.987Z"
-  },
-  "updatedAt": {
-    "$date": "2021-09-29T22:26:46.173Z"
-  },
-  "__v": 0,
-  "registerForm": [
-    {
-      "page": 1,
-      "name": "step 1",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
+        "_id": "acdfa72b-fd15-4dd5-9dfc-3430a040cd64",
+        "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
+        "name": "Rush Select",
+        "createdAt": {
+            "$date": "2021-09-06T16:58:02.987Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Info"
+        "updatedAt": {
+            "$date": "2021-09-29T22:26:46.173Z"
         },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff info"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
-          "placeholder": "Relationship with child",
-          "keyName": "relationShipWithChild",
-          "name": "relationShipWithChild",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "584f8f03-d257-4cf7-b440-9a2a7d730ea3",
-          "placeholder": "Quantity",
-          "keyName": "playerQuantity",
-          "name": "Quantity",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10"
-          ]
-        },
-        {
-          "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
-          "placeholder": "Select Parent | Guardian | Staff",
-          "keyName": "parentId",
-          "name": "parentId",
-          "inputType": "dropdown",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": []
-        },
-        {
-          "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
-          "placeholder": "Birthday",
-          "keyName": "birthday",
-          "name": "Birthday",
-          "inputType": "datepicker",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
-          "placeholder": "Player Phone (Optional)",
-          "keyName": "playerPhone",
-          "name": "Player Phone",
-          "inputType": "number",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
-          "placeholder": "Player Email (Optional)",
-          "keyName": "playerEmail",
-          "name": "Player Email",
-          "inputType": "text",
-          "required": false,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
-          "placeholder": "First Name",
-          "keyName": "firstName",
-          "name": "firstName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
-          "placeholder": "Last Name",
-          "keyName": "lastName",
-          "name": "lastName",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
-          "placeholder": "Phone",
-          "keyName": "phone",
-          "name": "phone",
-          "inputType": "number",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
-          "placeholder": "Email",
-          "keyName": "email",
-          "name": "Email",
-          "inputType": "text",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          }
-        },
-        {
-          "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
-          "placeholder": "Gender",
-          "keyName": "gender",
-          "name": "Gender",
-          "inputType": "dropdown",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Male",
-            "Female"
-          ]
-        },
-        {
-          "_id": "5024ce59-6ec5-4aea-bf30-98830c8bcb7d",
-          "placeholder": "Street Address",
-          "keyName": "streetAddress",
-          "name": "Street Address",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "55b6d540-fc3f-4935-9d99-b3096e1691aa",
-          "placeholder": "City",
-          "keyName": "city",
-          "name": "City",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "587ca96f-3bb9-42b3-8669-809e1196cab6",
-          "placeholder": "State",
-          "keyName": "state",
-          "name": "State",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "99b10ccb-089d-4de7-b82a-5e8008c4a8c9",
-          "placeholder": "Postal Code",
-          "keyName": "postalCode",
-          "name": "Postal Code",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "6a68a18b-16c1-4c85-b79a-cbddc54f80d9",
-          "placeholder": "Players Current Rush Club",
-          "keyName": "playersCurrentRushClub",
-          "name": "Players Current Rush Club",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "2cdc5a48-7878-4107-860d-63c65fad1b11",
-          "placeholder": "Country of Birth",
-          "keyName": "countryofBirth",
-          "name": "Country of Birth",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "749f373a-7464-460b-bc1b-b5af451f6360",
-          "placeholder": "Country of Citizenship",
-          "keyName": "countryofCitizenship",
-          "name": "Country of Citizenship",
-          "inputType": "text",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "5ab69e75-3c78-4092-9b55-fd6c6eb4bd41",
-          "placeholder": "Soccer Fan",
-          "keyName": "soccerFan",
-          "name": "Soccer Fan",
-          "inputType": "dropdown",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "values": [
-            "Yes",
-            "No"
-          ]
-        }
-      ]
+        "__v": 0.0,
+        "registerForm": [
+            {
+                "page": 1,
+                "name": "step 1",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Info"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff info"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "74477dff-1889-47ed-88fa-fa7dfa21f9e7",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "b53c309d-586e-4c62-851d-bf0b30854078",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "deca530c-ec8a-451f-b42e-b4ef3b336acf",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "6fbde57e-400e-48fc-8324-2af2821f367d",
+                        "placeholder": "Relationship with child",
+                        "keyName": "relationShipWithChild",
+                        "name": "relationShipWithChild",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "584f8f03-d257-4cf7-b440-9a2a7d730ea3",
+                        "placeholder": "Quantity",
+                        "keyName": "playerQuantity",
+                        "name": "Quantity",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10"
+                        ]
+                    },
+                    {
+                        "_id": "6c128d51-a65e-4add-a27d-da0e2b74938c",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "1f8ad9b5-bbe8-4ec0-8d49-5499c47ac62a",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2e3b1830-6147-4955-a3b3-b8e3a2db3d14",
+                        "placeholder": "Select Parent | Guardian | Staff",
+                        "keyName": "parentId",
+                        "name": "parentId",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": []
+                    },
+                    {
+                        "_id": "3a316c8f-603a-4c64-93e6-1799f7a20772",
+                        "placeholder": "Birthday",
+                        "keyName": "birthday",
+                        "name": "Birthday",
+                        "inputType": "datepicker",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "9cb4bf04-5d36-4ee0-8433-d7e28c6925bb",
+                        "placeholder": "Player Phone (Optional)",
+                        "keyName": "playerPhone",
+                        "name": "Player Phone",
+                        "inputType": "number",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "c73c3c25-b179-41bc-a734-378242d14fe9",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fcbeec7-d696-4ded-bd65-b25c5de06db1",
+                        "placeholder": "Player Email (Optional)",
+                        "keyName": "playerEmail",
+                        "name": "Player Email",
+                        "inputType": "text",
+                        "required": false,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "ce39941c-4273-4b36-ad61-2b01777f2ec1",
+                        "placeholder": "First Name",
+                        "keyName": "firstName",
+                        "name": "firstName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "b6bbbe23-8a36-4f3a-9db3-63bb3c56ff18",
+                        "placeholder": "Last Name",
+                        "keyName": "lastName",
+                        "name": "lastName",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e9ad2252-4451-45b8-b47e-da1ff3d27e12",
+                        "placeholder": "Phone",
+                        "keyName": "phone",
+                        "name": "phone",
+                        "inputType": "number",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "e645e6c9-4b08-4c8c-950b-fb8242941a5e",
+                        "placeholder": "Email",
+                        "keyName": "email",
+                        "name": "Email",
+                        "inputType": "text",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        }
+                    },
+                    {
+                        "_id": "3815cd31-1e36-4059-9626-29aa02685ef8",
+                        "placeholder": "Gender",
+                        "keyName": "gender",
+                        "name": "Gender",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Male",
+                            "Female"
+                        ]
+                    },
+                    {
+                        "_id": "5024ce59-6ec5-4aea-bf30-98830c8bcb7d",
+                        "placeholder": "Street Address",
+                        "keyName": "streetAddress",
+                        "name": "Street Address",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "55b6d540-fc3f-4935-9d99-b3096e1691aa",
+                        "placeholder": "City",
+                        "keyName": "city",
+                        "name": "City",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "587ca96f-3bb9-42b3-8669-809e1196cab6",
+                        "placeholder": "State",
+                        "keyName": "state",
+                        "name": "State",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "99b10ccb-089d-4de7-b82a-5e8008c4a8c9",
+                        "placeholder": "Postal Code",
+                        "keyName": "postalCode",
+                        "name": "Postal Code",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "6a68a18b-16c1-4c85-b79a-cbddc54f80d9",
+                        "placeholder": "Players Current Rush Club",
+                        "keyName": "playersCurrentRushClub",
+                        "name": "Players Current Rush Club",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "2cdc5a48-7878-4107-860d-63c65fad1b11",
+                        "placeholder": "Country of Birth",
+                        "keyName": "countryofBirth",
+                        "name": "Country of Birth",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "749f373a-7464-460b-bc1b-b5af451f6360",
+                        "placeholder": "Country of Citizenship",
+                        "keyName": "countryofCitizenship",
+                        "name": "Country of Citizenship",
+                        "inputType": "text",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "5ab69e75-3c78-4092-9b55-fd6c6eb4bd41",
+                        "placeholder": "Soccer Fan",
+                        "keyName": "soccerFan",
+                        "name": "Soccer Fan",
+                        "inputType": "dropdown",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "values": [
+                            "Yes",
+                            "No"
+                        ]
+                    }
+                ]
+            },
+            {
+                "page": 2,
+                "name": "step 2",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Adult Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Player Credentials"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Staff Credentials"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        }
+                    },
+                    {
+                        "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "photo",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
+                        "placeholder": "Birth Certificate",
+                        "keyName": "birthCertificate",
+                        "name": "birthCertificate",
+                        "inputType": "fileupload",
+                        "type": "image",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        }
+                    },
+                    {
+                        "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
+                        "placeholder": "Photo",
+                        "keyName": "photo",
+                        "name": "Photo",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    },
+                    {
+                        "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
+                        "placeholder": "Staff Certificate",
+                        "keyName": "staffCertificate",
+                        "name": "Staff Certificate",
+                        "inputType": "fileupload",
+                        "required": true,
+                        "default": true,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "type": "image"
+                    }
+                ]
+            },
+            {
+                "page": 3,
+                "name": "step 3",
+                "title": [
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "player"
+                        },
+                        "value": "Acknowledgement Statements"
+                    },
+                    {
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "staff"
+                        },
+                        "value": "Acknowledgement Statements"
+                    }
+                ],
+                "fields": [
+                    {
+                        "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
+                        "placeholder": "Travel Insurance",
+                        "keyName": "travelInsurance",
+                        "name": "Travel Insurance",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "xxx"
+                    },
+                    {
+                        "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
+                        "placeholder": "Flight Statement",
+                        "keyName": "flightStatement",
+                        "name": "Flight Statement",
+                        "inputType": "waviers",
+                        "required": true,
+                        "default": false,
+                        "for": {
+                            "keyName": "memberType",
+                            "value": "adult"
+                        },
+                        "value": "xxx"
+                    }
+                ]
+            }
+        ],
+        "isRemoved": false
     },
-    {
-      "page": 2,
-      "name": "step 2",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Adult Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Player Credentials"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Staff Credentials"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "8d3958fc-b4fb-4b00-bdf7-be4926b6153a",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          }
-        },
-        {
-          "_id": "1fc91c66-ce2d-463d-8975-394f95ba8942",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "photo",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "b042a3ec-de6d-4c00-8970-0f259b0c6297",
-          "placeholder": "Birth Certificate",
-          "keyName": "birthCertificate",
-          "name": "birthCertificate",
-          "inputType": "fileupload",
-          "type": "image",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          }
-        },
-        {
-          "_id": "0c6c7061-6f56-486f-8658-f286f7f46a53",
-          "placeholder": "Photo",
-          "keyName": "photo",
-          "name": "Photo",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        },
-        {
-          "_id": "57da1f18-1fa9-43b8-8c63-46f36c622a7b",
-          "placeholder": "Staff Certificate",
-          "keyName": "staffCertificate",
-          "name": "Staff Certificate",
-          "inputType": "fileupload",
-          "required": true,
-          "default": true,
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "type": "image"
-        }
-      ]
-    },
-    {
-      "page": 3,
-      "name": "step 3",
-      "title": [
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "player"
-          },
-          "value": "Acknowledgement Statements"
-        },
-        {
-          "for": {
-            "keyName": "memberType",
-            "value": "staff"
-          },
-          "value": "Acknowledgement Statements"
-        }
-      ],
-      "fields": [
-        {
-          "_id": "dc4f394d-00c3-44c8-94be-75e8cfac3e96",
-          "placeholder": "Travel Insurance",
-          "keyName": "travelInsurance",
-          "name": "Travel Insurance",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "xxx"
-        },
-        {
-          "_id": "3b1d72bd-eb32-48fc-b95c-ac635b125243",
-          "placeholder": "Flight Statement",
-          "keyName": "flightStatement",
-          "name": "Flight Statement",
-          "inputType": "waviers",
-          "required": true,
-          "default": false,
-          "for": {
-            "keyName": "memberType",
-            "value": "adult"
-          },
-          "value": "xxx"
-        }
-      ]
-    }
-  ],
-  "isRemoved": false
-},
 {
-  "_id": "eca1d66e-c21e-476f-8f4c-27b81a56ae99",
-  "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
-  "name": "Rush Futsal",
-  "createdAt": {
-    "$date": "2021-12-02T16:58:02.987Z"
-  },
-  "updatedAt": {
-    "$date": "2021-12-02T22:26:46.173Z"
-  },
-  "__v": 0,
-  "registerForm": [],
-  "isRemoved": false
-}]
+        "_id": "eca1d66e-c21e-476f-8f4c-27b81a56ae99",
+        "clubId": "9d8e0151-f81e-4bd2-98e0-41706069c0cc",
+        "name": "Rush Futsal",
+        "createdAt": {
+            "$date": "2021-12-02T16:58:02.987Z"
+        },
+        "updatedAt": {
+            "$date": "2021-12-02T22:26:46.173Z"
+        },
+        "__v": 0.0,
+        "registerForm": [],
+        "isRemoved": false
+    }
+]
