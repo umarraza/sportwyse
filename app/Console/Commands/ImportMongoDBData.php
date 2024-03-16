@@ -165,7 +165,7 @@ class ImportMongoDBData extends Command
 
     private function importUsers($club)
     {
-        $collection = $this->getFileContents('storage/app/public/sportwyse/v1/rushsoccer_users.json');
+        $collection = $this->getFileContents('storage/app/public/sportwyse/rushsoccer_users.json');
 
         $this->withProgressBar($collection, function ($model) use ($club) {
 
