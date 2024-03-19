@@ -60,80 +60,83 @@ class UsersImport
 
                     $data = $child->data;
 
-                    if (isset($data->playerEmail) && $data->playerEmail) {
+                    $email = Str::random('10') . "@gmail.com";
 
-                        $userByEmail = User::where('email', $data->playerEmail)->first();
-
-                        if (!$userByEmail) {
-                            
-                            $user = User::create([
-                                'm_id'          => $child->_id,
-                                'first_name'    => $data->firstName,
-                                'last_name'     => $data->lastName,
-                                'email'         => $data->playerEmail ?? Str::random('5') . "@gmail.com",
-                                'password'      => Hash::make('password'),
-                            ]);
-
-                            $user->assignRole('Player');
-
-                            $medicalInformationReleaseHIPPA = isset($data->medicalInformationReleaseHIPPA) 
-                                ? filter_var($data->medicalInformationReleaseHIPPA, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-                            
-                            $consentforTreatment = isset($data->consentforTreatment) 
-                                ? filter_var($data->consentforTreatment, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-                            
-                            $acceptanceofRisk = isset($data->acceptanceofRisk) 
-                                ? filter_var($data->acceptanceofRisk, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-
-                            $refundPolicy = isset($data->refundPolicy) 
-                                ? filter_var($data->refundPolicy, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-
-                            $delinquentPaymentPolicy = isset($data->delinquentPaymentPolicy) 
-                                ? filter_var($data->delinquentPaymentPolicy, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-
-                            $concussionInformationSheet = isset($data->concussionInformationSheet) 
-                                ? filter_var($data->concussionInformationSheet, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-
-                            $concussionInformationAcknowledgement = isset($data->concussionInformationAcknowledgement) 
-                                ? filter_var($data->concussionInformationAcknowledgement, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-
-                            $appearanceAgreement = isset($data->appearanceAgreement) 
-                                ? filter_var($data->appearanceAgreement, FILTER_VALIDATE_BOOLEAN) 
-                                : false;
-
-                            $user->player()->create([
-                                'club_id'                                => $club->id,
-                                'm_id'                                   => $child->_id,
-                                'guardian_id'                            => $guardian->id,
-                                'm_teams'                                => count($child->teams) ? json_encode($child->teams) : null,
-                                'birth_date'                             => Carbon::parse($data->birthday),
-                                'phone'                                  => isset($data->playerPhone) ? $data->playerPhone : null,
-                                'gender'                                 => isset($data->gender) ? $data->gender : null,
-                                'medical_information_release_HIPPA'      => $medicalInformationReleaseHIPPA,
-                                'consent_for_treatment'                  => $consentforTreatment,
-                                'acceptance_of_risk'                     => $acceptanceofRisk,
-                                'refund_policy'                          => $refundPolicy,
-                                'delinquent_payment_policy'              => $delinquentPaymentPolicy,
-                                'concussion_information_sheet'           => $concussionInformationSheet,
-                                'concussion_information_acknowledgement' => $concussionInformationAcknowledgement,
-                                'appearance_agreement'                   => $appearanceAgreement,
-                                'm_parent_id'                            => isset($data->parentId) ? $data->parentId : null,
-                                'm_parent_ids'                           => isset($data->parentIds) ? json_encode($data->parentIds) : null,
-                                'm_club_id'                              => isset($data->clubId) ? $data->clubId : null ,
-                                'm_club_name'                            => isset($data->clubName) ? $data->clubName : null ,
-                                'm_username'                             => isset($data->username) ? $data->username : null ,
-                                'm_files'                                => count($data->files) ? json_encode($data->files) : null,
-                                'm_camps'                                => count($model->camps) ? json_encode($model->camps) : null,
-                            ]);
-                        }
+                    if (isset($data->playerEmail) && $data->playerEmail !== '') {
+                        $email = $data->playerEmail;
                     }
+
+                    $user = User::where('email', $email)->first();
+
+                    if (!$user) {
+
+                        $user = User::create([
+                            'm_id'          => $child->_id,
+                            'first_name'    => $data->firstName,
+                            'last_name'     => $data->lastName,
+                            'email'         => $email,
+                            'password'      => Hash::make('password'),
+                        ]);
+    
+                        $user->assignRole('Player');
+                    }
+
+                    $medicalInformationReleaseHIPPA = isset($data->medicalInformationReleaseHIPPA)
+                        ? filter_var($data->medicalInformationReleaseHIPPA, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $consentforTreatment = isset($data->consentforTreatment)
+                        ? filter_var($data->consentforTreatment, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $acceptanceofRisk = isset($data->acceptanceofRisk)
+                        ? filter_var($data->acceptanceofRisk, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $refundPolicy = isset($data->refundPolicy)
+                        ? filter_var($data->refundPolicy, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $delinquentPaymentPolicy = isset($data->delinquentPaymentPolicy)
+                        ? filter_var($data->delinquentPaymentPolicy, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $concussionInformationSheet = isset($data->concussionInformationSheet)
+                        ? filter_var($data->concussionInformationSheet, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $concussionInformationAcknowledgement = isset($data->concussionInformationAcknowledgement)
+                        ? filter_var($data->concussionInformationAcknowledgement, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $appearanceAgreement = isset($data->appearanceAgreement)
+                        ? filter_var($data->appearanceAgreement, FILTER_VALIDATE_BOOLEAN)
+                        : false;
+
+                    $user->player()->create([
+                        'club_id'                                => $club->id,
+                        'm_id'                                   => $child->_id,
+                        'guardian_id'                            => $guardian->id,
+                        'm_teams'                                => count($child->teams) ? json_encode($child->teams) : null,
+                        'birth_date'                             => isset($data->birthday) ? Carbon::parse($data->birthday) : null,
+                        'phone'                                  => isset($data->playerPhone) ? $data->playerPhone : null,
+                        'gender'                                 => isset($data->gender) ? $data->gender : null,
+                        'medical_information_release_HIPPA'      => $medicalInformationReleaseHIPPA,
+                        'consent_for_treatment'                  => $consentforTreatment,
+                        'acceptance_of_risk'                     => $acceptanceofRisk,
+                        'refund_policy'                          => $refundPolicy,
+                        'delinquent_payment_policy'              => $delinquentPaymentPolicy,
+                        'concussion_information_sheet'           => $concussionInformationSheet,
+                        'concussion_information_acknowledgement' => $concussionInformationAcknowledgement,
+                        'appearance_agreement'                   => $appearanceAgreement,
+                        'm_parent_id'                            => isset($data->parentId) ? $data->parentId : null,
+                        'm_parent_ids'                           => isset($data->parentIds) ? json_encode($data->parentIds) : null,
+                        'm_club_id'                              => isset($data->clubId) ? $data->clubId : null ,
+                        'm_club_name'                            => isset($data->clubName) ? $data->clubName : null ,
+                        'm_username'                             => isset($data->username) ? $data->username : null ,
+                        'm_files'                                => count($data->files) ? json_encode($data->files) : null,
+                        'm_camps'                                => count($model->camps) ? json_encode($model->camps) : null,
+                    ]);
                 });
             }
         }

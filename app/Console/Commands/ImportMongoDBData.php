@@ -62,6 +62,7 @@ class ImportMongoDBData extends Command
 
                 $this->info('Importing users...');
                 $this->newLine();
+                $this->newLine();
                 $this->importUsers($club);
 
                 $this->newLine();
