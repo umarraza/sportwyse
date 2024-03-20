@@ -1,0 +1,1 @@
+import{_ as s}from"./_plugin-vue_export-helper-c27b6911.js";import{o as a,e as r,r as o,a as t}from"./app-39d70025.js";const c={},n={class:"wrapper-page"},d={class:"card card-pages shadow-none mt-3"};function _(e,i){return a(),r("div",n,[o(e.$slots,"logo"),t("div",d,[o(e.$slots,"default")])])}const f=s(c,[["render",_]]);export{f as A};
