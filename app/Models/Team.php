@@ -59,6 +59,12 @@ class Team extends Model
         return $this->belongsToMany(Player::class)->withPivot('status');
     }
 
+    /**
+     * Apply filters to the query based on the request parameters.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return void
+     */
     public function scopeFilter(Builder $query) 
     {
         $query->when(request()->teamName, function ($query) {

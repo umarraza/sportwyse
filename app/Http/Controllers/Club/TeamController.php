@@ -27,12 +27,11 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        // dd($request->all());
-
         return Inertia::render('Club/Teams/Index', [
-            'teams' => $this->repository->index()
+            'teams' => $this->repository->index(),
+            'filters' => request()->all(),
         ]);    
     }
 
