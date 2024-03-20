@@ -7,6 +7,7 @@ use App\Models\Player;
 use App\Models\TeamSetting;
 use App\Traits\Scopes\ClubScope;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -56,5 +57,18 @@ class Team extends Model
     public function players(): BelongsToMany
     {
         return $this->belongsToMany(Player::class)->withPivot('status');
+    }
+
+    public function scopeFilter(Builder $query) 
+    {
+        $query->when(request()->teamName, function ($query) {
+            $query->where('name', 'like', '%' . request()->teamName . '%');
+        })
+        ->when(request()->status, function ($query) {
+            $query->where('status', request()->status);
+        })
+        ->when(request()->gender, function ($query) {
+            $query->where('gender', request()->gender);
+        });
     }
 }

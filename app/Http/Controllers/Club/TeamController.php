@@ -6,6 +6,7 @@ use App\Models\Team;
 use Inertia\Inertia;
 use App\Models\Staff;
 use App\Models\Player;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Club\StoreTeamRequest;
 use App\Repository\Club\Team\TeamRepositoryInterface;
@@ -26,8 +27,10 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        // dd($request->all());
+
         return Inertia::render('Club/Teams/Index', [
             'teams' => $this->repository->index()
         ]);    

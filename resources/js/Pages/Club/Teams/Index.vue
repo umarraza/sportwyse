@@ -1,6 +1,50 @@
 <template>
   <AppLayout title="Camps">
     <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="pl-2"><i class="fas fa-filter"></i> Filters</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="col-form-label">Search By Team</label>
+                  <input type="text" placeholder="Search By Team" class="form-control" v-model="filters.teamName">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="">Gender</label>
+                  <select class="form-control" v-model="filters.gender">
+                    <option value="">Select Gender</option>
+                    <option value="boys">Male</option>
+                    <option value="girls">Female</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="">Status</label>
+                  <select class="form-control" v-model="filters.status">
+                    <option value="">Select Status</option>
+                    <option value="1">Enabled</option>
+                    <option value="0">Disabled</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <button class="btn btn-success" @click="resetFilters">Reset Filters</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
           <div class="card-header">
@@ -26,19 +70,18 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="(team, index) in teams" :key="index">
+                    <tr v-for="(team, index) in teams.data" :key="index">
                       <td>{{ team.name }}</td>
                       <td>
-                        <Link href=""
-                          class="">{{ team.staff_members_count }}</Link>
+                        <Link href="" class="">{{ team.staff_members_count }}</Link>
                       </td>
                       <td>{{ team.gender }}</td>
                       <td>{{ team.start_date }}</td>
                       <td>{{ team.end_date }}</td>
                       <td>
                         <svg v-if="team.status" stroke="currentColor" fill="currentColor" stroke-width="0"
-                          viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
-                          style="color: rgb(12, 241, 12);">
+                          viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em"
+                          xmlns="http://www.w3.org/2000/svg" style="color: rgb(12, 241, 12);">
                           <circle cx="8" cy="8" r="8"></circle>
                         </svg>
                         <svg v-else stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"
@@ -48,8 +91,8 @@
                         </svg>
                       </td>
                       <td>
-                        <Link :href="route('club.teams.players.index', team.id)"
-                        >Players ({{ team.players_count }})</Link>
+                        <Link :href="route('club.teams.players.index', team.id)">Players ({{ team.players_count }})
+                        </Link>
                       </td>
                       <td>
                         <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
@@ -65,6 +108,7 @@
                   </tbody>
                 </table>
               </div>
+              <Pagination :links="teams.links" />
             </div>
           </div>
         </div>
@@ -81,13 +125,42 @@ import EditButton from "@/Pages/Slots/EditButton.vue";
 import ShowButton from "@/Pages/Slots/ShowButton.vue";
 import { Link } from '@inertiajs/vue3';
 import { router } from '@inertiajs/vue3';
+import { watch, reactive } from 'vue';
+import { defaults } from 'lodash';
+import Pagination from '@/Shared/Pagination.vue';
 
-defineProps({
+const props = defineProps({
   teams: {
     type: Object,
     required: true
-  }
+  },
+  filters: Object,
 });
+
+const filters = reactive(defaults({}, props.filters, {
+  teamName: '',
+  gender: '',
+  status: '',
+}));
+
+watch(filters, () => {
+  runFilters();
+}, { deep: true });
+
+const runFilters = () => {
+  router.get('/club/teams', filters, {
+    preserveState: true,
+    preserveScroll: true,
+    replace: true,
+  });
+};
+
+const resetFilters = () => {
+  filters.teamName = '';
+  filters.gender = '';
+  filters.status = '';
+  runFilters();
+};
 
 const deleteTeam = (teamId) => {
   if (confirm("Are you sure you want to delete this team?")) {
