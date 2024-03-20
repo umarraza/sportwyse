@@ -16,11 +16,13 @@ class PlayerRepository implements PlayerRepositoryInterface
      */
     public function index()
     {
-        return Player::select('id', 'user_id', 'birth_date')
+        return Player::select('players.id', 'user_id', 'birth_date', 'gender')
+            ->filter()
             ->has('user')
             ->with('user:id,first_name,last_name', 'teams')
             ->withCount('teams')
-            ->get();
+            ->paginate(config('app.default_pagination_size'))
+            ->withQueryString();
     }
 
     /**

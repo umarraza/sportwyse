@@ -19,6 +19,7 @@ class PlayerController extends Controller
     {
         return Inertia::render('Club/Players/Index', [
             'players' => $this->repository->index(),
+            'filters' => request()->all(),
         ]);
     }
 

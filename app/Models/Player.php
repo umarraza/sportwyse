@@ -7,6 +7,7 @@ use App\Models\Guardian;
 use App\Models\Transaction;
 use App\Traits\Scopes\ClubScope;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -69,5 +70,28 @@ class Player extends Model
     public function transactions(): HasMany
     {
         return $this->hasMany(Transaction::class);
+    }
+
+    /**
+     * Apply filters to the query based on the request parameters.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return void
+     */
+    public function scopeFilter(Builder $query) 
+    {
+        $query->join('users', 'users.id', '=', 'players.user_id')
+        ->when(request()->firstName, function ($query) {
+            $query->where('users.first_name', 'like', '%' . request()->firstName . '%');
+        })
+        ->when(request()->lastName, function ($query) {
+            $query->where('users.last_name', 'like', '%' . request()->lastName . '%');
+        })
+        ->when(request()->gender, function ($query) {
+            $query->where('players.gender', request()->gender);
+        })
+        ->when(request()->year, function ($query) {
+            $query->whereYear('players.birth_date', request()->year);
+        });
     }
 }
