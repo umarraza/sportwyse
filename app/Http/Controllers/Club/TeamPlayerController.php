@@ -27,6 +27,8 @@ class TeamPlayerController extends Controller
     {
         $players = Player::whereNotIn('id', $team->players()->pluck('id')->toArray())
                 ->with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email')
+                ->whereYear('birth_date', '>=' , $team->end_date->year)
+                ->whereYear('birth_date', '<=' , $team->start_date->year)
                 ->get();
 
         return Inertia::render('Club/Teams/Players/Add', [

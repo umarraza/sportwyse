@@ -20,6 +20,16 @@ class Team extends Model
     protected $guarded = ['id'];
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'start_date' => 'date',
+        'end_date' => 'date',
+    ];
+
+    /**
      * Get the settings associated with the Team
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

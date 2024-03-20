@@ -9,7 +9,7 @@
               <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
             </div>
           </div>
-          <div class="card-body">
+          <div class="card-body" style="height: 60em;">
             <form @submit.prevent="submit">
               <div class="form-group row">
                 <InputLabel for="status" class="col-sm-2 col-form-label" value="Status" />

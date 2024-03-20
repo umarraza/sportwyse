@@ -32,9 +32,13 @@
                   <tbody>
                     <tr v-for="(player, index) in players" :key="index">
                       <td>-</td>
-                      <td>{{ player.user.first_name }}</td>
+                      <td>
+                        <Link :href="route('club.players.show', player.id)">
+                            {{ player.user.first_name }}
+                        </Link>
+                      </td>
                       <td>{{ player.user.last_name }}</td>
-                      <td>{{ player.birth_date }}</td>
+                      <td>{{ formatDate(player.birth_date) }}</td>
                       <td>
                         <span v-if="player.pivot.status === 'Primary'" class="badge badge-success">Primary</span>
                         <span v-else class="badge badge-info">Guest</span>
@@ -64,6 +68,8 @@
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
 import BackToList from "@/Pages/Slots/BackToList.vue";
 import { router } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3';
+import moment from 'moment';
 
 const props = defineProps({
   players: {
@@ -75,6 +81,10 @@ const props = defineProps({
     required: true
   }
 });
+
+const formatDate = (date, format = 'MM-DD-YYYY') => {
+  return date ? moment(date).format(format) : '-';
+};
 
 const deletePlyaer = (playerId) => {
   if (confirm('Are you sure you want to remove this player from the team?')) {

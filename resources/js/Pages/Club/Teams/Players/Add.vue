@@ -44,7 +44,7 @@
                   </tr>
                   <tr>
                     <th class="p0-th">Birth Date</th>
-                    <td style="width: 65% !important;" class="p0-th">{{ item.birth_date }}</td>
+                    <td style="width: 65% !important;" class="p0-th">{{ formatDate(item.birth_date) }}</td>
                   </tr>
                   <tr>
                     <th class="p0-th">Parent Name</th>
@@ -97,6 +97,7 @@ import { onMounted } from 'vue'
 import { Link } from '@inertiajs/vue3';
 import { useForm } from '@inertiajs/vue3';
 import { useToast } from "vue-toastification";
+import moment from 'moment';
 
 const props = defineProps({
   players: {
@@ -178,6 +179,10 @@ const addMorePlayer = () => {
     id: '',
     status: 'Primary'
   });
+};
+
+const formatDate = (date, format = 'MM-DD-YYYY') => {
+  return date ? moment(date).format(format) : '-';
 };
 
 const submitForm = () => {
