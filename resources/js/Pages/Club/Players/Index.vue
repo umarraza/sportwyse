@@ -68,9 +68,13 @@
                   </thead>
                   <tbody>
                     <tr v-for="(player, index) in players.data" :key="index">
-                      <td>{{ player.user.first_name }}</td>
+                      <td>
+                        <Link :href="route('club.players.show', player.id)">
+                          {{ player.user.first_name }}
+                        </Link>
+                      </td>
                       <td>{{ player.user.last_name }}</td>
-                      <td>{{ player.birth_date }}</td>
+                      <td>{{ formatDate(player.birth_date) }}</td>
                       <td>{{ player.gender }}</td>
                       <td>
                         <Link :href="route('club.players.teams', player.id)"
@@ -103,6 +107,7 @@ import Pagination from '@/Shared/Pagination.vue';
 import { defaults } from 'lodash';
 import { watch, reactive, ref } from 'vue';
 import { router } from '@inertiajs/vue3';
+import moment from 'moment';
 
 const props = defineProps({
     players: {
@@ -129,6 +134,10 @@ const runFilters = () => {
     preserveScroll: true,
     replace: true,
   });
+};
+
+const formatDate = (date, format = 'MM-DD-YYYY') => {
+  return date ? moment(date).format(format) : '-';
 };
 
 const resetFilters = () => {

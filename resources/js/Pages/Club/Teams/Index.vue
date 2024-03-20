@@ -76,8 +76,8 @@
                         <Link href="" class="">{{ team.staff_members_count }}</Link>
                       </td>
                       <td>{{ team.gender }}</td>
-                      <td>{{ team.start_date }}</td>
-                      <td>{{ team.end_date }}</td>
+                      <td>{{ formatDate(team.start_date) }}</td>
+                      <td>{{ formatDate(team.end_date) }}</td>
                       <td>
                         <svg v-if="team.status" stroke="currentColor" fill="currentColor" stroke-width="0"
                           viewBox="0 0 16 16" color="#0cf10c" height="1em" width="1em"
@@ -127,6 +127,7 @@ import { Link } from '@inertiajs/vue3';
 import { router } from '@inertiajs/vue3';
 import { watch, reactive } from 'vue';
 import { defaults } from 'lodash';
+import moment from 'moment';
 import Pagination from '@/Shared/Pagination.vue';
 
 const props = defineProps({
@@ -153,6 +154,10 @@ const runFilters = () => {
     preserveScroll: true,
     replace: true,
   });
+};
+
+const formatDate = (date, format = 'M-D-YYYY') => {
+  return date ? moment(date).format(format) : '-';
 };
 
 const resetFilters = () => {
