@@ -94,4 +94,9 @@ class Player extends Model
             $query->whereYear('players.birth_date', request()->year);
         });
     }
+
+    public function primaryTeam()
+    {
+        return $this->teams()->wherePivot('status', 'Primary')->first();
+    }
 }
