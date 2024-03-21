@@ -26,8 +26,8 @@
                     <tr v-for="(team, index) in teams" :key="index">
                       <td>{{ team.name }}</td>
                       <td>{{ team.gender }}</td>
-                      <td>{{ team.start_date }}</td>
-                      <td>{{ team.end_date }}</td>
+                      <td>{{ formatDate(team.start_date) }}</td>
+                      <td>{{ formatDate(team.end_date) }}</td>
                       <td>
                         <button :class="['btn', team.pivot.status === 'Primary' ? 'btn-success' : 'btn-info']"
                           @click="changeStatus(team)">{{ team.pivot.status }}</button>
@@ -47,7 +47,8 @@
 <script setup>
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
-import { Link, router } from '@inertiajs/vue3';
+import {router} from '@inertiajs/vue3';
+import moment from 'moment';
 
 const props = defineProps({
   player: {
@@ -59,6 +60,10 @@ const props = defineProps({
     required: true
   },
 });
+
+const formatDate = (date, format = 'MM-DD-YYYY') => {
+  return date ? moment(date).format(format) : '-';
+};
 
 const changeStatus = (team) => {
 

@@ -45,8 +45,17 @@ class PlayerController extends Controller
 
     public function updateStatus(Player $player, Team $team)
     {
+        $redirectUrl = request()->has('redirect_url') ? request('redirect_url') : route('club.players.teams', $player->id);
+
+        $primaryTeam = $player->primaryTeam();
+
+        if ($primaryTeam && request('status') === 'Primary') {
+            
+            return redirect($redirectUrl)->with('warning', 'Player is already a primary player on another team. Please remove them from that team first.');
+        }
+
         $this->repository->updateStatus($team, $player);
 
-        return redirect()->route('club.players.teams', $player->id)->with('success', 'Player status updated successfully');
+        return redirect($redirectUrl)->with('success', 'Player status updated successfully');
     }
 }

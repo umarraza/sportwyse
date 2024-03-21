@@ -34,14 +34,17 @@
                       <td>-</td>
                       <td>
                         <Link :href="route('club.players.show', player.id)">
-                            {{ player.user.first_name }}
+                        {{ player.user.first_name }}
                         </Link>
                       </td>
                       <td>{{ player.user.last_name }}</td>
                       <td>{{ formatDate(player.birth_date) }}</td>
                       <td>
-                        <span v-if="player.pivot.status === 'Primary'" class="badge badge-success">Primary</span>
-                        <span v-else class="badge badge-info">Guest</span>
+
+                        <button :class="['btn', player.pivot.status === 'Primary' ? 'btn-success' : 'btn-info']"
+                          @click="changeStatus(player)">{{ player.pivot.status }}</button>
+
+
                       </td>
                       <td>{{ `${player.guardian.user.first_name} ${player.guardian.user.last_name}` }}</td>
                       <td><a :href="`mailto:${player.guardian.user.email}`">{{ player.guardian.user.email }}</a></td>
@@ -62,7 +65,7 @@
     </div> <!-- end row -->
   </AppLayout>
 </template>
-  
+
 <script setup>
 
 import AppLayout from '@/Pages/Club/Layouts/AppLayout.vue';
@@ -84,6 +87,17 @@ const props = defineProps({
 
 const formatDate = (date, format = 'MM-DD-YYYY') => {
   return date ? moment(date).format(format) : '-';
+};
+
+const changeStatus = (player) => {
+  const status = player.pivot.status === 'Primary' ? 'Guest' : 'Primary';
+  const data = {
+    status: status,
+    redirect_url: route('club.teams.players.index', props.team.id)
+  };
+  if (confirm('Are you sure you want to update the status?')) {
+    router.post(route('club.players.teams.update-status', [player.id, props.team.id]), data);
+  }
 };
 
 const deletePlyaer = (playerId) => {

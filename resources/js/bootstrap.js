@@ -16,45 +16,52 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 // Add a response interceptor
 axios.interceptors.response.use(function (response) {
+    console.log(response);
 
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
     if (response.data.props) {
-        
-        let message = response.data.props.flash.success;
-      
-        message = message ?? '';
+        const flash = response.data.props.flash;
 
-        if (message.length > 0) {
-            toast.success(response.data.props.flash.success, {
+        if (flash && flash.success) {
+            toast.success(flash.success, {
+                position: "bottom-left",
+            });
+        }
+        if (flash && flash.warning) {
+            toast.warning(flash.warning, {
+                position: "bottom-left",
+            });
+        }
+        if (flash && flash.error) {
+            toast.error(flash.error, {
                 position: "bottom-left",
             });
         }
     }
 
-
     return response;
-    }, function (error) {
-        // Any status codes that falls outside the range of 2xx cause this function to trigger
-        // Do something with response error
+}, function (error) {
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
 
-        const response = error.response;
+    const response = error.response;
+    if (response) {
+        const flash = response.data.props.flash;
 
-        if (response) {
-            if (response.status === 500 && response.data.messag !== undefined) {
-                toast.error(response.data.message, {
-                    position: "bottom-left",
-                });
-            }
-
-            if (response.status === 404) {
-                alert(response.data.message);
-            }
+        if (response.status === 500 && flash && flash.error) {
+            toast.error(flash.error, {
+                position: "bottom-left",
+            });
         }
 
+        if (response.status === 404 && flash && flash.error) {
+            alert(flash.error);
+        }
+    }
 
-        return Promise.reject(error);
-    });
+    return Promise.reject(error);
+});
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
