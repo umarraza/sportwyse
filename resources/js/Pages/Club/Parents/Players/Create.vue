@@ -1,10 +1,10 @@
 <template>
-  <AppLayout title="Creae Player">
+  <AppLayout title="Create Player">
     <div class="row">
       <div class="col-12">
         <div class="card ">
           <div class="card-header">
-            <h4 class="pl-2">Crate Player</h4>
+            <h4 class="pl-2">Create Player</h4>
             <span class="pl-2">{{ parent.name }}</span>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.parents.index')"> Back</BackToList>

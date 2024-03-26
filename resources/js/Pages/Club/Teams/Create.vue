@@ -1,10 +1,10 @@
 <template>
-  <AppLayout title="Creae Team">
+  <AppLayout title="Create Team">
     <div class="row">
       <div class="col-12">
         <div class="card ">
           <div class="card-header">
-            <h4 class="pl-2">Crate Team</h4>
+            <h4 class="pl-2">Create Team</h4>
             <div class="card-header-right">
               <BackToList :backToListRoute="route('club.teams.index')"> Back</BackToList>
             </div>
