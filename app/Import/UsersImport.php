@@ -13,10 +13,6 @@ class UsersImport
     {
         $userByEmail = User::where('email', $model->data->email)->first();
 
-        if ($model->data->firstName === 'Mathias') {
-            dd($model->data);
-        }
-
         $createdAt = (array) $model->createdAt;
         $updatedAt = (array) $model->updatedAt;
 
