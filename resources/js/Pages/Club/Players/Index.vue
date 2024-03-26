@@ -33,7 +33,7 @@
               <div class="col-md-3">
                 <div class="form-group">
                   <label for="">Search By Players Birth Year</label>
-                  <VueDatePicker v-model="filters.year" year-picker />
+                  <VueDatePicker v-model="filters.year" year-picker placeholder="Year" />
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ const filters = reactive(defaults({}, props.filters, {
   firstName: '',
   lastName: '',
   gender: '',
-  year: ref(new Date().getFullYear()),
+  year: '',
 }));
 
 watch(filters, () => {
