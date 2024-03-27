@@ -22,7 +22,7 @@
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="">Gender</label>
+                  <label for="gender">Gender</label>
                   <select class="form-control" v-model="filters.gender">
                     <option value="">Select Gender</option>
                     <option value="Male">Male</option>

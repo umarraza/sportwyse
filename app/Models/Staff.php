@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Club;
 use App\Models\Team;
 use App\Models\User;
 use App\Traits\Scopes\ClubScope;

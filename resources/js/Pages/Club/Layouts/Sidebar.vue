@@ -26,6 +26,10 @@ import { Link } from '@inertiajs/vue3';
           <i class="fas fa-user-circle"></i>
           <span> Parents </span>
           </Link>
+          <Link :href="route('club.coaches.index')" class="sidebar-item">
+          <i class="fas fa-graduation-cap"></i>
+          <span> Coaches </span>
+          </Link>
           <Link :href="route('stripe.index')" class="sidebar-item">
           <i class="fab fa-stripe-s"></i>
           <span> Upload Stripe Data </span>

@@ -7,12 +7,14 @@ use Illuminate\Support\ServiceProvider;
 use App\Repository\Player\PlayerRepository;
 use App\Repository\Stripe\StripeRepository;
 use App\Repository\Club\Team\TeamRepository;
+use App\Repository\Club\Coach\CoachRepository;
 use App\Repository\Camp\CampRepositoryInterface;
 use App\Repository\Parent\ParentPlayerRepository;
 use App\Repository\Staff\Team\StaffTeamRepository;
 use App\Repository\Player\PlayerRepositoryInterface;
 use App\Repository\Stripe\StripeRepositoryInterface;
 use App\Repository\Club\Team\TeamRepositoryInterface;
+use App\Repository\Club\Coach\CoachRepositoryInterface;
 use App\Repository\Parent\ParentPlayerRepositoryInterface;
 use App\Repository\Staff\Team\StaffTeamRepositoryInterface;
 use App\Repository\Club\PlayerTransaction\PlayerTransactionRepository;
@@ -32,6 +34,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(StripeRepositoryInterface::class, StripeRepository::class);
         $this->app->bind(StaffTeamRepositoryInterface::class, StaffTeamRepository::class);
         $this->app->bind(PlayerTransactionRepositoryInterface::class, PlayerTransactionRepository::class);
+        $this->app->bind(CoachRepositoryInterface::class, CoachRepository::class);
     }
 
     /**
