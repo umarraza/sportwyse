@@ -18,11 +18,8 @@ class JsonViewerController extends Controller
 
         $collection = collect($json);
 
-        dd($collection->pluck('data')->groupBy('rushUserType'));
-
         $collection->each(function($model) {
             
-            dd($model);
             $user = User::create([
                 'first_name' => $model->data->firstName,
                 'last_name' => $model->data->lastName,

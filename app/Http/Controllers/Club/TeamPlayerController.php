@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Club;
 use App\Models\Team;
 use Inertia\Inertia;
 use App\Models\Player;
+use App\Models\Guardian;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Staff\AddPlayerInTeamRequest;
 
@@ -25,6 +26,8 @@ class TeamPlayerController extends Controller
 
     public function add(Team $team) 
     {
+        $guardians = Guardian::with('user:id,first_name,last_name')->get();
+
         $players = Player::whereNotIn('id', $team->players()->pluck('id')->toArray())
                 ->with('user:id,first_name,last_name', 'guardian.user:id,first_name,last_name,email')
                 ->whereYear('birth_date', '>=' , $team->end_date->year)
@@ -34,6 +37,7 @@ class TeamPlayerController extends Controller
         return Inertia::render('Club/Teams/Players/Add', [
             'team' => $team,
             'players' => $players,
+            'guardians' => $guardians,
         ]);
     }
 

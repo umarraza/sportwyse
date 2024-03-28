@@ -4,6 +4,8 @@ namespace App\Repository\Player;
 
 use App\Models\Team;
 use App\Models\Player;
+use App\Models\User;
+use DateHelper;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -23,6 +25,38 @@ class PlayerRepository implements PlayerRepositoryInterface
             ->withCount('teams')
             ->paginate(config('app.default_pagination_size'))
             ->withQueryString();
+    }
+
+    /**
+     * Store a new player record in the database.
+     *
+     * @param array $data The data to be stored.
+     * @return void
+     */
+    public function store(array $data)
+    {
+        DB::transaction(function () use ($data) {
+            $user = User::create([
+                'first_name' => $data['first_name'],
+                'last_name' => $data['last_name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password'] ?? 'password'),
+            ]);
+    
+            $user->assignRole('Player');
+
+            $player = $user->player()->create([
+                'guardian_id' => $data['guardian_id'],
+                'birth_date' => Carbon::parse($data['birth_date']),
+                'gender' => $data['gender'],
+            ]);
+
+            if (isset($data['team_id'])) {
+                $player->teams()->attach($data['team_id'], [
+                    'status' => $data['status'],
+                ]);
+            }
+        });
     }
 
     /**

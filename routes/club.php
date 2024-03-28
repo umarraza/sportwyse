@@ -16,14 +16,14 @@ Route::name('club.')->prefix('club')->group(function () {
     Route::resource('camps', CampController::class);
     Route::resource('parents', ParentController::class);
     Route::resource('parents.players', ParentPlayerController::class)->except('show')->shallow();
-    Route::get('players/{player}', [ParentPlayerController::class, 'show'])->name('parent.players.show');
+    Route::get('p/players/{player}', [ParentPlayerController::class, 'show'])->name('parent.players.show');
     Route::resource('teams', TeamController::class);
 
     /**
      * TeamPlayerController
      */
     Route::get('teams/{team}/players', [TeamPlayerController::class, 'index'])->name('teams.players.index');
-    Route::get('players/{plyare}', [TeamPlayerController::class, 'show'])->name('players.show');
+    Route::get('teams/players/{plyare}', [TeamPlayerController::class, 'show'])->name('players.show');
     Route::get('teams/{team}/players/add', [TeamPlayerController::class, 'add'])->name('teams.players.add');
     Route::post('teams/{team}/players', [TeamPlayerController::class, 'store'])->name('teams.players.store');
     Route::delete('teams/{team}/players/{player}', [TeamPlayerController::class, 'delete'])->name('teams.players.delete');
@@ -32,6 +32,8 @@ Route::name('club.')->prefix('club')->group(function () {
      * PlayerController
      */
     Route::get('players', [PlayerController::class, 'index'])->name('players.index');
+    Route::get('players/create', [PlayerController::class, 'create'])->name('players.create');
+    Route::post('players', [PlayerController::class, 'store'])->name('players.store');
     Route::get('player/{player}/teams', [PlayerController::class, 'teams'])->name('players.teams');
     Route::get('players/{player}/details', [PlayerController::class, 'show'])->name('players.details');
     Route::post('player/{player}/teams/{team}/update-status', [PlayerController::class, 'updateStatus'])->name('players.teams.update-status');

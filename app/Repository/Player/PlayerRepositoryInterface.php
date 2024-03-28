@@ -23,6 +23,14 @@ interface PlayerRepositoryInterface
     public function show(Player $player);
 
     /**
+     * Store a new player record in the database.
+     *
+     * @param array $data The data to be stored.
+     * @return void
+     */
+    public function store(array $data);
+
+    /**
      * Retrieve all teams for a player.
      *
      * @return array

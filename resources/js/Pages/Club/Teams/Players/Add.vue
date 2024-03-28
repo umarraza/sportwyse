@@ -1,5 +1,90 @@
 <template>
   <AppLayout title="Camps">
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title mt-0" id="mySmallModalLabel">Create New Player</h5>
+            <button type="button" class="close modal-close-btn" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form @submit.prevent="submitPlayer">
+              <div class="form-group row">
+                <InputLabel for="first_name" class="col-sm-2 col-form-label" value="First Name" />
+                <div class="col-sm-10">
+                  <TextInput id="first_name" v-model="playerForm.first_name" type="text" class="mt-1 block w-full"
+                    autofocus autocomplete="first_name" />
+                  <InputError class="mt-2" :message="form.errors.first_name" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <InputLabel for="last_name" class="col-sm-2 col-form-label" value="First Name" />
+                <div class="col-sm-10">
+                  <TextInput id="last_name" v-model="playerForm.last_name" type="text" class="mt-1 block w-full"
+                    autofocus autocomplete="last_name" />
+                  <InputError class="mt-2" :message="form.errors.last_name" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <InputLabel for="email" class="col-sm-2 col-form-label" value="Email" />
+                <div class="col-sm-10">
+                  <TextInput id="email" v-model="playerForm.email" type="email" class="mt-1 block w-full" autofocus
+                    autocomplete="email" />
+                  <InputError class="mt-2" :message="form.errors.email" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <InputLabel for="gender" class="col-sm-2 col-form-label" value="Gender" />
+                <div class="col-sm-10">
+                  <select class="form-control" v-model="playerForm.gender">
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                  <InputError :message="form.errors.gender" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <InputLabel for="status" class="col-sm-2 col-form-label" value="Status" />
+                <div class="col-sm-10">
+                  <select class="form-control" v-model="playerForm.status">
+                    <option value="">Select Status</option>
+                    <option value="Primary">Primary</option>
+                    <option value="Guest">Guest</option>
+                  </select>
+                  <InputError :message="form.errors.status" />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="example-search-input" class="col-sm-2 col-form-label">Birth Date</label>
+                <div class="col-sm-10">
+                  <VueDatePicker position="left" :enable-time-picker="false" v-model="playerForm.birth_date"
+                    auto-apply />
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Select Parent</label>
+                <div class="col-sm-10">
+                  <model-select :options="guardiansOptions" v-model="playerForm.guardian_id"
+                    placeholder="Select Parent">
+                  </model-select>
+                  <InputError class="mt-2" :message="form.errors.guardian_id" />
+                </div>
+              </div>
+              <div class="form-group">
+                <div>
+                  <button type="submit" class="btn btn-primary waves-effect ml-1 waves-light">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="row">
       <div class="col-12">
         <div class="card m-b-30">
@@ -7,6 +92,8 @@
             <h4 class="ml-4">Add Players</h4>
             <p class="mb-0">{{ team.name }}</p>
             <div class="card-header-right">
+              <button type="button" class="btn btn-success waves-effect waves-light mr-1" data-toggle="modal"
+                data-target=".bs-example-modal-sm"><i class="fa fa-plus"></i> Create New Player</button>
               <BackToList :backToListRoute="route('club.teams.players.index', team.id)" class="btn btn-primary">
               </BackToList>
             </div>
@@ -19,8 +106,9 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="col-form-label">Name</label>
-                  <model-select :options="playerOptions" v-model="item.id" :isError="hasError(`playerForms.${index}.id`)"
-                    placeholder="Select player" @blur="onselect(index, item)">
+                  <model-select :options="playerOptions" v-model="item.id"
+                    :isError="hasError(`playerForms.${index}.id`)" placeholder="Select player"
+                    @blur="onselect(index, item)">
                     <template v-slot="{ option }">
                       <span>{{ option.text }}</span>
                     </template>
@@ -66,7 +154,8 @@
             </div>
             <div class="row mt-3">
               <div class="col-md-12" style="padding-left: 0 !important;">
-                <button type="button" class="btn btn-info" @click="addMorePlayer"><i class="fas fa-plus"></i> Add another
+                <button type="button" class="btn btn-info" @click="addMorePlayer"><i class="fas fa-plus"></i> Add
+                  another
                   player</button>
               </div>
             </div>
@@ -85,7 +174,7 @@
     </div> <!-- end row -->
   </AppLayout>
 </template>
-  
+
 <script setup>
 
 import { ModelSelect } from 'vue-search-select'
@@ -98,6 +187,7 @@ import { Link } from '@inertiajs/vue3';
 import { useForm } from '@inertiajs/vue3';
 import { useToast } from "vue-toastification";
 import moment from 'moment';
+import { router } from '@inertiajs/vue3';
 
 const props = defineProps({
   players: {
@@ -108,9 +198,20 @@ const props = defineProps({
     type: Object,
     required: true
   },
+  guardians: {
+    type: Object,
+    required: true
+  },
   errors: {
     type: Object,
     required: false
+  }
+});
+
+const guardiansOptions = props.guardians.map((parent) => {
+  return {
+    value: parent.id,
+    text: parent.user.first_name + ' ' + parent.user.last_name,
   }
 });
 
@@ -126,7 +227,6 @@ const checkDuplicatePlayer = (playerId) => {
 
 const onselect = (index, item) => {
   setTimeout(() => {
-
     if (item.id && checkDuplicatePlayer(item.id)) {
       toast.error("Player already added.", {
         position: "bottom-left",
@@ -134,11 +234,8 @@ const onselect = (index, item) => {
       item.id = '';
       return;
     }
-
     const selectedValue = form.playerForms[index].id;
-
     const player = props.players.find((player) => player.id === selectedValue);
-
     item.gender = player.gender;
     item.birth_date = player.birth_date;
     item.parent_name = player.user.first_name + ' ' + player.user.last_name;
@@ -148,6 +245,18 @@ const onselect = (index, item) => {
 
 const form = useForm({
   playerForms: [],
+});
+
+const playerForm = useForm({
+  first_name: '',
+  last_name: '',
+  birth_date: new Date(),
+  gender: '',
+  email: '',
+  guardian_id: '',
+  team_id: props.team.id,
+  status: 'Primary',
+  redirectUrl:  route('club.teams.players.index', props.team.id),
 });
 
 const playerOptions = props.players.map((player) => {
@@ -206,6 +315,20 @@ const submitForm = () => {
       }
     }
   });
+};
+
+const submitPlayer = () => {
+
+  props.errors = {};
+
+  playerForm.transform(data => ({
+    ...data,
+  })).post(route('club.players.store'), {
+    onFinish: () => {
+    },
+  });
+
+  document.querySelector('.modal-close-btn').click();
 };
 
 </script>

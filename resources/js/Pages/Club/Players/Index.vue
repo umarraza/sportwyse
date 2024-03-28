@@ -4,7 +4,10 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <h4 class="pl-2"><i class="fas fa-filter"></i> Filters</h4>
+            <h4 class="pl-2">Teams</h4>
+            <div class="card-header-right">
+                <h4 class="pl-2"><i class="fas fa-filter"></i> Filters</h4>
+            </div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -51,6 +54,9 @@
         <div class="card m-b-30">
           <div class="card-header">
             <h4 class="pl-2">Players</h4>
+            <div class="card-header-right">
+              <AddButton :routeLink="route('club.players.create')"> Add</AddButton>
+            </div>
           </div>
           <div class="card-body">
             <div class="table-rep-plugin">
@@ -77,12 +83,12 @@
                       <td>{{ formatDate(player.birth_date) }}</td>
                       <td>{{ player.gender }}</td>
                       <td>
-                        <Link :href="route('club.players.teams', player.id)"
-                        >Teams ({{ player.teams_count }})</Link>
+                        <!-- <Link :href="route('club.players.teams', player.id)"
+                        >Teams ({{ player.teams_count }})</Link> -->
                       </td>
                       <td>
                         <div class="btn-group btn-group-sm ml-auto menu-actions align-self-center">
-                          <ShowButton :routeLink="route('club.players.details', player.id)">Show</ShowButton>
+                          <!-- <ShowButton :routeLink="route('club.players.details', player.id)">Show</ShowButton> -->
                         </div>
                       </td>
                     </tr>
@@ -108,6 +114,7 @@ import { defaults } from 'lodash';
 import { watch, reactive, ref } from 'vue';
 import { router } from '@inertiajs/vue3';
 import moment from 'moment';
+import AddButton from "@/Pages/Slots/AddButton.vue";
 
 const props = defineProps({
     players: {

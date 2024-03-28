@@ -109,6 +109,7 @@ class ParentPlayerController extends Controller
 
     public function show(Player $player) 
     {
+
         return Inertia::render('Club/Parents/Players/Show', [
             'player' => $this->repository->show($player),
         ]);
